@@ -345,6 +345,7 @@
 
                     <section class="checkout-form-section" style="margin-top: 20px;">
                         <h2>💳 Betaalmethode</h2>
+                        <p style="color: #7f8c8d; margin-bottom: 20px; font-size: 0.9rem;">Veilig betalen via Mollie - Kies je favoriete betaalmethode</p>
                         <div class="payment-methods">
                             <div class="payment-method selected" onclick="selectPayment(this, 'ideal')">
                                 <div style="font-size: 2rem;">🏦</div>
@@ -358,6 +359,24 @@
                                 <div style="font-size: 2rem;">💳</div>
                                 <span>Creditcard</span>
                             </div>
+                            <div class="payment-method" onclick="selectPayment(this, 'paypal')">
+                                <div style="font-size: 2rem;">🅿️</div>
+                                <span>PayPal</span>
+                            </div>
+                            <div class="payment-method" onclick="selectPayment(this, 'klarna')">
+                                <div style="font-size: 2rem;">🛍️</div>
+                                <span>Klarna</span>
+                            </div>
+                            <div class="payment-method" onclick="selectPayment(this, 'applepay')">
+                                <div style="font-size: 2rem;">🍎</div>
+                                <span>Apple Pay</span>
+                            </div>
+                        </div>
+
+                        <div style="background: #f8f9fa; padding: 15px; border-radius: 10px; margin-top: 20px; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                            <span>🔒</span>
+                            <span style="font-size: 0.9rem; color: #666;">Veilig betalen via</span>
+                            <strong style="color: #000;">Mollie</strong>
                         </div>
 
                         <div class="leverancier-info" id="leverancierInfo">

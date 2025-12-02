@@ -152,8 +152,12 @@ img {
 
 .nav {
     display: flex;
-    gap: 20px;
+    gap: 5px;
     flex-shrink: 0;
+}
+
+.nav-item {
+    position: relative;
 }
 
 .nav-link {
@@ -162,22 +166,90 @@ img {
     position: relative;
     white-space: nowrap;
     font-size: 0.95rem;
-}
-
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--primary-color);
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border-radius: var(--radius-sm);
     transition: var(--transition);
 }
 
-.nav-link:hover::after,
-.nav-link.active::after {
-    width: 100%;
+.nav-link:hover {
+    background: var(--bg-light);
+    color: var(--primary-color);
+}
+
+.nav-link.active {
+    color: var(--primary-color);
+}
+
+.nav-link .dropdown-arrow {
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+
+.nav-item:hover .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+/* Dropdown Menu */
+.nav-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+    min-width: 220px;
+    padding: 10px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 1001;
+}
+
+.nav-item:hover .nav-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.nav-dropdown a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.nav-dropdown a:hover {
+    background: var(--bg-light);
+    color: var(--primary-color);
+    padding-left: 25px;
+}
+
+.nav-dropdown a .dropdown-icon {
+    font-size: 1.1rem;
+    width: 24px;
+    text-align: center;
+}
+
+.nav-dropdown-divider {
+    height: 1px;
+    background: var(--border-color);
+    margin: 8px 0;
+}
+
+.nav-dropdown-header {
+    padding: 8px 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .header-actions {
