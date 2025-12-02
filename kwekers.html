@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onze Kwekers - Bollenstreek Direct</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🌷</span>
+                    <span class="logo-text">Bollenstreek Direct</span>
+                </a>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="shop.html" class="nav-link">Webshop</a>
+                    <a href="kwekers.html" class="nav-link active">Onze Kwekers</a>
+                    <a href="bollenstreek.html" class="nav-link">De Bollenstreek</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Zoek bloembollen..." autocomplete="off">
+                        <div class="search-results" id="searchResults"></div>
+                    </div>
+                    <button class="fav-btn" id="favBtn" title="Favorieten">
+                        ❤️ <span class="fav-count" id="favCount">0</span>
+                    </button>
+                    <button class="cart-btn" id="cartBtn">
+                        🛒 <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Onze Kwekers</h1>
+            <p>Maak kennis met de families achter uw bloembollen</p>
+        </div>
+    </section>
+
+    <!-- Kwekers Section -->
+    <section class="kwekers-section">
+        <div class="container">
+            <div class="kwekers-intro" style="max-width: 800px; margin: 0 auto 50px; text-align: center;">
+                <p style="font-size: 1.1rem; color: #7f8c8d; line-height: 1.8;">
+                    Bij Bollenstreek Direct geloven we in transparantie. Daarom laten we u precies zien wie uw bloembollen kweekt. 
+                    Onze kwekers zijn familiebedrijven uit de Bollenstreek die al generaties lang met passie de mooiste bollen kweken.
+                </p>
+            </div>
+
+            <div class="kwekers-grid" id="kwekersGrid">
+                <!-- Dynamisch gegenereerd -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="padding: 80px 0; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center;">
+        <div class="container">
+            <h2 style="font-size: 2rem; margin-bottom: 15px;">Bent u Kweker?</h2>
+            <p style="max-width: 600px; margin: 0 auto 30px; opacity: 0.9;">
+                Heeft u een bloembollenkwekerij in de Bollenstreek en wilt u uw producten via ons platform verkopen? 
+                Neem contact met ons op!
+            </p>
+            <a href="contact.html" class="btn" style="background: white; color: #667eea;">Contact Opnemen</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Bollenstreek Direct</h4>
+                    <p>Nederlandse bloembollen rechtstreeks van lokale kwekers uit de Bollenstreek naar uw tuin.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Webshop</h4>
+                    <ul>
+                        <li><a href="shop.html">Alle Producten</a></li>
+                        <li><a href="shop.html?cat=tulpen">Tulpen</a></li>
+                        <li><a href="shop.html?cat=narcissen">Narcissen</a></li>
+                        <li><a href="shop.html?cat=hyacinten">Hyacinten</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Over Ons</h4>
+                    <ul>
+                        <li><a href="kwekers.html">Onze Kwekers</a></li>
+                        <li><a href="bollenstreek.html">De Bollenstreek</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>📍 Bollenstreek, Nederland</p>
+                    <p>📧 info@bollenstreekdirect.nl</p>
+                    <p>📞 +31 (0)252 123 456</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Bollenstreek Direct. Alle rechten voorbehouden.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>🛒 Winkelwagen</h3>
+            <button class="cart-close" id="cartClose">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-subtotal">
+                <span>Subtotaal:</span>
+                <span id="cartTotal">€0,00</span>
+            </div>
+            <div id="shippingInfo" class="shipping-info"></div>
+            <div class="cart-total-final">
+                <span>Totaal:</span>
+                <span id="cartTotalFinal">€0,00</span>
+            </div>
+            <button class="btn btn-primary btn-full" onclick="window.location.href='checkout.html'">Afrekenen →</button>
+            <p class="cart-secure">🔒 Veilig betalen via iDEAL, Bancontact of creditcard</p>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <script src="js/data.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadKwekers();
+        });
+
+        function loadKwekers() {
+            const container = document.getElementById('kwekersGrid');
+            if (!container) return;
+
+            container.innerHTML = kwekers.map(kweker => `
+                <div class="kweker-card">
+                    <div class="kweker-header" style="background: linear-gradient(135deg, ${kweker.color} 0%, ${kweker.color}cc 100%)">
+                        <span>${kweker.avatar}</span>
+                        <span class="kweker-location-badge">📍 ${kweker.location}</span>
+                    </div>
+                    <div class="kweker-body">
+                        <h3 class="kweker-name">${kweker.name}</h3>
+                        <p class="kweker-since">Actief sinds ${kweker.since}</p>
+                        <div class="kweker-specialties">
+                            ${kweker.specialties.map(s => `<span class="kweker-specialty">${s}</span>`).join('')}
+                        </div>
+                        <p class="kweker-description">${kweker.description}</p>
+                        <div class="kweker-stats">
+                            <div class="kweker-stat">
+                                <div class="kweker-stat-value">${kweker.products}</div>
+                                <div class="kweker-stat-label">Producten</div>
+                            </div>
+                            <div class="kweker-stat">
+                                <div class="kweker-stat-value">${kweker.rating}</div>
+                                <div class="kweker-stat-label">Rating ⭐</div>
+                            </div>
+                            <div class="kweker-stat">
+                                <div class="kweker-stat-value">${new Date().getFullYear() - kweker.since}</div>
+                                <div class="kweker-stat-label">Jaar ervaring</div>
+                            </div>
+                        </div>
+                        <a href="shop.html" class="btn btn-primary btn-small" style="width: 100%; margin-top: 20px;" 
+                           onclick="localStorage.setItem('filterKweker', ${kweker.id})">
+                            Bekijk Producten
+                        </a>
+                    </div>
+                </div>
+            `).join('');
+        }
+    </script>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="js/favorites.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html>

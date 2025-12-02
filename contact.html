@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Bollenstreek Direct</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🌷</span>
+                    <span class="logo-text">Bollenstreek Direct</span>
+                </a>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="shop.html" class="nav-link">Webshop</a>
+                    <a href="kwekers.html" class="nav-link">Onze Kwekers</a>
+                    <a href="bollenstreek.html" class="nav-link">De Bollenstreek</a>
+                    <a href="contact.html" class="nav-link active">Contact</a>
+                </nav>
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Zoek bloembollen..." autocomplete="off">
+                        <div class="search-results" id="searchResults"></div>
+                    </div>
+                    <button class="fav-btn" id="favBtn" title="Favorieten">
+                        ❤️ <span class="fav-count" id="favCount">0</span>
+                    </button>
+                    <button class="cart-btn" id="cartBtn">
+                        🛒 <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact</h1>
+            <p>Heeft u vragen? Wij helpen u graag!</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Neem Contact Op</h2>
+                    <p>
+                        Heeft u vragen over onze bloembollen, bezorging of wilt u kweker worden? 
+                        Ons team staat voor u klaar.
+                    </p>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <h4>Adres</h4>
+                                <p>Bollenstreek, Nederland</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div>
+                                <h4>E-mail</h4>
+                                <p>info@bollenstreekdirect.nl</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div>
+                                <h4>Telefoon</h4>
+                                <p>+31 (0)252 123 456</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">🕐</div>
+                            <div>
+                                <h4>Openingstijden</h4>
+                                <p>Ma-Vr: 9:00 - 17:00<br>Za: 10:00 - 14:00</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 30px;">
+                        <h4 style="margin-bottom: 15px;">Volg Ons</h4>
+                        <div style="display: flex; gap: 15px;">
+                            <a href="#" style="font-size: 2rem;">📘</a>
+                            <a href="#" style="font-size: 2rem;">📸</a>
+                            <a href="#" style="font-size: 2rem;">🐦</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <h3>Stuur een Bericht</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Naam *</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail *</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefoon</label>
+                            <input type="tel" id="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Onderwerp *</label>
+                            <select id="subject" required>
+                                <option value="">Selecteer een onderwerp</option>
+                                <option value="order">Vraag over bestelling</option>
+                                <option value="product">Productvraag</option>
+                                <option value="kweker">Ik wil kweker worden</option>
+                                <option value="complaint">Klacht</option>
+                                <option value="other">Anders</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Bericht *</label>
+                            <textarea id="message" required placeholder="Uw bericht..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Versturen</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section style="padding: 80px 0; background: var(--bg-light);">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2rem; margin-bottom: 50px;">Veelgestelde Vragen</h2>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="faq-item" style="background: white; border-radius: 12px; padding: 25px; margin-bottom: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                    <h4 style="margin-bottom: 10px;">🌷 Wanneer moet ik bloembollen planten?</h4>
+                    <p style="color: #7f8c8d;">De meeste voorjaarsbollen (tulpen, narcissen, krokussen) plant u in het najaar, van september tot december. Zomerbollen zoals lelies plant u in het voorjaar.</p>
+                </div>
+                <div class="faq-item" style="background: white; border-radius: 12px; padding: 25px; margin-bottom: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                    <h4 style="margin-bottom: 10px;">🚚 Hoe snel worden bollen bezorgd?</h4>
+                    <p style="color: #7f8c8d;">Bestellingen worden binnen 2-3 werkdagen verzonden. De bezorging duurt normaal 1-2 werkdagen binnen Nederland.</p>
+                </div>
+                <div class="faq-item" style="background: white; border-radius: 12px; padding: 25px; margin-bottom: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                    <h4 style="margin-bottom: 10px;">🌱 Hoe bewaar ik bloembollen?</h4>
+                    <p style="color: #7f8c8d;">Bewaar bollen op een koele, droge en donkere plaats. Niet in de koelkast, maar bijvoorbeeld in een schuur of garage. Plant zo snel mogelijk na ontvangst.</p>
+                </div>
+                <div class="faq-item" style="background: white; border-radius: 12px; padding: 25px; margin-bottom: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                    <h4 style="margin-bottom: 10px;">👨‍🌾 Hoe weet ik welke kweker mijn bollen kweekt?</h4>
+                    <p style="color: #7f8c8d;">Bij elk product staat vermeld welke kweker de bollen heeft gekweekt, inclusief de locatie. U kunt ook op onze kwekers-pagina meer over hen lezen.</p>
+                </div>
+                <div class="faq-item" style="background: white; border-radius: 12px; padding: 25px; margin-bottom: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                    <h4 style="margin-bottom: 10px;">💰 Wat zijn de verzendkosten?</h4>
+                    <p style="color: #7f8c8d;">Verzending is gratis bij bestellingen boven €25. Onder €25 betaalt u €4,95 verzendkosten.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Bollenstreek Direct</h4>
+                    <p>Nederlandse bloembollen rechtstreeks van lokale kwekers uit de Bollenstreek naar uw tuin.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Webshop</h4>
+                    <ul>
+                        <li><a href="shop.html">Alle Producten</a></li>
+                        <li><a href="shop.html?cat=tulpen">Tulpen</a></li>
+                        <li><a href="shop.html?cat=narcissen">Narcissen</a></li>
+                        <li><a href="shop.html?cat=hyacinten">Hyacinten</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Over Ons</h4>
+                    <ul>
+                        <li><a href="kwekers.html">Onze Kwekers</a></li>
+                        <li><a href="bollenstreek.html">De Bollenstreek</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>📍 Bollenstreek, Nederland</p>
+                    <p>📧 info@bollenstreekdirect.nl</p>
+                    <p>📞 +31 (0)252 123 456</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Bollenstreek Direct. Alle rechten voorbehouden.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>🛒 Winkelwagen</h3>
+            <button class="cart-close" id="cartClose">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-subtotal">
+                <span>Subtotaal:</span>
+                <span id="cartTotal">€0,00</span>
+            </div>
+            <div id="shippingInfo" class="shipping-info"></div>
+            <div class="cart-total-final">
+                <span>Totaal:</span>
+                <span id="cartTotalFinal">€0,00</span>
+            </div>
+            <button class="btn btn-primary btn-full" onclick="window.location.href='checkout.html'">Afrekenen →</button>
+            <p class="cart-secure">🔒 Veilig betalen via iDEAL, Bancontact of creditcard</p>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <script src="js/data.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/favorites.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Simuleer versturen met toast
+            if (typeof showToast === 'function') {
+                showToast(`Bedankt ${name}! Uw bericht is verzonden.`, 'success');
+            } else {
+                alert(`Bedankt ${name}! Uw bericht is verzonden. We nemen zo snel mogelijk contact met u op via ${email}.`);
+            }
+            
+            this.reset();
+        });
+    </script>
+</body>
+</html>

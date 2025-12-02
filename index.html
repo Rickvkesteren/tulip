@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bollenstreek Direct - Nederlandse Bloembollen van de Kweker</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🌷</span>
+                    <span class="logo-text">Bollenstreek Direct</span>
+                </a>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="shop.html" class="nav-link">Webshop</a>
+                    <a href="kwekers.html" class="nav-link">Onze Kwekers</a>
+                    <a href="bollenstreek.html" class="nav-link">De Bollenstreek</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+                <div class="header-actions">
+                    <div class="search-box" id="searchBox">
+                        <input type="text" placeholder="Zoek bollen..." id="searchInput">
+                        <button class="search-btn">🔍</button>
+                        <div class="search-results" id="searchResults"></div>
+                    </div>
+                    <button class="fav-btn" id="favBtn" title="Favorieten">
+                        ❤️ <span class="fav-count" id="favCount">0</span>
+                    </button>
+                    <button class="cart-btn" id="cartBtn">
+                        🛒 <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Nederlandse Bloembollen<br>Direct van de Kweker</h1>
+            <p>Ontdek de prachtige bloembollen uit de Bollenstreek. Wij verbinden u rechtstreeks met lokale kwekers voor de beste kwaliteit.</p>
+            <div class="hero-buttons">
+                <a href="shop.html" class="btn btn-primary">Bekijk Collectie</a>
+                <a href="kwekers.html" class="btn btn-secondary">Ontmoet de Kwekers</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- USP Section -->
+    <section class="usp-section">
+        <div class="container">
+            <div class="usp-grid">
+                <div class="usp-item">
+                    <div class="usp-icon">📍</div>
+                    <h3>Direct uit de Bollenstreek</h3>
+                    <p>Al onze bollen komen rechtstreeks van kwekers uit Lisse, Hillegom en omgeving.</p>
+                </div>
+                <div class="usp-item">
+                    <div class="usp-icon">👨‍🌾</div>
+                    <h3>Ken je Kweker</h3>
+                    <p>Weet precies wie jouw bollen kweekt en hoe ze geteeld worden.</p>
+                </div>
+                <div class="usp-item">
+                    <div class="usp-icon">🌱</div>
+                    <h3>Premium Kwaliteit</h3>
+                    <p>Alleen de beste bollen, geselecteerd door generaties van expertise.</p>
+                </div>
+                <div class="usp-item">
+                    <div class="usp-icon">🚚</div>
+                    <h3>Vers Verzonden</h3>
+                    <p>Van het veld naar uw tuin, met zorg verpakt en snel bezorgd.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-section">
+        <div class="container">
+            <h2 class="section-title">Populaire Bollen</h2>
+            <p class="section-subtitle">Onze best verkopende bloembollen van dit seizoen</p>
+            <div class="products-grid" id="featuredProducts">
+                <!-- Products worden via JavaScript geladen -->
+            </div>
+            <div class="section-cta">
+                <a href="shop.html" class="btn btn-primary">Bekijk Alle Producten</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kwekers Preview -->
+    <section class="kwekers-preview">
+        <div class="container">
+            <div class="kwekers-content">
+                <div class="kwekers-text">
+                    <h2>Ontmoet Onze Kwekers</h2>
+                    <p>Achter elke bol zit een verhaal. Onze kwekers werken al generaties lang in de Bollenstreek en delen hun passie voor het kweken van de mooiste bloembollen.</p>
+                    <p>Van familiebedrijven in Lisse tot innovatieve kwekerijen in Hillegom - ontdek wie er achter jouw bloemen zit.</p>
+                    <a href="kwekers.html" class="btn btn-primary">Ontmoet de Kwekers</a>
+                </div>
+                <div class="kwekers-image">
+                    <div class="kweker-card-preview">
+                        <div class="kweker-avatar">👨‍🌾</div>
+                        <h4>Familie Jansen</h4>
+                        <p>Lisse - Sinds 1952</p>
+                        <span class="specialty">Tulpen Specialist</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Preview -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title">De Bollenstreek</h2>
+            <p class="section-subtitle">Ontdek waar onze bloembollen vandaan komen</p>
+            <div class="map-container">
+                <div class="map-placeholder" id="mapPlaceholder">
+                    <div class="map-overlay">
+                        <h3>🗺️ Interactieve Kaart</h3>
+                        <p>Bekijk de locaties van onze kwekers in de Bollenstreek</p>
+                        <a href="bollenstreek.html" class="btn btn-secondary">Ontdek de Streek</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Blijf op de Hoogte</h2>
+                <p>Ontvang als eerste nieuws over nieuwe bollen, planttips en exclusieve aanbiedingen.</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Uw e-mailadres" required>
+                    <button type="submit" class="btn btn-primary">Aanmelden</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Bollenstreek Direct</h4>
+                    <p>Nederlandse bloembollen rechtstreeks van lokale kwekers uit de Bollenstreek naar uw tuin.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Webshop</h4>
+                    <ul>
+                        <li><a href="shop.html">Alle Producten</a></li>
+                        <li><a href="shop.html?cat=tulpen">Tulpen</a></li>
+                        <li><a href="shop.html?cat=narcissen">Narcissen</a></li>
+                        <li><a href="shop.html?cat=hyacinten">Hyacinten</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Over Ons</h4>
+                    <ul>
+                        <li><a href="kwekers.html">Onze Kwekers</a></li>
+                        <li><a href="bollenstreek.html">De Bollenstreek</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>📍 Bollenstreek, Nederland</p>
+                    <p>📧 info@bollenstreekdirect.nl</p>
+                    <p>📞 +31 (0)252 123 456</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Bollenstreek Direct. Alle rechten voorbehouden.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>🛒 Winkelwagen</h3>
+            <button class="cart-close" id="cartClose">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items worden via JavaScript geladen -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-subtotal">
+                <span>Subtotaal:</span>
+                <span id="cartTotal">€0,00</span>
+            </div>
+            <div id="shippingInfo" class="shipping-info">
+                <!-- Shipping info wordt via JavaScript geladen -->
+            </div>
+            <div class="cart-total-final">
+                <span>Totaal:</span>
+                <span id="cartTotalFinal">€0,00</span>
+            </div>
+            <button class="btn btn-primary btn-full" onclick="window.location.href='checkout.html'">
+                Afrekenen →
+            </button>
+            <p class="cart-secure">🔒 Veilig betalen via iDEAL, Bancontact of creditcard</p>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Product Detail Modal -->
+    <div class="product-modal" id="productModal">
+        <div class="modal-overlay" onclick="closeProductModal()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeProductModal()">✕</button>
+            <div class="modal-body" id="modalBody">
+                <!-- Filled by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="js/data.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/favorites.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

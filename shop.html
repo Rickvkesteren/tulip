@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webshop - Bollenstreek Direct</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🌷</span>
+                    <span class="logo-text">Bollenstreek Direct</span>
+                </a>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="shop.html" class="nav-link active">Webshop</a>
+                    <a href="kwekers.html" class="nav-link">Onze Kwekers</a>
+                    <a href="bollenstreek.html" class="nav-link">De Bollenstreek</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Zoek bloembollen..." autocomplete="off">
+                        <div class="search-results" id="searchResults"></div>
+                    </div>
+                    <button class="fav-btn" id="favBtn" title="Favorieten">
+                        ❤️ <span class="fav-count" id="favCount">0</span>
+                    </button>
+                    <button class="cart-btn" id="cartBtn">
+                        🛒 <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Onze Bloembollen</h1>
+            <p>Direct van Nederlandse kwekers uit de Bollenstreek</p>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section class="shop-section">
+        <div class="container">
+            <!-- Quick Filter Bar -->
+            <div class="quick-filter-bar">
+                <div class="sort-options">
+                    <label for="sortSelect">Sorteren:</label>
+                    <select id="sortSelect" onchange="sortProducts()">
+                        <option value="popular">Populair</option>
+                        <option value="price-low">Prijs laag-hoog</option>
+                        <option value="price-high">Prijs hoog-laag</option>
+                        <option value="name">Naam A-Z</option>
+                    </select>
+                </div>
+                <div class="results-count" id="resultsCount">20 producten</div>
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="grid" onclick="setView('grid')">▦</button>
+                    <button class="view-btn" data-view="list" onclick="setView('list')">☰</button>
+                </div>
+            </div>
+
+            <div class="shop-layout">
+                <!-- Filters Sidebar -->
+                <aside class="shop-filters">
+                    <div class="filter-group">
+                        <h4>Categorieën</h4>
+                        <div class="filter-option">
+                            <input type="checkbox" id="cat-all" checked onchange="filterProducts()">
+                            <label for="cat-all">Alle producten</label>
+                        </div>
+                        <div id="categoryFilters">
+                            <!-- Dynamisch gegenereerd -->
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Kweker</h4>
+                        <div id="kwekerFilters">
+                            <!-- Dynamisch gegenereerd -->
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Prijs</h4>
+                        <div class="filter-option">
+                            <input type="radio" name="price" id="price-all" checked onchange="filterProducts()">
+                            <label for="price-all">Alle prijzen</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="radio" name="price" id="price-low" onchange="filterProducts()">
+                            <label for="price-low">Tot €10</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="radio" name="price" id="price-mid" onchange="filterProducts()">
+                            <label for="price-mid">€10 - €15</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="radio" name="price" id="price-high" onchange="filterProducts()">
+                            <label for="price-high">€15+</label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Locatie</h4>
+                        <div id="locationFilters">
+                            <!-- Dynamisch gegenereerd -->
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Products Grid -->
+                <div class="shop-products" id="shopProducts">
+                    <!-- Dynamisch gegenereerd -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Bollenstreek Direct</h4>
+                    <p>Nederlandse bloembollen rechtstreeks van lokale kwekers uit de Bollenstreek naar uw tuin.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Webshop</h4>
+                    <ul>
+                        <li><a href="shop.html">Alle Producten</a></li>
+                        <li><a href="shop.html?cat=tulpen">Tulpen</a></li>
+                        <li><a href="shop.html?cat=narcissen">Narcissen</a></li>
+                        <li><a href="shop.html?cat=hyacinten">Hyacinten</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Over Ons</h4>
+                    <ul>
+                        <li><a href="kwekers.html">Onze Kwekers</a></li>
+                        <li><a href="bollenstreek.html">De Bollenstreek</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>📍 Bollenstreek, Nederland</p>
+                    <p>📧 info@bollenstreekdirect.nl</p>
+                    <p>📞 +31 (0)252 123 456</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Bollenstreek Direct. Alle rechten voorbehouden.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>🛒 Winkelwagen</h3>
+            <button class="cart-close" id="cartClose">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-subtotal">
+                <span>Subtotaal:</span>
+                <span id="cartTotal">€0,00</span>
+            </div>
+            <div id="shippingInfo" class="shipping-info"></div>
+            <div class="cart-total-final">
+                <span>Totaal:</span>
+                <span id="cartTotalFinal">€0,00</span>
+            </div>
+            <button class="btn btn-primary btn-full" onclick="window.location.href='checkout.html'">Afrekenen →</button>
+            <p class="cart-secure">🔒 Veilig betalen via iDEAL, Bancontact of creditcard</p>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Product Modal -->
+    <div class="product-modal" id="productModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeProductModal()">✕</button>
+            <div class="modal-body" id="modalBody">
+                <!-- Dynamisch gevuld -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="js/data.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/favorites.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/shop.js"></script>
+</body>
+</html>
