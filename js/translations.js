@@ -85,6 +85,16 @@ const translations = {
         bestTimeToVisit: "Beste bezoektijd",
         bloomingPeriod: "Bloeiperiode",
         
+        // Tickets
+        buyTickets: "Koop Tickets",
+        selectTickets: "Selecteer tickets",
+        adults: "Volwassenen",
+        children: "Kinderen (4-12 jaar)",
+        seniors: "Senioren (65+)",
+        selectDate: "Kies een datum",
+        addToCartTickets: "Voeg toe aan winkelwagen",
+        ticketAdded: "Tickets toegevoegd aan winkelwagen",
+        
         // General
         since: "Sinds",
         moreInfo: "Meer info",
@@ -173,6 +183,16 @@ const translations = {
         nowBlooming: "Now blooming",
         bestTimeToVisit: "Best time to visit",
         bloomingPeriod: "Blooming period",
+        
+        // Tickets
+        buyTickets: "Buy Tickets",
+        selectTickets: "Select tickets",
+        adults: "Adults",
+        children: "Children (4-12 years)",
+        seniors: "Seniors (65+)",
+        selectDate: "Select a date",
+        addToCartTickets: "Add to cart",
+        ticketAdded: "Tickets added to cart",
         
         // General
         since: "Since",
@@ -263,11 +283,121 @@ const translations = {
         bestTimeToVisit: "Beste Besuchszeit",
         bloomingPeriod: "Blütezeit",
         
+        // Tickets
+        buyTickets: "Tickets Kaufen",
+        selectTickets: "Tickets auswählen",
+        adults: "Erwachsene",
+        children: "Kinder (4-12 Jahre)",
+        seniors: "Senioren (65+)",
+        selectDate: "Datum auswählen",
+        addToCartTickets: "In den Warenkorb",
+        ticketAdded: "Tickets zum Warenkorb hinzugefügt",
+        
         // General
         since: "Seit",
         moreInfo: "Mehr Info",
         visitWebsite: "Website besuchen",
         close: "Schließen"
+    },
+    
+    fr: {
+        // Header
+        home: "首页",
+        webshop: "网店",
+        ourGrowers: "我们的花农",
+        theBollenstreek: "花球区",
+        experiences: "体验活动",
+        contact: "联系我们",
+        blog: "博客",
+        searchPlaceholder: "搜索花球...",
+        
+        // Hero
+        heroTitle: "荷兰花球<br>直接来自花农",
+        heroSubtitle: "探索来自花球区的美丽花球。我们直接将您与当地花农连接，提供最佳品质。",
+        viewCollection: "浏览系列",
+        meetGrowers: "认识花农",
+        
+        // Products
+        addToCart: "加入购物车",
+        bulbs: "个花球",
+        inStock: "有货",
+        outOfStock: "售罄",
+        perPiece: "每个",
+        
+        // Cart
+        cart: "购物车",
+        subtotal: "小计",
+        shipping: "运费",
+        total: "总计",
+        checkout: "结账",
+        freeShipping: "满€50免运费",
+        emptyCart: "您的购物车是空的",
+        
+        // Checkout
+        deliveryAddress: "配送地址",
+        firstName: "名",
+        lastName: "姓",
+        email: "电子邮箱",
+        phone: "电话号码",
+        street: "街道",
+        houseNumber: "门牌号",
+        postalCode: "邮编",
+        city: "城市",
+        country: "国家",
+        paymentMethod: "支付方式",
+        placeOrder: "提交订单",
+        
+        // Shipping
+        shippingNetherlands: "荷兰",
+        shippingBelgium: "比利时",
+        shippingGermany: "德国",
+        shippingFrance: "法国",
+        shippingEU: "其他欧盟",
+        shippingWorldwide: "全球",
+        shippingChina: "中国",
+        freeFrom: "满额免运费",
+        deliveryDays: "工作日",
+        
+        // Footer
+        footerAbout: "荷兰花球直接从花球区的当地花农送到您的花园。",
+        allProducts: "所有产品",
+        aboutUs: "关于我们",
+        
+        // Blog
+        blogTitle: "博客与种植技巧",
+        blogSubtitle: "种植美丽花球的技巧、窍门和指南",
+        howToPlant: "如何种植",
+        seasonCalendar: "季节日历",
+        videoTutorials: "视频教程",
+        readMore: "阅读更多",
+        
+        // Map
+        mapTitle: "互动地图",
+        filterGrowers: "花球种植者",
+        filterExperiences: "活动与体验",
+        filterPlaces: "地点",
+        planRoute: "规划路线",
+        
+        // Bloom status
+        nowBlooming: "正在开花",
+        bestTimeToVisit: "最佳游览时间",
+        bloomingPeriod: "花期",
+        
+        // Tickets
+        buyTickets: "购买门票",
+        selectTickets: "选择门票",
+        adults: "成人",
+        children: "儿童 (4-12岁)",
+        seniors: "老年人 (65+)",
+        selectDate: "选择日期",
+        addToCartTickets: "加入购物车",
+        ticketAdded: "门票已添加到购物车",
+        
+        // General
+        since: "自",
+        moreInfo: "更多信息",
+        visitWebsite: "访问网站",
+        close: "关闭"
     },
     
     fr: {
@@ -352,6 +482,16 @@ const translations = {
         bestTimeToVisit: "Meilleur moment pour visiter",
         bloomingPeriod: "Période de floraison",
         
+        // Tickets
+        buyTickets: "Acheter des Billets",
+        selectTickets: "Sélectionner les billets",
+        adults: "Adultes",
+        children: "Enfants (4-12 ans)",
+        seniors: "Seniors (65+)",
+        selectDate: "Choisir une date",
+        addToCartTickets: "Ajouter au panier",
+        ticketAdded: "Billets ajoutés au panier",
+        
         // General
         since: "Depuis",
         moreInfo: "Plus d'infos",
@@ -382,7 +522,12 @@ const internationalShipping = {
     US: { name: "Verenigde Staten", price: 39.95, freeFrom: null, deliveryDays: "10-15", zone: "world" },
     CA: { name: "Canada", price: 39.95, freeFrom: null, deliveryDays: "10-15", zone: "world" },
     AU: { name: "Australië", price: 49.95, freeFrom: null, deliveryDays: "14-21", zone: "world" },
-    JP: { name: "Japan", price: 44.95, freeFrom: null, deliveryDays: "10-14", zone: "world" }
+    JP: { name: "Japan", price: 44.95, freeFrom: null, deliveryDays: "10-14", zone: "world" },
+    CN: { name: "China", price: 44.95, freeFrom: null, deliveryDays: "12-18", zone: "world" },
+    HK: { name: "Hong Kong", price: 39.95, freeFrom: null, deliveryDays: "10-14", zone: "world" },
+    TW: { name: "Taiwan", price: 42.95, freeFrom: null, deliveryDays: "10-14", zone: "world" },
+    SG: { name: "Singapore", price: 39.95, freeFrom: null, deliveryDays: "8-12", zone: "world" },
+    KR: { name: "South Korea", price: 42.95, freeFrom: null, deliveryDays: "10-14", zone: "world" }
 };
 
 // Language management
@@ -463,6 +608,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <button class="lang-btn ${currentLanguage === 'en' ? 'active' : ''}" data-lang="en" onclick="setLanguage('en')">🇬🇧</button>
             <button class="lang-btn ${currentLanguage === 'de' ? 'active' : ''}" data-lang="de" onclick="setLanguage('de')">🇩🇪</button>
             <button class="lang-btn ${currentLanguage === 'fr' ? 'active' : ''}" data-lang="fr" onclick="setLanguage('fr')">🇫🇷</button>
+            <button class="lang-btn ${currentLanguage === 'zh' ? 'active' : ''}" data-lang="zh" onclick="setLanguage('zh')">🇨🇳</button>
         `;
         header.insertBefore(switcher, header.firstChild);
     }

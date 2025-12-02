@@ -141,6 +141,226 @@
             transform: translateY(-2px);
         }
 
+        .btn-tickets {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-tickets:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.4);
+        }
+
+        /* Ticket Modal Styles */
+        .ticket-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .ticket-modal.active {
+            display: flex;
+        }
+
+        .ticket-modal-content {
+            background: white;
+            border-radius: 20px;
+            max-width: 500px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .ticket-modal-header {
+            padding: 25px;
+            color: white;
+            border-radius: 20px 20px 0 0;
+            position: relative;
+        }
+
+        .ticket-modal-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .ticket-modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .ticket-modal-close:hover {
+            background: rgba(255,255,255,0.4);
+        }
+
+        .ticket-modal-body {
+            padding: 25px;
+        }
+
+        .ticket-date {
+            margin-bottom: 25px;
+        }
+
+        .ticket-date label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #2c3e50;
+        }
+
+        .ticket-date input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .ticket-date input:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+        .ticket-type {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .ticket-type:last-child {
+            border-bottom: none;
+        }
+
+        .ticket-type-info h4 {
+            font-size: 1rem;
+            margin-bottom: 3px;
+            color: #2c3e50;
+        }
+
+        .ticket-type-info span {
+            color: #27ae60;
+            font-weight: 600;
+        }
+
+        .ticket-qty {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .ticket-qty button {
+            width: 36px;
+            height: 36px;
+            border: 2px solid #e0e0e0;
+            border-radius: 50%;
+            background: white;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: #2c3e50;
+            transition: all 0.3s ease;
+        }
+
+        .ticket-qty button:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .ticket-qty span {
+            font-size: 1.2rem;
+            font-weight: 600;
+            min-width: 30px;
+            text-align: center;
+        }
+
+        .ticket-total {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .ticket-total-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .ticket-total-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #27ae60;
+        }
+
+        .ticket-info-note {
+            background: #fff3cd;
+            padding: 12px 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #856404;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-add-tickets {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-add-tickets:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(39, 174, 96, 0.4);
+        }
+
+        .btn-add-tickets:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
         .filter-tabs {
             display: flex;
             gap: 10px;
@@ -349,15 +569,69 @@
     <!-- Toast Container -->
     <div class="toast-container" id="toastContainer"></div>
 
+    <!-- Ticket Modal -->
+    <div class="ticket-modal" id="ticketModal">
+        <div class="ticket-modal-content">
+            <div class="ticket-modal-header" id="ticketModalHeader">
+                <button class="ticket-modal-close" onclick="closeTicketModal()">✕</button>
+                <h3 id="ticketModalTitle">Tickets</h3>
+                <p id="ticketModalLocation">📍 Locatie</p>
+            </div>
+            <div class="ticket-modal-body">
+                <div class="ticket-date">
+                    <label for="ticketDate">📅 Kies een datum</label>
+                    <input type="date" id="ticketDate" onchange="updateTicketTotal()">
+                </div>
+                
+                <div class="ticket-types" id="ticketTypes">
+                    <!-- Dynamically generated -->
+                </div>
+
+                <div class="ticket-total">
+                    <span class="ticket-total-label">Totaal:</span>
+                    <span class="ticket-total-price" id="ticketTotalPrice">€0,00</span>
+                </div>
+
+                <div class="ticket-info-note" id="ticketInfoNote">
+                    <span>💡</span>
+                    <span id="ticketInfoText">Info over de tickets</span>
+                </div>
+
+                <button class="btn-add-tickets" id="btnAddTickets" onclick="addTicketsToCart()" disabled>
+                    🎟️ Toevoegen aan winkelwagen
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script src="js/data.js"></script>
     <script src="js/cart.js"></script>
     <script src="js/favorites.js"></script>
     <script src="js/search.js"></script>
     <script src="js/main.js"></script>
     <script>
+        // Ticket System Variables
+        let currentExperience = null;
+        let ticketQuantities = {
+            adult: 0,
+            child: 0,
+            senior: 0,
+            family: 0
+        };
+
         document.addEventListener('DOMContentLoaded', function() {
             renderExperiences('all');
             initFilterTabs();
+            
+            // Set minimum date to today
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('ticketDate').min = today;
+            document.getElementById('ticketDate').value = today;
+            
+            // Close modal on overlay click
+            document.getElementById('ticketModal').addEventListener('click', function(e) {
+                if (e.target === this) closeTicketModal();
+            });
         });
 
         function renderExperiences(filter) {
@@ -400,14 +674,209 @@
                             </div>
                         </div>
                         <div class="experience-footer">
-                            <div class="experience-rating">
-                                <span>⭐ ${exp.rating}</span>
-                            </div>
+                            ${exp.ticketsAvailable ? `
+                                <button class="btn-tickets" onclick="openTicketModal(${exp.id})">
+                                    🎟️ Koop Tickets
+                                </button>
+                            ` : `
+                                <div class="experience-rating">
+                                    <span>⭐ ${exp.rating}</span>
+                                </div>
+                            `}
                             ${exp.website ? `<a href="${exp.website}" target="_blank" class="btn-experience">Meer info →</a>` : ''}
                         </div>
                     </div>
                 </div>
             `).join('');
+        }
+
+        function openTicketModal(experienceId) {
+            currentExperience = experiences.find(e => e.id === experienceId);
+            if (!currentExperience || !currentExperience.ticketsAvailable) return;
+
+            // Reset quantities
+            ticketQuantities = { adult: 0, child: 0, senior: 0, family: 0 };
+
+            // Update modal header
+            document.getElementById('ticketModalHeader').style.background = 
+                `linear-gradient(135deg, ${currentExperience.color} 0%, ${adjustColor(currentExperience.color, -20)} 100%)`;
+            document.getElementById('ticketModalTitle').textContent = currentExperience.name;
+            document.getElementById('ticketModalLocation').textContent = `📍 ${currentExperience.location}`;
+
+            // Generate ticket types
+            const ticketTypesContainer = document.getElementById('ticketTypes');
+            const prices = currentExperience.ticketPrices;
+            
+            ticketTypesContainer.innerHTML = `
+                <div class="ticket-type">
+                    <div class="ticket-type-info">
+                        <h4>👤 Volwassenen</h4>
+                        <span>€${prices.adult.toFixed(2)}</span>
+                    </div>
+                    <div class="ticket-qty">
+                        <button onclick="changeQuantity('adult', -1)">−</button>
+                        <span id="qty-adult">0</span>
+                        <button onclick="changeQuantity('adult', 1)">+</button>
+                    </div>
+                </div>
+                ${prices.child !== undefined ? `
+                <div class="ticket-type">
+                    <div class="ticket-type-info">
+                        <h4>👧 Kinderen (4-12 jaar)</h4>
+                        <span>${prices.child === 0 ? 'Gratis!' : '€' + prices.child.toFixed(2)}</span>
+                    </div>
+                    <div class="ticket-qty">
+                        <button onclick="changeQuantity('child', -1)">−</button>
+                        <span id="qty-child">0</span>
+                        <button onclick="changeQuantity('child', 1)">+</button>
+                    </div>
+                </div>
+                ` : ''}
+                ${prices.senior !== undefined ? `
+                <div class="ticket-type">
+                    <div class="ticket-type-info">
+                        <h4>👴 Senioren (65+)</h4>
+                        <span>€${prices.senior.toFixed(2)}</span>
+                    </div>
+                    <div class="ticket-qty">
+                        <button onclick="changeQuantity('senior', -1)">−</button>
+                        <span id="qty-senior">0</span>
+                        <button onclick="changeQuantity('senior', 1)">+</button>
+                    </div>
+                </div>
+                ` : ''}
+                ${prices.family !== undefined ? `
+                <div class="ticket-type">
+                    <div class="ticket-type-info">
+                        <h4>👨‍👩‍👧‍👦 Gezinsticket (2+2)</h4>
+                        <span>€${prices.family.toFixed(2)}</span>
+                    </div>
+                    <div class="ticket-qty">
+                        <button onclick="changeQuantity('family', -1)">−</button>
+                        <span id="qty-family">0</span>
+                        <button onclick="changeQuantity('family', 1)">+</button>
+                    </div>
+                </div>
+                ` : ''}
+            `;
+
+            // Update info note
+            document.getElementById('ticketInfoText').textContent = currentExperience.ticketInfo || 'Tickets zijn geldig op de geselecteerde datum';
+
+            updateTicketTotal();
+            document.getElementById('ticketModal').classList.add('active');
+        }
+
+        function closeTicketModal() {
+            document.getElementById('ticketModal').classList.remove('active');
+            currentExperience = null;
+        }
+
+        function changeQuantity(type, change) {
+            ticketQuantities[type] = Math.max(0, ticketQuantities[type] + change);
+            document.getElementById(`qty-${type}`).textContent = ticketQuantities[type];
+            updateTicketTotal();
+        }
+
+        function updateTicketTotal() {
+            if (!currentExperience) return;
+
+            const prices = currentExperience.ticketPrices;
+            let total = 0;
+            let hasTickets = false;
+
+            for (const [type, qty] of Object.entries(ticketQuantities)) {
+                if (qty > 0 && prices[type] !== undefined) {
+                    total += prices[type] * qty;
+                    hasTickets = true;
+                }
+            }
+
+            document.getElementById('ticketTotalPrice').textContent = `€${total.toFixed(2).replace('.', ',')}`;
+            
+            const dateSelected = document.getElementById('ticketDate').value;
+            const btn = document.getElementById('btnAddTickets');
+            btn.disabled = !hasTickets || !dateSelected;
+        }
+
+        function addTicketsToCart() {
+            if (!currentExperience) return;
+
+            const date = document.getElementById('ticketDate').value;
+            const dateFormatted = new Date(date).toLocaleDateString('nl-NL', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+
+            const prices = currentExperience.ticketPrices;
+            let totalTickets = 0;
+            let totalPrice = 0;
+            const ticketDetails = [];
+
+            for (const [type, qty] of Object.entries(ticketQuantities)) {
+                if (qty > 0 && prices[type] !== undefined) {
+                    totalTickets += qty;
+                    totalPrice += prices[type] * qty;
+                    const typeNames = {
+                        adult: 'Volwassene',
+                        child: 'Kind',
+                        senior: 'Senior',
+                        family: 'Gezin'
+                    };
+                    ticketDetails.push(`${qty}x ${typeNames[type]}`);
+                }
+            }
+
+            // Create ticket item for cart
+            const ticketItem = {
+                id: `ticket-${currentExperience.id}-${Date.now()}`,
+                type: 'ticket',
+                name: `🎟️ ${currentExperience.name}`,
+                description: `${ticketDetails.join(', ')} - ${dateFormatted}`,
+                price: totalPrice,
+                quantity: 1,
+                experienceId: currentExperience.id,
+                date: date,
+                icon: currentExperience.icon
+            };
+
+            // Add to cart (using existing cart system)
+            let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            cart.push(ticketItem);
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Update cart count
+            if (typeof updateCartCount === 'function') {
+                updateCartCount();
+            } else {
+                const cartCount = document.getElementById('cartCount');
+                if (cartCount) {
+                    cartCount.textContent = cart.length;
+                }
+            }
+
+            // Show toast
+            showToast(`🎟️ ${totalTickets} ticket(s) voor ${currentExperience.name} toegevoegd!`, 'success');
+
+            closeTicketModal();
+        }
+
+        function showToast(message, type = 'success') {
+            const container = document.getElementById('toastContainer');
+            if (!container) return;
+            
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            toast.innerHTML = message;
+            container.appendChild(toast);
+            
+            setTimeout(() => toast.classList.add('show'), 10);
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
         }
 
         function initFilterTabs() {

@@ -369,7 +369,15 @@ const experiences = [
         phone: "+31 (0)252 465 555",
         rating: 4.7,
         highlights: ["7 miljoen bloemen", "80 hectare", "Bloemenshows", "Fotospots"],
-        season: "Maart - Mei"
+        season: "Maart - Mei",
+        ticketsAvailable: true,
+        ticketPrices: {
+            adult: 19.50,
+            child: 9.00,
+            senior: 17.50,
+            family: 49.00
+        },
+        ticketInfo: "Online tickets zijn goedkoper dan aan de kassa"
     },
     {
         id: 2,
@@ -423,7 +431,15 @@ const experiences = [
         phone: "+31 (0)297 325 421",
         rating: 4.5,
         highlights: ["Historische planten", "Rondleidingen", "Kinderactiviteiten", "Theehuis"],
-        season: "April - Oktober"
+        season: "April - Oktober",
+        ticketsAvailable: true,
+        ticketPrices: {
+            adult: 7.50,
+            child: 4.00,
+            senior: 6.50,
+            family: 20.00
+        },
+        ticketInfo: "Inclusief toegang tot alle tuinen"
     },
     {
         id: 5,
@@ -441,7 +457,15 @@ const experiences = [
         phone: "+31 (0)252 417 900",
         rating: 4.4,
         highlights: ["Tulpengeschiedenis", "Tulpenmanie", "Kweektechnieken", "Kinderroute"],
-        season: "Hele jaar"
+        season: "Hele jaar",
+        ticketsAvailable: true,
+        ticketPrices: {
+            adult: 8.00,
+            child: 4.00,
+            senior: 7.00,
+            family: 22.00
+        },
+        ticketInfo: "Gratis audiotour inbegrepen"
     },
     {
         id: 6,
@@ -477,7 +501,15 @@ const experiences = [
         phone: "+31 (0)72 505 1552",
         rating: 4.6,
         highlights: ["4000 soorten", "Historische tulpen", "Ledendag", "Bollenverkoop"],
-        season: "April - Mei"
+        season: "April - Mei",
+        ticketsAvailable: true,
+        ticketPrices: {
+            adult: 6.00,
+            child: 3.00,
+            senior: 5.00,
+            family: 15.00
+        },
+        ticketInfo: "Korting voor leden"
     },
     {
         id: 8,
@@ -495,7 +527,15 @@ const experiences = [
         phone: "+31 (0)88 789 8000",
         rating: 4.3,
         highlights: ["Grootste veiling", "Veilingklok", "Bezoekersgalerij", "Bloemenwinkel"],
-        season: "Hele jaar"
+        season: "Hele jaar",
+        ticketsAvailable: true,
+        ticketPrices: {
+            adult: 7.50,
+            child: 0,
+            senior: 6.50,
+            family: 18.00
+        },
+        ticketInfo: "Kinderen gratis, vroeg komen aanbevolen!"
     },
     {
         id: 9,
@@ -531,7 +571,15 @@ const experiences = [
         phone: "+31 (0)252 465 555",
         rating: 4.5,
         highlights: ["Historisch kasteel", "Landgoed", "Wandelroutes", "Evenementen"],
-        season: "April - Oktober"
+        season: "April - Oktober",
+        ticketsAvailable: true,
+        ticketPrices: {
+            adult: 10.00,
+            child: 5.00,
+            senior: 8.50,
+            family: 27.50
+        },
+        ticketInfo: "Los van Keukenhof park"
     }
 ];
 
