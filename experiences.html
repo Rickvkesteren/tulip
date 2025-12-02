@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiences - Bollenstreek Direct</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .experiences-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .experience-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .experience-header {
+            padding: 30px;
+            color: white;
+            position: relative;
+        }
+
+        .experience-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .experience-type {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+        }
+
+        .experience-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .experience-location {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        .experience-body {
+            padding: 25px 30px;
+        }
+
+        .experience-description {
+            color: #7f8c8d;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .experience-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .highlight-tag {
+            background: #f0f0f0;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            color: #555;
+        }
+
+        .experience-meta {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            padding: 20px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 20px;
+        }
+
+        .meta-item {
+            text-align: center;
+        }
+
+        .meta-label {
+            font-size: 0.75rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .meta-value {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-top: 3px;
+        }
+
+        .experience-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .experience-rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .experience-rating span {
+            color: #f39c12;
+            font-weight: 600;
+        }
+
+        .btn-experience {
+            background: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-experience:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .filter-tab {
+            padding: 10px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .filter-tab:hover,
+        .filter-tab.active {
+            border-color: var(--primary-color);
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .season-banner {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 16px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .season-banner h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .season-banner p {
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .experiences-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-meta {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🌷</span>
+                    <span class="logo-text">Bollenstreek Direct</span>
+                </a>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="shop.html" class="nav-link">Webshop</a>
+                    <a href="kwekers.html" class="nav-link">Onze Kwekers</a>
+                    <a href="bollenstreek.html" class="nav-link">De Bollenstreek</a>
+                    <a href="experiences.html" class="nav-link active">Experiences</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Zoek bloembollen..." autocomplete="off">
+                        <div class="search-results" id="searchResults"></div>
+                    </div>
+                    <button class="fav-btn" id="favBtn" title="Favorieten">
+                        ❤️ <span class="fav-count" id="favCount">0</span>
+                    </button>
+                    <button class="cart-btn" id="cartBtn">
+                        🛒 <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>🌷 Bollenstreek Experiences</h1>
+            <p>Ontdek de mooiste bezienswaardigheden en activiteiten in de Bollenstreek</p>
+        </div>
+    </section>
+
+    <!-- Season Banner -->
+    <section style="padding: 40px 0 0;">
+        <div class="container">
+            <div class="season-banner">
+                <h2>🌸 Voorjaar 2025</h2>
+                <p>Het bollenbloeiseizoen start in maart! Plan nu je bezoek aan de Bollenstreek en ervaar de kleurenpracht van miljoenen bloemen.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Tabs -->
+    <section style="padding: 20px 0;">
+        <div class="container">
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-filter="all">Alles</button>
+                <button class="filter-tab" data-filter="Bloemenpark">🌷 Parken</button>
+                <button class="filter-tab" data-filter="Museum">🖼️ Musea</button>
+                <button class="filter-tab" data-filter="Activiteit">🚴 Activiteiten</button>
+                <button class="filter-tab" data-filter="Evenement">🎉 Evenementen</button>
+                <button class="filter-tab" data-filter="Tuin">🌱 Tuinen</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiences Grid -->
+    <section style="padding: 0 0 80px;">
+        <div class="container">
+            <div class="experiences-grid" id="experiencesGrid">
+                <!-- Dynamisch gegenereerd -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="padding: 80px 0; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);">
+        <div class="container" style="text-align: center;">
+            <h2 style="font-size: 2rem; margin-bottom: 20px;">🌷 Combineer je bezoek met verse bollen!</h2>
+            <p style="color: #7f8c8d; max-width: 600px; margin: 0 auto 30px;">
+                Bezocht een van deze locaties? Neem echte Bollenstreek bollen mee naar huis 
+                en haal de kleuren en geuren van Holland in je eigen tuin!
+            </p>
+            <a href="shop.html" class="btn btn-primary">Bekijk ons assortiment →</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Bollenstreek Direct</h4>
+                    <p>Nederlandse bloembollen rechtstreeks van lokale kwekers uit de Bollenstreek naar uw tuin.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Webshop</h4>
+                    <ul>
+                        <li><a href="shop.html">Alle Producten</a></li>
+                        <li><a href="shop.html?cat=tulpen">Tulpen</a></li>
+                        <li><a href="shop.html?cat=narcissen">Narcissen</a></li>
+                        <li><a href="shop.html?cat=hyacinten">Hyacinten</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Ontdek</h4>
+                    <ul>
+                        <li><a href="kwekers.html">Onze Kwekers</a></li>
+                        <li><a href="bollenstreek.html">De Bollenstreek</a></li>
+                        <li><a href="experiences.html">Experiences</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>📍 Bollenstreek, Nederland</p>
+                    <p>📧 info@bollenstreekdirect.nl</p>
+                    <p>📞 +31 (0)252 123 456</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Bollenstreek Direct. Alle rechten voorbehouden.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>🛒 Winkelwagen</h3>
+            <button class="cart-close" id="cartClose">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-subtotal">
+                <span>Subtotaal:</span>
+                <span id="cartTotal">€0,00</span>
+            </div>
+            <div id="shippingInfo" class="shipping-info"></div>
+            <div class="cart-total-final">
+                <span>Totaal:</span>
+                <span id="cartTotalFinal">€0,00</span>
+            </div>
+            <button class="btn btn-primary btn-full" onclick="window.location.href='checkout.html'">Afrekenen →</button>
+            <p class="cart-secure">🔒 Veilig betalen via iDEAL, Bancontact of creditcard</p>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="js/data.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/favorites.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            renderExperiences('all');
+            initFilterTabs();
+        });
+
+        function renderExperiences(filter) {
+            const container = document.getElementById('experiencesGrid');
+            if (!container || typeof experiences === 'undefined') return;
+
+            const filtered = filter === 'all' 
+                ? experiences 
+                : experiences.filter(exp => exp.type === filter);
+
+            container.innerHTML = filtered.map(exp => `
+                <div class="experience-card" data-type="${exp.type}">
+                    <div class="experience-header" style="background: linear-gradient(135deg, ${exp.color} 0%, ${adjustColor(exp.color, -20)} 100%)">
+                        <div class="experience-icon">${exp.icon}</div>
+                        <span class="experience-type">${exp.type}</span>
+                        <h3>${exp.name}</h3>
+                        <div class="experience-location">📍 ${exp.location}</div>
+                    </div>
+                    <div class="experience-body">
+                        <p class="experience-description">${exp.description}</p>
+                        <div class="experience-highlights">
+                            ${exp.highlights.map(h => `<span class="highlight-tag">${h}</span>`).join('')}
+                        </div>
+                        <div class="experience-meta">
+                            <div class="meta-item">
+                                <div class="meta-label">Openingstijden</div>
+                                <div class="meta-value">${exp.openingHours}</div>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-label">Prijs</div>
+                                <div class="meta-value">${exp.price}</div>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-label">Seizoen</div>
+                                <div class="meta-value">${exp.season}</div>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-label">Rating</div>
+                                <div class="meta-value">⭐ ${exp.rating}</div>
+                            </div>
+                        </div>
+                        <div class="experience-footer">
+                            <div class="experience-rating">
+                                <span>⭐ ${exp.rating}</span>
+                            </div>
+                            ${exp.website ? `<a href="${exp.website}" target="_blank" class="btn-experience">Meer info →</a>` : ''}
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function initFilterTabs() {
+            const tabs = document.querySelectorAll('.filter-tab');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    renderExperiences(tab.dataset.filter);
+                });
+            });
+        }
+
+        // Helper functie om kleur donkerder te maken
+        function adjustColor(color, amount) {
+            const clamp = (num) => Math.min(255, Math.max(0, num));
+            const hex = color.replace('#', '');
+            const r = clamp(parseInt(hex.substr(0, 2), 16) + amount);
+            const g = clamp(parseInt(hex.substr(2, 2), 16) + amount);
+            const b = clamp(parseInt(hex.substr(4, 2), 16) + amount);
+            return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
+        }
+    </script>
+</body>
+</html>
