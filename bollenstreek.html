@@ -15,6 +15,72 @@
             border-radius: 12px;
             z-index: 1;
         }
+        
+        /* Legenda Styling */
+        .map-legend {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        .legend-item.active {
+            border-color: currentColor;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        
+        .legend-item:not(.active) {
+            opacity: 0.5;
+        }
+        
+        .legend-item:hover {
+            transform: translateY(-2px);
+        }
+        
+        .legend-item.kwekers {
+            background: #ffe5e5;
+            color: #e74c3c;
+        }
+        
+        .legend-item.experiences {
+            background: #e5f0ff;
+            color: #3498db;
+        }
+        
+        .legend-item.plaatsen {
+            background: #e5ffe5;
+            color: #27ae60;
+        }
+        
+        .legend-icon {
+            font-size: 1.2rem;
+        }
+        
+        .legend-count {
+            background: rgba(0,0,0,0.1);
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.75rem;
+        }
+
         .leaflet-popup-content {
             font-family: 'Open Sans', sans-serif;
         }
@@ -169,7 +235,27 @@
 
             <!-- Interactive Map -->
             <div class="map-fullwidth">
-                <h3 style="text-align: center; margin-bottom: 30px; font-size: 1.5rem;">🗺️ Interactieve Kaart - Onze Kwekers</h3>
+                <h3 style="text-align: center; margin-bottom: 20px; font-size: 1.5rem;">🗺️ Interactieve Kaart</h3>
+                
+                <!-- Legenda met filters -->
+                <div class="map-legend" id="mapLegend">
+                    <div class="legend-item kwekers active" data-filter="kwekers" onclick="toggleFilter('kwekers')">
+                        <span class="legend-icon">🌷</span>
+                        <span>Bloembollen Bedrijven</span>
+                        <span class="legend-count" id="count-kwekers">20</span>
+                    </div>
+                    <div class="legend-item experiences active" data-filter="experiences" onclick="toggleFilter('experiences')">
+                        <span class="legend-icon">🎉</span>
+                        <span>Uitjes & Experiences</span>
+                        <span class="legend-count" id="count-experiences">12</span>
+                    </div>
+                    <div class="legend-item plaatsen active" data-filter="plaatsen" onclick="toggleFilter('plaatsen')">
+                        <span class="legend-icon">📍</span>
+                        <span>Plaatsen</span>
+                        <span class="legend-count" id="count-plaatsen">6</span>
+                    </div>
+                </div>
+                
                 <div id="map"></div>
             </div>
 
@@ -314,15 +400,75 @@
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script>
+        // Globale variabelen voor kaart en markers
+        let map;
+        let kwekerMarkers = [];
+        let experienceMarkers = [];
+        let plaatsMarkers = [];
+        let activeFilters = {
+            kwekers: true,
+            experiences: true,
+            plaatsen: true
+        };
+
         document.addEventListener('DOMContentLoaded', function() {
             initMap();
             loadPartnerWebshops();
             loadLocations();
+            updateCounts();
         });
+
+        function updateCounts() {
+            document.getElementById('count-kwekers').textContent = kwekers.length;
+            document.getElementById('count-experiences').textContent = typeof experiences !== 'undefined' ? experiences.length : 0;
+            document.getElementById('count-plaatsen').textContent = locations.length;
+        }
+
+        function toggleFilter(filterType) {
+            activeFilters[filterType] = !activeFilters[filterType];
+            
+            // Update legenda styling
+            const legendItem = document.querySelector(`.legend-item.${filterType}`);
+            if (legendItem) {
+                legendItem.classList.toggle('active', activeFilters[filterType]);
+            }
+            
+            // Update markers zichtbaarheid
+            updateMarkerVisibility();
+        }
+
+        function updateMarkerVisibility() {
+            // Kwekers
+            kwekerMarkers.forEach(marker => {
+                if (activeFilters.kwekers) {
+                    marker.addTo(map);
+                } else {
+                    map.removeLayer(marker);
+                }
+            });
+            
+            // Experiences
+            experienceMarkers.forEach(marker => {
+                if (activeFilters.experiences) {
+                    marker.addTo(map);
+                } else {
+                    map.removeLayer(marker);
+                }
+            });
+            
+            // Plaatsen
+            plaatsMarkers.forEach(marker => {
+                if (activeFilters.plaatsen) {
+                    marker.addTo(map);
+                } else {
+                    map.removeLayer(marker);
+                }
+            });
+        }
 
         function initMap() {
             // Initialiseer Leaflet kaart gecentreerd op de Bollenstreek
-            const map = L.map('map').setView([52.35, 4.65], 9);
+            map = L.map('map').setView([52.35, 4.65], 9);
 
             // Voeg OpenStreetMap tiles toe
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -330,28 +476,18 @@
                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             }).addTo(map);
 
-            // Custom tulp icoon voor markers
-            const tulipIcon = L.divIcon({
-                className: 'custom-marker',
-                html: '<div style="background: #e74c3c; width: 36px; height: 36px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 10px rgba(0,0,0,0.3);"><span style="transform: rotate(45deg); font-size: 18px;">🌷</span></div>',
-                iconSize: [36, 36],
-                iconAnchor: [18, 36],
-                popupAnchor: [0, -36]
-            });
-
-            // Voeg markers toe voor elke kweker
+            // 1. Voeg markers toe voor elke kweker (ROOD)
             kwekers.forEach(kweker => {
                 const marker = L.marker([kweker.coordinates.lat, kweker.coordinates.lng], {
                     icon: L.divIcon({
                         className: 'custom-marker',
-                        html: `<div style="background: ${kweker.color}; width: 40px; height: 40px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 10px rgba(0,0,0,0.3); border: 3px solid white;"><span style="transform: rotate(45deg); font-size: 20px;">${kweker.avatar}</span></div>`,
+                        html: `<div style="background: ${kweker.color || '#e74c3c'}; width: 40px; height: 40px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 10px rgba(0,0,0,0.3); border: 3px solid white;"><span style="transform: rotate(45deg); font-size: 20px;">${kweker.avatar}</span></div>`,
                         iconSize: [40, 40],
                         iconAnchor: [20, 40],
                         popupAnchor: [0, -40]
                     })
-                }).addTo(map);
+                });
 
-                // Popup content
                 const popupContent = `
                     <div class="popup-kweker">
                         <div style="font-size: 2rem; margin-bottom: 5px;">${kweker.avatar}</div>
@@ -368,33 +504,72 @@
                 `;
 
                 marker.bindPopup(popupContent);
+                marker.addTo(map);
+                kwekerMarkers.push(marker);
             });
 
-            // Voeg ook locatie markers toe (kleinere markers)
+            // 2. Voeg markers toe voor experiences (BLAUW)
+            if (typeof experiences !== 'undefined') {
+                experiences.forEach(exp => {
+                    const marker = L.marker([exp.coordinates.lat, exp.coordinates.lng], {
+                        icon: L.divIcon({
+                            className: 'custom-marker',
+                            html: `<div style="background: ${exp.color || '#3498db'}; width: 36px; height: 36px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 10px rgba(0,0,0,0.3); border: 3px solid white;"><span style="transform: rotate(45deg); font-size: 18px;">${exp.icon}</span></div>`,
+                            iconSize: [36, 36],
+                            iconAnchor: [18, 36],
+                            popupAnchor: [0, -36]
+                        })
+                    });
+
+                    const popupContent = `
+                        <div class="popup-kweker">
+                            <div style="font-size: 2rem; margin-bottom: 5px;">${exp.icon}</div>
+                            <h3>${exp.name}</h3>
+                            <div class="location">📍 ${exp.location}</div>
+                            <div style="background: #e5f0ff; color: #3498db; display: inline-block; padding: 3px 10px; border-radius: 10px; font-size: 0.75rem; margin-bottom: 8px;">${exp.type}</div>
+                            <p style="font-size: 0.85rem; color: #7f8c8d; margin-bottom: 8px;">${exp.description.substring(0, 100)}...</p>
+                            <div style="font-size: 0.85rem; color: #7f8c8d; margin-bottom: 10px;">
+                                💰 ${exp.price} • ⭐ ${exp.rating}
+                            </div>
+                            ${exp.website ? `<a href="${exp.website}" target="_blank" class="btn-small" style="background: #3498db;">🎫 Meer Info</a>` : ''}
+                        </div>
+                    `;
+
+                    marker.bindPopup(popupContent);
+                    marker.addTo(map);
+                    experienceMarkers.push(marker);
+                });
+            }
+
+            // 3. Voeg markers toe voor plaatsen (GROEN)
             locations.forEach(loc => {
                 const marker = L.marker([loc.coordinates.lat, loc.coordinates.lng], {
                     icon: L.divIcon({
                         className: 'custom-marker',
-                        html: `<div style="background: #3498db; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.2); border: 2px solid white;"><span style="font-size: 14px;">${loc.icon}</span></div>`,
-                        iconSize: [28, 28],
-                        iconAnchor: [14, 14],
-                        popupAnchor: [0, -14]
+                        html: `<div style="background: #27ae60; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.2); border: 2px solid white;"><span style="font-size: 14px;">${loc.icon}</span></div>`,
+                        iconSize: [30, 30],
+                        iconAnchor: [15, 15],
+                        popupAnchor: [0, -15]
                     })
-                }).addTo(map);
+                });
 
                 marker.bindPopup(`
                     <div style="text-align: center; min-width: 150px;">
                         <div style="font-size: 1.5rem;">${loc.icon}</div>
                         <strong>${loc.name}</strong>
                         <p style="color: #7f8c8d; font-size: 0.85rem; margin: 5px 0;">${loc.description}</p>
-                        <small>${loc.kwekers} kweker(s) actief</small>
+                        <small style="color: #27ae60;">${loc.kwekers} kweker(s) actief</small>
                     </div>
                 `);
+                
+                marker.addTo(map);
+                plaatsMarkers.push(marker);
             });
 
             // Zoom to fit all markers
             const allCoords = [
                 ...kwekers.map(k => [k.coordinates.lat, k.coordinates.lng]),
+                ...(typeof experiences !== 'undefined' ? experiences.map(e => [e.coordinates.lat, e.coordinates.lng]) : []),
                 ...locations.map(l => [l.coordinates.lat, l.coordinates.lng])
             ];
             if (allCoords.length > 0) {
