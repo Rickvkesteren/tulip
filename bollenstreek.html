@@ -196,6 +196,7 @@
                     <a href="kwekers.html" class="nav-link">Onze Kwekers</a>
                     <a href="bollenstreek.html" class="nav-link active">De Bollenstreek</a>
                     <a href="experiences.html" class="nav-link">Experiences</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
                     <a href="contact.html" class="nav-link">Contact</a>
                 </nav>
                 <div class="header-actions">
@@ -237,6 +238,20 @@
             <div class="map-fullwidth">
                 <h3 style="text-align: center; margin-bottom: 20px; font-size: 1.5rem;">🗺️ Interactieve Kaart</h3>
                 
+                <!-- Live Bloei Status Banner -->
+                <div id="bloomStatusBanner" style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); padding: 15px 25px; border-radius: 12px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px;">
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <div class="bloom-indicator active"></div>
+                        <div>
+                            <strong style="color: #2e7d32;">🌷 Live Bloei Status</strong>
+                            <p style="margin: 0; font-size: 0.9rem; color: #558b2f;" id="bloomStatusText">Laadt bloei informatie...</p>
+                        </div>
+                    </div>
+                    <div class="best-visit-badge" id="bestVisitBadge">
+                        ⭐ Beste bezoektijd: <span id="bestVisitTime">-</span>
+                    </div>
+                </div>
+                
                 <!-- Legenda met filters -->
                 <div class="map-legend" id="mapLegend">
                     <div class="legend-item kwekers active" data-filter="kwekers" onclick="toggleFilter('kwekers')">
@@ -254,6 +269,54 @@
                         <span>Plaatsen</span>
                         <span class="legend-count" id="count-plaatsen">6</span>
                     </div>
+                </div>
+                
+                <!-- Route Planner -->
+                <div class="route-planner" id="routePlanner">
+                    <h3>🚴 Route Planner</h3>
+                    <p style="color: var(--text-light); margin-bottom: 15px;">Plan je eigen route langs de mooiste bollenkwekers en bezienswaardigheden.</p>
+                    
+                    <div class="route-type-toggle">
+                        <button class="route-type-btn active" onclick="setRouteType('bike')" id="btnBike">
+                            🚴 Fietsroute
+                        </button>
+                        <button class="route-type-btn" onclick="setRouteType('car')" id="btnCar">
+                            🚗 Autoroute
+                        </button>
+                        <button class="route-type-btn" onclick="setRouteType('walk')" id="btnWalk">
+                            🚶 Wandelroute
+                        </button>
+                    </div>
+                    
+                    <div class="route-stops" id="routeStops">
+                        <p style="text-align: center; color: var(--text-light); padding: 20px;">
+                            Klik op markers in de kaart om stops toe te voegen aan je route
+                        </p>
+                    </div>
+                    
+                    <div class="route-summary" id="routeSummary" style="display: none;">
+                        <div class="route-stats">
+                            <div class="route-stat">
+                                <div class="value" id="routeDistance">0 km</div>
+                                <div class="label">Afstand</div>
+                            </div>
+                            <div class="route-stat">
+                                <div class="value" id="routeTime">0 min</div>
+                                <div class="label">Geschatte tijd</div>
+                            </div>
+                            <div class="route-stat">
+                                <div class="value" id="routeStopsCount">0</div>
+                                <div class="label">Stops</div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" onclick="exportRoute()" style="width: 100%;">
+                            📥 Download Route (GPX)
+                        </button>
+                    </div>
+                    
+                    <button class="btn btn-secondary" onclick="clearRoute()" style="width: 100%; margin-top: 10px;">
+                        🗑️ Route Wissen
+                    </button>
                 </div>
                 
                 <div id="map"></div>
@@ -274,6 +337,70 @@
             <h3 style="text-align: center; margin-bottom: 30px; font-size: 1.8rem;">📍 Locaties in de Bollenstreek</h3>
             <div class="locations-grid" id="locationsGrid">
                 <!-- Dynamisch gegenereerd -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Virtual Tours / 360° Views Section -->
+    <section style="padding: 80px 0; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+        <div class="container">
+            <h2 style="text-align: center; color: white; margin-bottom: 15px;">🌐 Virtuele Rondleidingen & 360° Views</h2>
+            <p style="text-align: center; color: rgba(255,255,255,0.9); max-width: 700px; margin: 0 auto 40px;">
+                Beleef de Bollenstreek vanuit huis! Bekijk 360° panorama's van de mooiste bollenvelden.
+            </p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
+                <div class="virtual-tour-card">
+                    <div class="tour-preview" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);">
+                        <div class="tour-360-badge">🔄 360° View</div>
+                    </div>
+                    <div class="tour-info">
+                        <h4>🌷 Tulpenvelden Lisse</h4>
+                        <p>Panoramisch uitzicht over de iconische tulpenvelden nabij Keukenhof</p>
+                        <button class="btn btn-primary" style="width: 100%; margin-top: 15px;" onclick="showToast('360° view komt binnenkort beschikbaar!', 'info')">
+                            Bekijk 360° →
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="virtual-tour-card">
+                    <div class="tour-preview" style="background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%);">
+                        <div class="tour-360-badge">🔄 360° View</div>
+                    </div>
+                    <div class="tour-info">
+                        <h4>🌼 Narcissenvelden Noordwijk</h4>
+                        <p>Ontdek de gele zee van narcissen richting de kust</p>
+                        <button class="btn btn-primary" style="width: 100%; margin-top: 15px;" onclick="showToast('360° view komt binnenkort beschikbaar!', 'info')">
+                            Bekijk 360° →
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="virtual-tour-card">
+                    <div class="tour-preview" style="background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);">
+                        <div class="tour-360-badge">🔄 360° View</div>
+                    </div>
+                    <div class="tour-info">
+                        <h4>💜 Hyacintenvelden Hillegom</h4>
+                        <p>Ruik de heerlijke geur (virtueel!) van duizenden hyacinten</p>
+                        <button class="btn btn-primary" style="width: 100%; margin-top: 15px;" onclick="showToast('360° view komt binnenkort beschikbaar!', 'info')">
+                            Bekijk 360° →
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="virtual-tour-card">
+                    <div class="tour-preview" style="background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);">
+                        <div class="tour-360-badge">🎬 Video Tour</div>
+                    </div>
+                    <div class="tour-info">
+                        <h4>🚁 Drone Vlucht Bollenstreek</h4>
+                        <p>Spectaculaire luchtbeelden van de hele Bollenstreek</p>
+                        <button class="btn btn-primary" style="width: 100%; margin-top: 15px;" onclick="showToast('Video tour komt binnenkort beschikbaar!', 'info')">
+                            Bekijk Video →
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -499,7 +626,10 @@
                         <div style="font-size: 0.85rem; color: #7f8c8d; margin-bottom: 10px;">
                             Sinds ${kweker.since} • ⭐ ${kweker.rating}
                         </div>
-                        ${kweker.website ? `<a href="${kweker.website}" target="_blank" class="btn-small">🌐 Bezoek Website</a>` : ''}
+                        <div style="display: flex; gap: 5px; flex-wrap: wrap; justify-content: center;">
+                            ${kweker.website ? `<a href="${kweker.website}" target="_blank" class="btn-small">🌐 Website</a>` : ''}
+                            <button class="btn-small" style="background: #27ae60;" onclick="addToRoute('${kweker.name.replace(/'/g, "\\'")}', ${kweker.coordinates.lat}, ${kweker.coordinates.lng}, '${kweker.avatar}')">➕ Route</button>
+                        </div>
                     </div>
                 `;
 
@@ -531,7 +661,10 @@
                             <div style="font-size: 0.85rem; color: #7f8c8d; margin-bottom: 10px;">
                                 💰 ${exp.price} • ⭐ ${exp.rating}
                             </div>
-                            ${exp.website ? `<a href="${exp.website}" target="_blank" class="btn-small" style="background: #3498db;">🎫 Meer Info</a>` : ''}
+                            <div style="display: flex; gap: 5px; flex-wrap: wrap; justify-content: center;">
+                                ${exp.website ? `<a href="${exp.website}" target="_blank" class="btn-small" style="background: #3498db;">🎫 Info</a>` : ''}
+                                <button class="btn-small" style="background: #27ae60;" onclick="addToRoute('${exp.name.replace(/'/g, "\\'")}', ${exp.coordinates.lat}, ${exp.coordinates.lng}, '${exp.icon}')">➕ Route</button>
+                            </div>
                         </div>
                     `;
 
@@ -608,6 +741,235 @@
                 </div>
             `).join('');
         }
+
+        // ==========================================
+        // Route Planner Functionality
+        // ==========================================
+        let routeStops = [];
+        let routeType = 'bike';
+        let routeLine = null;
+
+        function setRouteType(type) {
+            routeType = type;
+            document.querySelectorAll('.route-type-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('btn' + type.charAt(0).toUpperCase() + type.slice(1)).classList.add('active');
+            updateRouteDisplay();
+        }
+
+        function addToRoute(name, lat, lng, icon) {
+            if (routeStops.length >= 10) {
+                showToast('Maximum 10 stops per route', 'warning');
+                return;
+            }
+            
+            // Check if already in route
+            if (routeStops.find(s => s.name === name)) {
+                showToast('Deze stop zit al in je route', 'info');
+                return;
+            }
+            
+            routeStops.push({ name, lat, lng, icon });
+            updateRouteDisplay();
+            showToast(`${name} toegevoegd aan route`, 'success');
+        }
+
+        function removeFromRoute(index) {
+            routeStops.splice(index, 1);
+            updateRouteDisplay();
+        }
+
+        function updateRouteDisplay() {
+            const container = document.getElementById('routeStops');
+            const summary = document.getElementById('routeSummary');
+            
+            if (routeStops.length === 0) {
+                container.innerHTML = `<p style="text-align: center; color: var(--text-light); padding: 20px;">
+                    Klik op markers in de kaart om stops toe te voegen aan je route
+                </p>`;
+                summary.style.display = 'none';
+                if (routeLine) {
+                    map.removeLayer(routeLine);
+                    routeLine = null;
+                }
+                return;
+            }
+            
+            container.innerHTML = routeStops.map((stop, i) => `
+                <div class="route-stop" onclick="removeFromRoute(${i})" title="Klik om te verwijderen">
+                    <div class="stop-number">${i + 1}</div>
+                    <div class="stop-info">
+                        <h4>${stop.icon} ${stop.name}</h4>
+                        <p>Klik om te verwijderen</p>
+                    </div>
+                </div>
+            `).join('');
+            
+            // Calculate route stats
+            const distance = calculateRouteDistance();
+            const time = calculateRouteTime(distance);
+            
+            document.getElementById('routeDistance').textContent = distance.toFixed(1) + ' km';
+            document.getElementById('routeTime').textContent = time + ' min';
+            document.getElementById('routeStopsCount').textContent = routeStops.length;
+            
+            summary.style.display = 'block';
+            
+            // Draw route line on map
+            drawRouteLine();
+        }
+
+        function calculateRouteDistance() {
+            if (routeStops.length < 2) return 0;
+            
+            let total = 0;
+            for (let i = 0; i < routeStops.length - 1; i++) {
+                const from = L.latLng(routeStops[i].lat, routeStops[i].lng);
+                const to = L.latLng(routeStops[i + 1].lat, routeStops[i + 1].lng);
+                total += from.distanceTo(to) / 1000; // Convert to km
+            }
+            return total * 1.3; // Add 30% for actual road distance
+        }
+
+        function calculateRouteTime(distanceKm) {
+            const speeds = { bike: 15, car: 40, walk: 5 }; // km/h
+            const stopTime = routeStops.length * 15; // 15 min per stop
+            return Math.round((distanceKm / speeds[routeType]) * 60 + stopTime);
+        }
+
+        function drawRouteLine() {
+            if (routeLine) {
+                map.removeLayer(routeLine);
+            }
+            
+            if (routeStops.length < 2) return;
+            
+            const coords = routeStops.map(s => [s.lat, s.lng]);
+            routeLine = L.polyline(coords, {
+                color: routeType === 'bike' ? '#27ae60' : routeType === 'car' ? '#3498db' : '#e74c3c',
+                weight: 4,
+                opacity: 0.8,
+                dashArray: routeType === 'walk' ? '10, 10' : null
+            }).addTo(map);
+            
+            map.fitBounds(routeLine.getBounds(), { padding: [50, 50] });
+        }
+
+        function clearRoute() {
+            routeStops = [];
+            updateRouteDisplay();
+            showToast('Route gewist', 'info');
+        }
+
+        function exportRoute() {
+            if (routeStops.length < 2) {
+                showToast('Voeg minimaal 2 stops toe', 'warning');
+                return;
+            }
+            
+            // Generate simple GPX
+            let gpx = `<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Bollenstreek Direct">
+  <trk>
+    <name>Bollenstreek Route</name>
+    <trkseg>
+${routeStops.map(s => `      <trkpt lat="${s.lat}" lon="${s.lng}"><name>${s.name}</name></trkpt>`).join('\n')}
+    </trkseg>
+  </trk>
+</gpx>`;
+            
+            const blob = new Blob([gpx], { type: 'application/gpx+xml' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'bollenstreek-route.gpx';
+            a.click();
+            URL.revokeObjectURL(url);
+            
+            showToast('Route gedownload!', 'success');
+        }
+
+        // ==========================================
+        // Live Bloom Status
+        // ==========================================
+        const bloomData = {
+            tulpen: { start: 4, end: 5, peak: [4, 5] },
+            narcissen: { start: 3, end: 5, peak: [3, 4] },
+            hyacinten: { start: 3, end: 4, peak: [3, 4] },
+            krokussen: { start: 2, end: 4, peak: [3] }
+        };
+
+        function updateBloomStatus() {
+            const now = new Date();
+            const month = now.getMonth() + 1; // 1-12
+            
+            let blooming = [];
+            let upcoming = [];
+            
+            Object.entries(bloomData).forEach(([flower, data]) => {
+                if (month >= data.start && month <= data.end) {
+                    const isPeak = data.peak.includes(month);
+                    blooming.push({ name: flower, isPeak });
+                } else if (month === data.start - 1) {
+                    upcoming.push(flower);
+                }
+            });
+            
+            const statusText = document.getElementById('bloomStatusText');
+            const banner = document.getElementById('bloomStatusBanner');
+            const indicator = banner.querySelector('.bloom-indicator');
+            const bestVisit = document.getElementById('bestVisitTime');
+            
+            if (blooming.length > 0) {
+                const peakFlowers = blooming.filter(f => f.isPeak).map(f => f.name);
+                if (peakFlowers.length > 0) {
+                    statusText.textContent = `🌸 Piek bloei: ${peakFlowers.join(', ')}! Nu is het ideale moment om te bezoeken.`;
+                } else {
+                    statusText.textContent = `In bloei: ${blooming.map(f => f.name).join(', ')}`;
+                }
+                indicator.className = 'bloom-indicator active';
+                bestVisit.textContent = 'NU!';
+            } else if (upcoming.length > 0) {
+                statusText.textContent = `Binnenkort in bloei: ${upcoming.join(', ')}. Nog even geduld!`;
+                indicator.className = 'bloom-indicator upcoming';
+                banner.style.background = 'linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%)';
+                bestVisit.textContent = 'Maart - Mei';
+            } else if (month >= 6 && month <= 9) {
+                statusText.textContent = 'Zomerbollen zoals lelies en dahlia\'s zijn nu in bloei!';
+                indicator.className = 'bloom-indicator active';
+                bestVisit.textContent = 'Juni - September';
+            } else {
+                statusText.textContent = 'Het bollenseizoen is voorbij. Bestel nu bollen voor het voorjaar!';
+                indicator.className = 'bloom-indicator finished';
+                banner.style.background = 'var(--bg-light)';
+                bestVisit.textContent = 'Maart - Mei 2025';
+            }
+        }
+
+        // Update popup content to include "add to route" button
+        function createKwekerPopup(kweker) {
+            return `
+                <div class="popup-kweker">
+                    <div style="font-size: 2rem; margin-bottom: 5px;">${kweker.avatar}</div>
+                    <h3>${kweker.name}</h3>
+                    <div class="location">📍 ${kweker.location}</div>
+                    <div class="specialties">
+                        ${kweker.specialties.map(s => `<span class="specialty">${s}</span>`).join('')}
+                    </div>
+                    <div style="font-size: 0.85rem; color: #7f8c8d; margin-bottom: 10px;">
+                        Sinds ${kweker.since} • ⭐ ${kweker.rating}
+                    </div>
+                    <div style="display: flex; gap: 5px; flex-wrap: wrap; justify-content: center;">
+                        ${kweker.website ? `<a href="${kweker.website}" target="_blank" class="btn-small">🌐 Website</a>` : ''}
+                        <button class="btn-small" style="background: #27ae60;" onclick="addToRoute('${kweker.name}', ${kweker.coordinates.lat}, ${kweker.coordinates.lng}, '${kweker.avatar}')">➕ Route</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Initialize bloom status on load
+        document.addEventListener('DOMContentLoaded', function() {
+            updateBloomStatus();
+        });
     </script>
 
     <!-- Toast Container -->
@@ -615,5 +977,6 @@
 
     <script src="js/favorites.js"></script>
     <script src="js/search.js"></script>
+    <script src="js/translations.js"></script>
 </body>
 </html>

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Planttips - Bollenstreek Direct</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🌷</span>
+                    <span class="logo-text">Bollenstreek Direct</span>
+                </a>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="shop.html" class="nav-link">Webshop</a>
+                    <a href="kwekers.html" class="nav-link">Onze Kwekers</a>
+                    <a href="bollenstreek.html" class="nav-link">De Bollenstreek</a>
+                    <a href="experiences.html" class="nav-link">Experiences</a>
+                    <a href="blog.html" class="nav-link active">Blog</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Zoek bloembollen..." autocomplete="off">
+                        <div class="search-results" id="searchResults"></div>
+                    </div>
+                    <button class="fav-btn" id="favBtn" title="Favorieten">
+                        ❤️ <span class="fav-count" id="favCount">0</span>
+                    </button>
+                    <button class="cart-btn" id="cartBtn">
+                        🛒 <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 data-translate="blogTitle">📚 Blog & Planttips</h1>
+            <p data-translate="blogSubtitle">Tips, trucs en handleidingen voor het kweken van prachtige bloembollen</p>
+        </div>
+    </section>
+
+    <!-- Season Calendar Section -->
+    <section style="padding: 60px 0; background: var(--bg-cream);">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 15px;">📅 Seizoenskalender - Wanneer planten & bloeien?</h2>
+            <p style="text-align: center; color: var(--text-light); max-width: 700px; margin: 0 auto 30px;">
+                Ontdek de ideale plant- en bloeitijden voor de populairste bloembollen.
+            </p>
+            
+            <div class="season-calendar" id="seasonCalendar">
+                <!-- Months Header -->
+                <div class="month-header">Jan</div>
+                <div class="month-header">Feb</div>
+                <div class="month-header">Mrt</div>
+                <div class="month-header">Apr</div>
+                <div class="month-header">Mei</div>
+                <div class="month-header">Jun</div>
+                <div class="month-header">Jul</div>
+                <div class="month-header">Aug</div>
+                <div class="month-header">Sep</div>
+                <div class="month-header">Okt</div>
+                <div class="month-header">Nov</div>
+                <div class="month-header">Dec</div>
+            </div>
+            
+            <div id="calendarLegend" style="margin-top: 20px;">
+                <!-- Dynamisch gegenereerd -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Articles -->
+    <section style="padding: 80px 0;">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 15px;">📝 Plantgidsen & Artikelen</h2>
+            <p style="text-align: center; color: var(--text-light); max-width: 700px; margin: 0 auto 40px;">
+                Leer alles over het planten en verzorgen van bloembollen met onze uitgebreide gidsen.
+            </p>
+            
+            <div class="blog-grid" id="blogGrid">
+                <!-- Dynamisch gegenereerd -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Tutorials -->
+    <section style="padding: 80px 0; background: var(--bg-light);">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 15px;">🎬 Video Tutorials</h2>
+            <p style="text-align: center; color: var(--text-light); max-width: 700px; margin: 0 auto 40px;">
+                Bekijk onze instructievideo's en word een bollenexpert!
+            </p>
+            
+            <div class="video-grid" id="videoGrid">
+                <!-- Dynamisch gegenereerd -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Planting Tips Quick Guide -->
+    <section style="padding: 80px 0;">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 50px;">🌱 Snelle Planttips</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
+                <div style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 15px;">🕳️</div>
+                    <h3 style="margin-bottom: 10px;">Diepte</h3>
+                    <p style="color: var(--text-light);">Plant bollen op een diepte van <strong>2-3x de bolhoogte</strong>. Tulpen dus ongeveer 10-15 cm diep.</p>
+                </div>
+                
+                <div style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 15px;">↔️</div>
+                    <h3 style="margin-bottom: 10px;">Afstand</h3>
+                    <p style="color: var(--text-light);">Houd <strong>5-10 cm afstand</strong> tussen de bollen. Voor een vol effect kun je dichter planten.</p>
+                </div>
+                
+                <div style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 15px;">⬆️</div>
+                    <h3 style="margin-bottom: 10px;">Richting</h3>
+                    <p style="color: var(--text-light);">Plant met de <strong>punt naar boven</strong>. Twijfel je? Plant op z'n kant - de plant vindt z'n weg wel!</p>
+                </div>
+                
+                <div style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 15px;">💧</div>
+                    <h3 style="margin-bottom: 10px;">Water</h3>
+                    <p style="color: var(--text-light);">Geef na het planten <strong>goed water</strong>. Daarna is de natuur meestal voldoende.</p>
+                </div>
+                
+                <div style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 15px;">🌡️</div>
+                    <h3 style="margin-bottom: 10px;">Temperatuur</h3>
+                    <p style="color: var(--text-light);">Plant als de <strong>bodemtemperatuur onder 10°C</strong> is. Meestal vanaf oktober.</p>
+                </div>
+                
+                <div style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 15px;">🏔️</div>
+                    <h3 style="margin-bottom: 10px;">Drainage</h3>
+                    <p style="color: var(--text-light);">Zorg voor <strong>goede drainage</strong>. Bollen houden niet van natte voeten!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section style="padding: 80px 0; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center;">
+        <div class="container">
+            <h2 style="margin-bottom: 15px;">📬 Blijf op de hoogte!</h2>
+            <p style="opacity: 0.9; max-width: 600px; margin: 0 auto 30px;">
+                Schrijf je in voor onze nieuwsbrief en ontvang seizoenstips, exclusieve aanbiedingen en plantvideo's.
+            </p>
+            <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Bedankt voor je inschrijving! 🌷', 'success');">
+                <input type="email" placeholder="Je e-mailadres" required>
+                <button type="submit" class="btn btn-primary">Inschrijven</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Bollenstreek Direct</h4>
+                    <p>Nederlandse bloembollen rechtstreeks van lokale kwekers uit de Bollenstreek naar uw tuin.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Webshop</h4>
+                    <ul>
+                        <li><a href="shop.html">Alle Producten</a></li>
+                        <li><a href="shop.html?cat=tulpen">Tulpen</a></li>
+                        <li><a href="shop.html?cat=narcissen">Narcissen</a></li>
+                        <li><a href="shop.html?cat=hyacinten">Hyacinten</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Ontdek</h4>
+                    <ul>
+                        <li><a href="kwekers.html">Onze Kwekers</a></li>
+                        <li><a href="bollenstreek.html">De Bollenstreek</a></li>
+                        <li><a href="experiences.html">Experiences</a></li>
+                        <li><a href="blog.html">Blog & Tips</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>📍 Bollenstreek, Nederland</p>
+                    <p>📧 info@bollenstreekdirect.nl</p>
+                    <p>📞 +31 (0)252 123 456</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Bollenstreek Direct. Alle rechten voorbehouden.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>🛒 Winkelwagen</h3>
+            <button class="cart-close" id="cartClose">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-subtotal">
+                <span>Subtotaal:</span>
+                <span id="cartTotal">€0,00</span>
+            </div>
+            <div id="shippingInfo" class="shipping-info"></div>
+            <div class="cart-total-final">
+                <span>Totaal:</span>
+                <span id="cartTotalFinal">€0,00</span>
+            </div>
+            <button class="btn btn-primary btn-full" onclick="window.location.href='checkout.html'">Afrekenen →</button>
+            <p class="cart-secure">🔒 Veilig betalen via iDEAL, Bancontact of creditcard</p>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="js/data.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/favorites.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Blog data
+        const blogArticles = [
+            {
+                id: 1,
+                title: "Hoe plant ik tulpenbollen?",
+                category: "Plantgids",
+                image: "🌷",
+                color: "#e74c3c",
+                excerpt: "Complete handleiding voor het planten van tulpenbollen. Van de juiste diepte tot de ideale planttijd.",
+                readTime: "5 min",
+                date: "15 okt 2024"
+            },
+            {
+                id: 2,
+                title: "Narcissen: Van bol tot bloem",
+                category: "Plantgids",
+                image: "🌼",
+                color: "#f1c40f",
+                excerpt: "Alles wat je moet weten over het kweken van prachtige narcissen in je tuin.",
+                readTime: "4 min",
+                date: "10 okt 2024"
+            },
+            {
+                id: 3,
+                title: "Hyacinten in potten kweken",
+                category: "Indoor",
+                image: "💜",
+                color: "#9b59b6",
+                excerpt: "Geniet van de heerlijke geur van hyacinten in huis. Tips voor het kweken in potten.",
+                readTime: "6 min",
+                date: "5 okt 2024"
+            },
+            {
+                id: 4,
+                title: "Verwilderen: Bollen die terugkomen",
+                category: "Geavanceerd",
+                image: "🔄",
+                color: "#27ae60",
+                excerpt: "Ontdek welke bollen jaar na jaar terugkomen en hoe je een natuurlijke verwildering creëert.",
+                readTime: "7 min",
+                date: "1 okt 2024"
+            },
+            {
+                id: 5,
+                title: "Bollen in de border combineren",
+                category: "Design",
+                image: "🎨",
+                color: "#3498db",
+                excerpt: "Creëer prachtige kleurencombinaties door slim te plannen. Tips van de experts.",
+                readTime: "8 min",
+                date: "25 sep 2024"
+            },
+            {
+                id: 6,
+                title: "Bescherming tegen muizen & vorst",
+                category: "Verzorging",
+                image: "🐭",
+                color: "#95a5a6",
+                excerpt: "Bescherm je bollen tegen hongerige knaagdieren en extreme kou.",
+                readTime: "4 min",
+                date: "20 sep 2024"
+            }
+        ];
+
+        const videoTutorials = [
+            {
+                id: 1,
+                title: "Tulpenbollen planten - Stap voor stap",
+                duration: "4:32",
+                thumbnail: "🌷",
+                views: "12.5K"
+            },
+            {
+                id: 2,
+                title: "Bollen in potten planten",
+                duration: "3:45",
+                thumbnail: "🪴",
+                views: "8.2K"
+            },
+            {
+                id: 3,
+                title: "Lasagne planting methode",
+                duration: "6:15",
+                thumbnail: "🍝",
+                views: "15.1K"
+            },
+            {
+                id: 4,
+                title: "Narcissen na de bloei verzorgen",
+                duration: "2:58",
+                thumbnail: "🌼",
+                views: "5.7K"
+            }
+        ];
+
+        const bloomCalendar = [
+            { name: "Sneeuwklokjes", color: "#ecf0f1", plantMonths: [9, 10, 11], bloomMonths: [1, 2, 3] },
+            { name: "Krokussen", color: "#9b59b6", plantMonths: [9, 10, 11], bloomMonths: [2, 3, 4] },
+            { name: "Narcissen", color: "#f1c40f", plantMonths: [9, 10, 11], bloomMonths: [3, 4, 5] },
+            { name: "Tulpen", color: "#e74c3c", plantMonths: [10, 11, 12], bloomMonths: [4, 5] },
+            { name: "Hyacinten", color: "#8e44ad", plantMonths: [9, 10, 11], bloomMonths: [3, 4] },
+            { name: "Alliums", color: "#9b59b6", plantMonths: [9, 10, 11], bloomMonths: [5, 6] },
+            { name: "Lelies", color: "#e91e63", plantMonths: [10, 11, 3, 4], bloomMonths: [6, 7, 8] },
+            { name: "Dahlia's", color: "#ff5722", plantMonths: [4, 5], bloomMonths: [7, 8, 9, 10] },
+            { name: "Gladiolen", color: "#f44336", plantMonths: [4, 5], bloomMonths: [7, 8, 9] }
+        ];
+
+        document.addEventListener('DOMContentLoaded', function() {
+            renderSeasonCalendar();
+            renderBlogArticles();
+            renderVideoTutorials();
+        });
+
+        function renderSeasonCalendar() {
+            const calendar = document.getElementById('seasonCalendar');
+            const legend = document.getElementById('calendarLegend');
+            
+            bloomCalendar.forEach(bulb => {
+                // Add label row
+                const labelRow = document.createElement('div');
+                labelRow.className = 'bloom-label';
+                labelRow.innerHTML = `<span style="display: inline-block; width: 15px; height: 15px; background: ${bulb.color}; border-radius: 3px; margin-right: 10px;"></span>${bulb.name}`;
+                calendar.appendChild(labelRow);
+                
+                // Add months
+                for (let month = 1; month <= 12; month++) {
+                    const cell = document.createElement('div');
+                    cell.className = 'bloom-cell';
+                    
+                    if (bulb.plantMonths.includes(month)) {
+                        cell.style.background = `repeating-linear-gradient(45deg, ${bulb.color}22, ${bulb.color}22 5px, ${bulb.color}44 5px, ${bulb.color}44 10px)`;
+                        cell.title = `${bulb.name} - Planttijd`;
+                        cell.classList.add('active');
+                    }
+                    
+                    if (bulb.bloomMonths.includes(month)) {
+                        cell.style.background = bulb.color;
+                        cell.title = `${bulb.name} - Bloeitijd`;
+                        cell.classList.add('active');
+                    }
+                    
+                    calendar.appendChild(cell);
+                }
+            });
+
+            // Legend
+            legend.innerHTML = `
+                <div style="display: flex; gap: 30px; justify-content: center; flex-wrap: wrap;">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <div style="width: 30px; height: 20px; background: repeating-linear-gradient(45deg, #e74c3c22, #e74c3c22 5px, #e74c3c44 5px, #e74c3c44 10px); border-radius: 4px;"></div>
+                        <span>Planttijd</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <div style="width: 30px; height: 20px; background: #e74c3c; border-radius: 4px;"></div>
+                        <span>Bloeitijd</span>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderBlogArticles() {
+            const grid = document.getElementById('blogGrid');
+            
+            grid.innerHTML = blogArticles.map(article => `
+                <article class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, ${article.color}22 0%, ${article.color}44 100%); display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 4rem;">${article.image}</span>
+                        <span class="blog-category">${article.category}</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>${article.title}</h3>
+                        <p>${article.excerpt}</p>
+                        <div class="blog-meta">
+                            <span>📅 ${article.date}</span>
+                            <span>⏱️ ${article.readTime}</span>
+                        </div>
+                        <a href="#" class="blog-read-more" onclick="event.preventDefault(); showToast('Volledig artikel komt binnenkort!', 'info');">
+                            Lees meer →
+                        </a>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        function renderVideoTutorials() {
+            const grid = document.getElementById('videoGrid');
+            
+            grid.innerHTML = videoTutorials.map(video => `
+                <div class="video-card">
+                    <div class="video-thumbnail" style="background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);">
+                        <span style="font-size: 4rem; position: relative; z-index: 1;">${video.thumbnail}</span>
+                        <div class="play-button" onclick="showToast('Video tutorials komen binnenkort!', 'info');">▶</div>
+                    </div>
+                    <div class="video-info">
+                        <h4>${video.title}</h4>
+                        <div class="video-duration">
+                            <span>⏱️ ${video.duration}</span>
+                            <span style="margin-left: 15px;">👁️ ${video.views} views</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+    </script>
+</body>
+</html>
