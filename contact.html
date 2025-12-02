@@ -62,9 +62,24 @@
                     <button class="cart-btn" id="cartBtn">
                         🛒 <span class="cart-count" id="cartCount">0</span>
                     </button>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                 </div>
             </div>
         </div>
+        <!-- Mobile Navigation -->
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="index.html" class="mobile-nav-link">🏠 Home</a>
+            <a href="shop.html" class="mobile-nav-link">🛒 Shop</a>
+            <a href="kwekers.html" class="mobile-nav-link">👨‍🌾 Kwekers</a>
+            <a href="bollenstreek.html" class="mobile-nav-link">🗺️ Bollenstreek</a>
+            <a href="experiences.html" class="mobile-nav-link">🎟️ Experiences</a>
+            <a href="blog.html" class="mobile-nav-link">📝 Blog</a>
+            <a href="contact.html" class="mobile-nav-link active">📧 Contact</a>
+        </nav>
     </header>
 
     <!-- Page Header -->
@@ -258,10 +273,52 @@
     <script src="js/cart.js"></script>
     <script src="js/favorites.js"></script>
     <script src="js/search.js"></script>
+    <script src="js/translations.js"></script>
+    <script src="js/ux-enhancements.js"></script>
     <script src="js/main.js"></script>
 
     <!-- Toast Container -->
     <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <button class="chat-button" id="chatButton">
+            💬
+            <span class="chat-badge" style="display:none;">1</span>
+        </button>
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <span>💬 Klantenservice</span>
+                <button class="chat-close" id="chatClose">✕</button>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="chat-message bot">
+                    Welkom! Hoe kunnen we u helpen?
+                </div>
+            </div>
+            <div class="chat-input-container">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Typ uw bericht...">
+                <button class="chat-send" id="chatSend">➤</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter Popup -->
+    <div class="newsletter-popup" id="newsletterPopup">
+        <div class="newsletter-content">
+            <button class="newsletter-close" id="newsletterClose">✕</button>
+            <div class="newsletter-icon">🌷</div>
+            <h3 data-translate="newsletter_title">Ontvang 10% korting!</h3>
+            <p data-translate="newsletter_text">Schrijf je in voor onze nieuwsbrief en ontvang exclusieve aanbiedingen, planttips en 10% korting op je eerste bestelling.</p>
+            <form id="newsletterForm">
+                <input type="email" id="newsletterEmail" placeholder="Je e-mailadres" required>
+                <button type="submit" class="btn btn-primary">Inschrijven</button>
+            </form>
+            <p class="newsletter-privacy">
+                <small>We respecteren je privacy en sturen max. 2x per maand.</small>
+            </p>
+        </div>
+    </div>
 
     <script>
         document.getElementById('contactForm').addEventListener('submit', function(e) {
