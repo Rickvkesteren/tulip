@@ -679,12 +679,13 @@ const products = [
         id: 1,
         name: "Rode Triumph Tulpen",
         category: "tulpen",
-        inkoopprijs: 10.50,       // Wat wij betalen
-        price: 12.95,             // Verkoopprijs aan klant
+        inkoopprijs: 10.50,
+        price: 12.95,
         unit: "10 stuks",
-        kwekerId: 2, // Ruigrok
-        leverancierId: 3, // Ruigrok Flowerbulbs
+        kwekerId: 2,
+        leverancierId: 3,
         icon: "🌷",
+        image: "https://images.unsplash.com/photo-1520763185298-1b434c919102?w=400&q=80", // Rode tulpen
         description: "Klassieke rode tulpen van Ruigrok, perfect voor borders en potten.",
         badge: "Bestseller",
         inStock: true,
@@ -700,9 +701,10 @@ const products = [
         inkoopprijs: 11.95,
         price: 14.95,
         unit: "10 stuks",
-        kwekerId: 1, // Fluwel
-        leverancierId: 1, // Fluwel.nl
+        kwekerId: 1,
+        leverancierId: 1,
         icon: "🌷",
+        image: "https://images.unsplash.com/photo-1589994160839-163cd867cfe8?w=400&q=80", // Roze/abrikoos tulpen
         description: "Prachtige abrikooskleurige tulp van Fluwel met zacht geurende bloemen.",
         badge: "Fluwel Favoriet",
         inStock: true,
@@ -718,9 +720,10 @@ const products = [
         inkoopprijs: 13.50,
         price: 16.95,
         unit: "15 stuks",
-        kwekerId: 4, // BULBi
-        leverancierId: 2, // BULBi.nl
+        kwekerId: 4,
+        leverancierId: 2,
         icon: "🌷",
+        image: "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=400&q=80", // Kleurrijke tulpenmix
         description: "Kleurrijke mix van Darwin Hybrid tulpen, sterk en weerbestendig.",
         badge: "Keukenhof Keuze",
         inStock: true,
@@ -736,9 +739,10 @@ const products = [
         inkoopprijs: 12.50,
         price: 15.95,
         unit: "10 stuks",
-        kwekerId: 5, // Keukenhof
-        leverancierId: 2, // BULBi
+        kwekerId: 5,
+        leverancierId: 2,
         icon: "🌷",
+        image: "https://images.unsplash.com/photo-1553530979-212c46e8afd5?w=400&q=80", // Donkerpaarse tulpen
         description: "Donkerpaarse, bijna zwarte tulp. Een echte showstopper!",
         badge: "Exclusief",
         inStock: true,
@@ -756,9 +760,10 @@ const products = [
         inkoopprijs: 7.95,
         price: 9.95,
         unit: "10 stuks",
-        kwekerId: 2, // Ruigrok
+        kwekerId: 2,
         leverancierId: 3,
         icon: "🌼",
+        image: "https://images.unsplash.com/photo-1456415333674-42b11b9f5b7b?w=400&q=80", // Gele narcissen
         description: "Klassieke gele narcissen van Ruigrok met grote trompetten.",
         badge: "Populair",
         inStock: true,
@@ -774,9 +779,10 @@ const products = [
         inkoopprijs: 9.50,
         price: 11.95,
         unit: "10 stuks",
-        kwekerId: 3, // P. Aker
+        kwekerId: 3,
         leverancierId: 4,
         icon: "🌼",
+        image: "https://images.unsplash.com/photo-1549751043-ccdb46f4a7e8?w=400&q=80", // Witte narcissen
         description: "Sierlijke witte narcissen met meerdere bloemen per steel.",
         badge: null,
         inStock: true,
@@ -792,9 +798,10 @@ const products = [
         inkoopprijs: 11.95,
         price: 14.95,
         unit: "20 stuks",
-        kwekerId: 4, // BULBi
+        kwekerId: 4,
         leverancierId: 2,
         icon: "🌼",
+        image: "https://images.unsplash.com/photo-1582479459972-aa0a9a2cbbd1?w=400&q=80", // Narcissenveld
         description: "Vrolijke mix van gele en witte narcissen van BULBi.",
         badge: null,
         inStock: true,
@@ -812,9 +819,10 @@ const products = [
         inkoopprijs: 6.95,
         price: 8.95,
         unit: "5 stuks",
-        kwekerId: 2, // Ruigrok
+        kwekerId: 2,
         leverancierId: 3,
         icon: "💜",
+        image: "https://images.unsplash.com/photo-1584479898061-15742e14f50d?w=400&q=80", // Blauwe hyacinten
         description: "Heerlijk geurende blauwe hyacinten, vernoemd naar Delfts Blauw.",
         badge: "Geurend",
         inStock: true,
@@ -830,9 +838,10 @@ const products = [
         inkoopprijs: 6.95,
         price: 8.95,
         unit: "5 stuks",
-        kwekerId: 1, // Fluwel
+        kwekerId: 1,
         leverancierId: 1,
         icon: "💗",
+        image: "https://images.unsplash.com/photo-1455659817273-f96807779a8a?w=400&q=80", // Roze hyacinten
         description: "Roze hyacinten van Fluwel met intense geur.",
         badge: null,
         inStock: true,
@@ -848,9 +857,10 @@ const products = [
         inkoopprijs: 9.95,
         price: 12.95,
         unit: "8 stuks",
-        kwekerId: 4, // BULBi
+        kwekerId: 4,
         leverancierId: 2,
         icon: "🤍",
+        image: "https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?w=400&q=80", // Gemengde hyacinten
         description: "Mix van blauw, roze en wit. Perfect voor binnen en buiten.",
         badge: "Mix",
         inStock: true,
@@ -868,9 +878,10 @@ const products = [
         inkoopprijs: 5.25,
         price: 6.95,
         unit: "25 stuks",
-        kwekerId: 2, // Ruigrok
+        kwekerId: 2,
         leverancierId: 3,
         icon: "💜",
+        image: "https://images.unsplash.com/photo-1457534979083-dbc249d0f5cc?w=400&q=80", // Paarse krokussen
         description: "Vroege voorjaarsbloemen van Ruigrok, perfect voor in het gazon.",
         badge: "Vroegbloeier",
         inStock: true,
@@ -886,9 +897,10 @@ const products = [
         inkoopprijs: 6.50,
         price: 7.95,
         unit: "25 stuks",
-        kwekerId: 6, // Peter Nyssen
+        kwekerId: 6,
         leverancierId: 5,
         icon: "🤍",
+        image: "https://images.unsplash.com/photo-1520412099551-62b6bafeb5bb?w=400&q=80", // Witte krokussen
         description: "Pure witte krokussen, ideaal voor naturaliseren.",
         badge: null,
         inStock: true,
@@ -904,9 +916,10 @@ const products = [
         inkoopprijs: 5.95,
         price: 7.95,
         unit: "30 stuks",
-        kwekerId: 4, // BULBi
+        kwekerId: 4,
         leverancierId: 2,
         icon: "🌸",
+        image: "https://images.unsplash.com/photo-1551972251-12070d63502a?w=400&q=80", // Gele krokussen
         description: "Kleinbloemige, vroegbloeiende soorten. Bijvriendelijk!",
         badge: "Bijvriendelijk",
         inStock: true,
@@ -924,9 +937,10 @@ const products = [
         inkoopprijs: 9.95,
         price: 12.95,
         unit: "5 stuks",
-        kwekerId: 6, // Peter Nyssen
+        kwekerId: 6,
         leverancierId: 5,
         icon: "🟣",
+        image: "https://images.unsplash.com/photo-1464639351491-a172c2aa2911?w=400&q=80", // Paarse allium
         description: "Spectaculaire paarse bollen op hoge stelen van Peter Nyssen.",
         badge: "Showstopper",
         inStock: true,
@@ -942,9 +956,10 @@ const products = [
         inkoopprijs: 18.95,
         price: 24.95,
         unit: "3 stuks",
-        kwekerId: 4, // BULBi
+        kwekerId: 4,
         leverancierId: 2,
         icon: "🟣",
+        image: "https://images.unsplash.com/photo-1530092285049-1c42085fd395?w=400&q=80", // Allium giganteum
         description: "Enorme paarse bollen tot 20 cm doorsnee. Spectaculair!",
         badge: "XXL",
         inStock: true,
@@ -962,9 +977,10 @@ const products = [
         inkoopprijs: 11.50,
         price: 14.95,
         unit: "3 stuks",
-        kwekerId: 3, // P. Aker
+        kwekerId: 3,
         leverancierId: 4,
         icon: "🤍",
+        image: "https://images.unsplash.com/photo-1533616688419-b7a585564566?w=400&q=80", // Witte lelies
         description: "Elegante witte lelies van P. Aker met heerlijke geur.",
         badge: "Geurend",
         inStock: true,
@@ -980,9 +996,10 @@ const products = [
         inkoopprijs: 9.95,
         price: 12.95,
         unit: "5 stuks",
-        kwekerId: 3, // P. Aker
+        kwekerId: 3,
         leverancierId: 4,
         icon: "💗",
+        image: "https://images.unsplash.com/photo-1567748157439-651aca2ff064?w=400&q=80", // Roze lelies
         description: "Kleurrijke mix van Aziatische lelies, vrolijk en sterk.",
         badge: "Mix",
         inStock: true,
@@ -1000,9 +1017,10 @@ const products = [
         inkoopprijs: 6.75,
         price: 8.95,
         unit: "1 stuk",
-        kwekerId: 1, // Fluwel
+        kwekerId: 1,
         leverancierId: 1,
         icon: "🌺",
+        image: "https://images.unsplash.com/photo-1536238349444-c05ffb6837e4?w=400&q=80", // Roze/crème dahlia
         description: "Beroemde cremekleurige dahlia van Fluwel. Instagram favoriet!",
         badge: "Fluwel Topper",
         inStock: true,
@@ -1018,9 +1036,10 @@ const products = [
         inkoopprijs: 14.95,
         price: 19.95,
         unit: "3 stuks",
-        kwekerId: 1, // Fluwel
+        kwekerId: 1,
         leverancierId: 1,
         icon: "🌺",
+        image: "https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=400&q=80", // Grote dahlia
         description: "Grote dahlia's met bloemen tot 25 cm. Carlos' favorieten!",
         badge: "Mega Bloemen",
         inStock: true,
@@ -1038,9 +1057,10 @@ const products = [
         inkoopprijs: 7.50,
         price: 9.95,
         unit: "1 stuk",
-        kwekerId: 1, // Fluwel
+        kwekerId: 1,
         leverancierId: 1,
         icon: "🌺",
+        image: "https://images.unsplash.com/photo-1546842931-886c185b4c8c?w=400&q=80", // Rode amaryllis
         description: "Klassieke rode amaryllis van Fluwel. Perfect voor binnen!",
         badge: "Kerst Favoriet",
         inStock: true,
@@ -1063,6 +1083,7 @@ const products = [
         kwekerId: 7,
         leverancierId: 1,
         icon: "🌷",
+        image: "https://images.unsplash.com/photo-1522165078649-823cf4dbaf46?w=400&q=80", // Wit-rode tulpen
         description: "Replica van de beroemde tulp uit de tulpenmanie. Wit met rode vlammen.",
         badge: "Historisch",
         inStock: true,
@@ -1081,6 +1102,7 @@ const products = [
         kwekerId: 7,
         leverancierId: 4,
         icon: "🌺",
+        image: "https://images.unsplash.com/photo-1606041008023-472dfb5e530f?w=400&q=80", // Stargazer lelie
         description: "Spectaculaire roze-witte lelies met sterke geur. Van den Bos kwaliteit.",
         badge: "Geurend",
         inStock: true,
@@ -1101,6 +1123,7 @@ const products = [
         kwekerId: 8,
         leverancierId: 2,
         icon: "🔔",
+        image: "https://images.unsplash.com/photo-1586521995568-39abaa0c2311?w=400&q=80", // Fritillaria
         description: "Indrukwekkende donkerpaarse keizerskroon. Bakker Brothers specialty.",
         badge: "Bijzonder",
         inStock: true,
@@ -1119,6 +1142,7 @@ const products = [
         kwekerId: 8,
         leverancierId: 2,
         icon: "💙",
+        image: "https://images.unsplash.com/photo-1590755117688-2fd7db7a9ead?w=400&q=80", // Blauwe iris
         description: "Prachtige blauwe hollandse irissen. Ideaal voor snijbloemen.",
         badge: null,
         inStock: true,
@@ -1139,6 +1163,7 @@ const products = [
         kwekerId: 9,
         leverancierId: 3,
         icon: "💙",
+        image: "https://images.unsplash.com/photo-1584479898061-15742e14f50d?w=400&q=80", // Delft blauwe hyacint
         description: "Klassieke Delfts blauwe hyacint. Moolenaar's paradepaardje!",
         badge: "Moolenaar Specialty",
         inStock: true,
@@ -1157,6 +1182,7 @@ const products = [
         kwekerId: 9,
         leverancierId: 3,
         icon: "💜",
+        image: "https://images.unsplash.com/photo-1585007600263-71228e40c8d1?w=400&q=80", // Muscari druifhyacint
         description: "Dubbele blauwe druifjes. Perfect voor borders en potten.",
         badge: "Bijvriendelijk",
         inStock: true,
@@ -1175,6 +1201,7 @@ const products = [
         kwekerId: 9,
         leverancierId: 3,
         icon: "🌸",
+        image: "https://images.unsplash.com/photo-1455659817273-f96807779a8a?w=400&q=80", // Mix hyacinten
         description: "Gemengde kleuren hyacinten met intense geur. Moolenaar kwaliteit.",
         badge: "Geurend",
         inStock: true,
@@ -1195,6 +1222,7 @@ const products = [
         kwekerId: 10,
         leverancierId: 1,
         icon: "🌷",
+        image: "https://images.unsplash.com/photo-1524386416438-98b9b2d4b433?w=400&q=80", // Tulpenveld mix
         description: "Authentieke boerenmix van De Tulpenfarm. Zoals vroeger!",
         badge: "Authentiek",
         inStock: true,
@@ -1213,6 +1241,7 @@ const products = [
         kwekerId: 10,
         leverancierId: 1,
         icon: "🌺",
+        image: "https://images.unsplash.com/photo-1560717789-0ac7c58ac90a?w=400&q=80", // Roze pioenroos
         description: "Roze pioenroos met volle bloemen. De Tulpenfarm favoriet.",
         badge: "Snijbloem",
         inStock: true,
@@ -1233,6 +1262,7 @@ const products = [
         kwekerId: 11,
         leverancierId: 2,
         icon: "🎨",
+        image: "https://images.unsplash.com/photo-1518882605630-8eb738e08289?w=400&q=80", // Gestreepte tulpen
         description: "Gestreepte tulpen in Rembrandt stijl. 160 jaar Van Waveren traditie.",
         badge: "Heritage",
         inStock: true,
@@ -1251,6 +1281,7 @@ const products = [
         kwekerId: 11,
         leverancierId: 3,
         icon: "🌼",
+        image: "https://images.unsplash.com/photo-1585007600263-71228e40c8d1?w=400&q=80", // Narcissen
         description: "Trosbloemige narcis met oranje hartje. Historische cultivar.",
         badge: "Historisch",
         inStock: true,
@@ -1269,6 +1300,7 @@ const products = [
         kwekerId: 11,
         leverancierId: 3,
         icon: "🤍",
+        image: "https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?w=400&q=80", // Witte hyacinten
         description: "Pure witte hyacint. Van Waveren's oudste cultivar.",
         badge: "Klassiek",
         inStock: true,
@@ -1289,6 +1321,7 @@ const products = [
         kwekerId: 12,
         leverancierId: 2,
         icon: "🌸",
+        image: "https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?w=400&q=80", // Ranonkels
         description: "Zachte pasteltinten ranonkels. Bloemenlust specialty.",
         badge: "Snijbloem",
         inStock: true,
@@ -1307,6 +1340,7 @@ const products = [
         kwekerId: 12,
         leverancierId: 2,
         icon: "❤️",
+        image: "https://images.unsplash.com/photo-1612722432474-b971cdcea546?w=400&q=80", // Anemonen
         description: "Kleurrijke Franse anemonen. Perfect voor in vazen.",
         badge: null,
         inStock: true,
@@ -1325,6 +1359,7 @@ const products = [
         kwekerId: 12,
         leverancierId: 1,
         icon: "🌷",
+        image: "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=400&q=80", // Tulpenveld
         description: "Speciaal geselecteerde mix voor snijbloemen. Lange stelen!",
         badge: "Snijbloem",
         inStock: true,

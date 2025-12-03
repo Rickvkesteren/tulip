@@ -56,8 +56,13 @@ const productImages = {
     ]
 };
 
-// Get product image based on category and ID
+// Get product image based on product.image property or fallback to category
 function getProductImage(product) {
+    // Gebruik de product-specifieke afbeelding als die bestaat
+    if (product.image) {
+        return product.image;
+    }
+    // Fallback naar categorie-gebaseerde afbeelding
     const category = product.category.toLowerCase();
     const images = productImages[category] || productImages.default;
     const index = product.id % images.length;
