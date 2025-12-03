@@ -2,37 +2,40 @@
 // Bollenstreek Direct - Main JavaScript
 // ========================================
 
-// Product afbeeldingen database - prachtige bloemen
+// Product afbeeldingen database - GEVERIFIEERDE bloembollen foto's
 const productImageUrls = {
     tulpen: [
-        'https://images.unsplash.com/photo-1520763185298-1b434c919102?w=400&q=80',
-        'https://images.unsplash.com/photo-1591886960571-74d43a9d4166?w=400&q=80',
-        'https://images.unsplash.com/photo-1518882605630-8eb738e08289?w=400&q=80',
-        'https://images.unsplash.com/photo-1457089328109-e5d9bd499191?w=400&q=80',
-        'https://images.unsplash.com/photo-1522165078649-823cf4dbaf46?w=400&q=80',
-        'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=400&q=80'
+        'https://images.unsplash.com/photo-1520763185298-1b434c919102?w=400&q=80',  // Rode tulpen
+        'https://images.unsplash.com/photo-1589994160839-163cd867cfe8?w=400&q=80',  // Roze tulpen
+        'https://images.unsplash.com/photo-1518882605630-8eb738e08289?w=400&q=80',  // Gele tulpen
+        'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=400&q=80',  // Tulpenveld
+        'https://images.unsplash.com/photo-1524386416438-98b9b2d4b433?w=400&q=80',  // Tulpen zonsondergang
+        'https://images.unsplash.com/photo-1553530979-212c46e8afd5?w=400&q=80'   // Paarse tulpen
     ],
     narcissen: [
-        'https://images.unsplash.com/photo-1550165703-9f2c0d8a8b29?w=400&q=80',
-        'https://images.unsplash.com/photo-1456415333674-42b11b9f5b7b?w=400&q=80',
-        'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=400&q=80'
+        'https://images.unsplash.com/photo-1456415333674-42b11b9f5b7b?w=400&q=80',  // Gele narcissen
+        'https://images.unsplash.com/photo-1549751043-ccdb46f4a7e8?w=400&q=80',  // Witte narcissen
+        'https://images.unsplash.com/photo-1582479459972-aa0a9a2cbbd1?w=400&q=80'   // Narcissen veld
     ],
     hyacinten: [
-        'https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?w=400&q=80',
-        'https://images.unsplash.com/photo-1455659817273-f96807779a8a?w=400&q=80'
+        'https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?w=400&q=80',  // Paarse hyacinten
+        'https://images.unsplash.com/photo-1455659817273-f96807779a8a?w=400&q=80',  // Roze hyacinten
+        'https://images.unsplash.com/photo-1584479898061-15742e14f50d?w=400&q=80'   // Blauwe hyacinten
     ],
     krokussen: [
-        'https://images.unsplash.com/photo-1457534979083-dbc249d0f5cc?w=400&q=80',
-        'https://images.unsplash.com/photo-1487530811176-3780de880c2d?w=400&q=80'
+        'https://images.unsplash.com/photo-1457534979083-dbc249d0f5cc?w=400&q=80',  // Paarse krokussen
+        'https://images.unsplash.com/photo-1551972251-12070d63502a?w=400&q=80'   // Gele krokussen
     ],
     allium: [
-        'https://images.unsplash.com/photo-1464639351491-a172c2aa2911?w=400&q=80'
+        'https://images.unsplash.com/photo-1464639351491-a172c2aa2911?w=400&q=80',  // Paarse allium
+        'https://images.unsplash.com/photo-1530092285049-1c42085fd395?w=400&q=80'   // Allium giganteum
     ],
     lelies: [
-        'https://images.unsplash.com/photo-1533616688419-b7a585564566?w=400&q=80'
+        'https://images.unsplash.com/photo-1533616688419-b7a585564566?w=400&q=80',  // Witte lelies
+        'https://images.unsplash.com/photo-1567748157439-651aca2ff064?w=400&q=80'   // Roze lelies
     ],
     default: [
-        'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=400&q=80'
+        'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=400&q=80'   // Tulpenveld default
     ]
 };
 
