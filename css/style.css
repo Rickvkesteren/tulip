@@ -4578,10 +4578,10 @@ img {
    ENHANCED VISUAL - REAL IMAGES & EFFECTS
    ======================================== */
 
-/* Hero met echte achtergrond */
+/* Hero met echte achtergrond - Tulpenveld bij zonsondergang */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), 
-                url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1920&q=80') center/cover no-repeat fixed;
+    background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.35)), 
+                url('https://images.unsplash.com/photo-1524386416438-98b9b2d4b433?w=1920&q=80') center/cover no-repeat fixed;
     min-height: 100vh;
 }
 
