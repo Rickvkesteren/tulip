@@ -99,7 +99,36 @@ const translations = {
         since: "Sinds",
         moreInfo: "Meer info",
         visitWebsite: "Bezoek Website",
-        close: "Sluiten"
+        close: "Sluiten",
+        
+        // New Homepage elements
+        orderNow: "Bestel Nu",
+        freeShippingBanner: "GRATIS VERZENDING",
+        freeShippingFrom: "bij bestellingen vanaf €35",
+        growthGuarantee: "100% GROEIGARANTIE",
+        onAllBulbs: "op al onze bollen",
+        customerRating: "klantbeoordeling",
+        securePayment: "Veilig betalen",
+        fastDelivery: "Snel geleverd",
+        growthGuaranteeBadge: "Groeigarantie",
+        dutch100: "100% Nederlands",
+        idealCreditcard: "iDEAL & Creditcard",
+        directFromBollenstreek: "Direct uit de Bollenstreek",
+        directFromBollenstreekDesc: "Al onze bollen komen rechtstreeks van kwekers uit Lisse, Hillegom en omgeving.",
+        knowYourGrower: "Ken je Kweker",
+        knowYourGrowerDesc: "Weet precies wie jouw bollen kweekt en hoe ze geteeld worden.",
+        premiumQuality: "Premium Kwaliteit",
+        premiumQualityDesc: "Alleen de beste bollen, geselecteerd door generaties van expertise.",
+        freshShipped: "Vers Verzonden",
+        freshShippedDesc: "Van het veld naar uw tuin, met zorg verpakt en snel bezorgd.",
+        winterAction: "Winteractie - Nu Planten voor Voorjaarspracht!",
+        winterActionDesc: "Plant nu je bollen en geniet in het voorjaar van een kleurrijke tuin. Bestel voor 15 december en ontvang <strong>10% korting</strong> met code WINTER2025.",
+        popularBulbs: "Populaire Bollen",
+        popularBulbsSubtitle: "Onze best verkopende bloembollen van dit seizoen",
+        viewAllProducts: "Bekijk Alle Producten",
+        meetOurGrowers: "Ontmoet Onze Kwekers",
+        meetOurGrowersDesc: "Achter elke bol zit een verhaal. Onze kwekers werken al generaties lang in de Bollenstreek en delen hun passie voor het kweken van de mooiste bloembollen.",
+        order: "Bestel"
     },
     
     en: {
@@ -198,7 +227,36 @@ const translations = {
         since: "Since",
         moreInfo: "More info",
         visitWebsite: "Visit Website",
-        close: "Close"
+        close: "Close",
+        
+        // New Homepage elements
+        orderNow: "Order Now",
+        freeShippingBanner: "FREE SHIPPING",
+        freeShippingFrom: "on orders over €35",
+        growthGuarantee: "100% GROWTH GUARANTEE",
+        onAllBulbs: "on all our bulbs",
+        customerRating: "customer rating",
+        securePayment: "Secure payment",
+        fastDelivery: "Fast delivery",
+        growthGuaranteeBadge: "Growth guarantee",
+        dutch100: "100% Dutch",
+        idealCreditcard: "iDEAL & Credit card",
+        directFromBollenstreek: "Direct from the Bollenstreek",
+        directFromBollenstreekDesc: "All our bulbs come directly from growers in Lisse, Hillegom and surroundings.",
+        knowYourGrower: "Know Your Grower",
+        knowYourGrowerDesc: "Know exactly who grows your bulbs and how they are cultivated.",
+        premiumQuality: "Premium Quality",
+        premiumQualityDesc: "Only the best bulbs, selected by generations of expertise.",
+        freshShipped: "Freshly Shipped",
+        freshShippedDesc: "From field to your garden, carefully packed and quickly delivered.",
+        winterAction: "Winter Sale - Plant Now for Spring Splendor!",
+        winterActionDesc: "Plant your bulbs now and enjoy a colorful garden in spring. Order before December 15 and receive <strong>10% off</strong> with code WINTER2025.",
+        popularBulbs: "Popular Bulbs",
+        popularBulbsSubtitle: "Our best-selling flower bulbs this season",
+        viewAllProducts: "View All Products",
+        meetOurGrowers: "Meet Our Growers",
+        meetOurGrowersDesc: "Behind every bulb is a story. Our growers have been working in the Bollenstreek for generations, sharing their passion for growing the most beautiful flower bulbs.",
+        order: "Order"
     },
     
     de: {
@@ -297,10 +355,39 @@ const translations = {
         since: "Seit",
         moreInfo: "Mehr Info",
         visitWebsite: "Website besuchen",
-        close: "Schließen"
+        close: "Schließen",
+        
+        // New Homepage elements
+        orderNow: "Jetzt Bestellen",
+        freeShippingBanner: "KOSTENLOSER VERSAND",
+        freeShippingFrom: "bei Bestellungen ab €35",
+        growthGuarantee: "100% WACHSTUMSGARANTIE",
+        onAllBulbs: "auf alle unsere Zwiebeln",
+        customerRating: "Kundenbewertung",
+        securePayment: "Sichere Bezahlung",
+        fastDelivery: "Schnelle Lieferung",
+        growthGuaranteeBadge: "Wachstumsgarantie",
+        dutch100: "100% Niederländisch",
+        idealCreditcard: "iDEAL & Kreditkarte",
+        directFromBollenstreek: "Direkt aus der Bollenstreek",
+        directFromBollenstreekDesc: "Alle unsere Zwiebeln kommen direkt von Züchtern aus Lisse, Hillegom und Umgebung.",
+        knowYourGrower: "Kenne deinen Züchter",
+        knowYourGrowerDesc: "Wissen Sie genau, wer Ihre Zwiebeln anbaut und wie sie kultiviert werden.",
+        premiumQuality: "Premium-Qualität",
+        premiumQualityDesc: "Nur die besten Zwiebeln, ausgewählt durch Generationen von Expertise.",
+        freshShipped: "Frisch Versendet",
+        freshShippedDesc: "Vom Feld in Ihren Garten, sorgfältig verpackt und schnell geliefert.",
+        winterAction: "Winteraktion - Jetzt Pflanzen für Frühlingspracht!",
+        winterActionDesc: "Pflanzen Sie jetzt Ihre Zwiebeln und genießen Sie im Frühjahr einen bunten Garten. Bestellen Sie vor dem 15. Dezember und erhalten Sie <strong>10% Rabatt</strong> mit Code WINTER2025.",
+        popularBulbs: "Beliebte Zwiebeln",
+        popularBulbsSubtitle: "Unsere meistverkauften Blumenzwiebeln dieser Saison",
+        viewAllProducts: "Alle Produkte Anzeigen",
+        meetOurGrowers: "Unsere Züchter Kennenlernen",
+        meetOurGrowersDesc: "Hinter jeder Zwiebel steckt eine Geschichte. Unsere Züchter arbeiten seit Generationen in der Bollenstreek und teilen ihre Leidenschaft für die schönsten Blumenzwiebeln.",
+        order: "Bestellen"
     },
     
-    fr: {
+    zh: {
         // Header
         home: "首页",
         webshop: "网店",
@@ -397,7 +484,36 @@ const translations = {
         since: "自",
         moreInfo: "更多信息",
         visitWebsite: "访问网站",
-        close: "关闭"
+        close: "关闭",
+        
+        // New Homepage elements
+        orderNow: "立即订购",
+        freeShippingBanner: "免费送货",
+        freeShippingFrom: "订单满€35",
+        growthGuarantee: "100%生长保证",
+        onAllBulbs: "所有花球",
+        customerRating: "客户评价",
+        securePayment: "安全支付",
+        fastDelivery: "快速送达",
+        growthGuaranteeBadge: "生长保证",
+        dutch100: "100%荷兰产",
+        idealCreditcard: "iDEAL和信用卡",
+        directFromBollenstreek: "直接来自花球区",
+        directFromBollenstreekDesc: "我们所有的花球都直接来自利瑟、希勒霍姆及周边地区的种植者。",
+        knowYourGrower: "认识您的花农",
+        knowYourGrowerDesc: "准确了解谁种植您的花球以及如何培育。",
+        premiumQuality: "优质品质",
+        premiumQualityDesc: "只有最好的花球，由几代人的专业知识精选。",
+        freshShipped: "新鲜发货",
+        freshShippedDesc: "从田间到您的花园，精心包装，快速配送。",
+        winterAction: "冬季促销 - 现在种植，春季绽放！",
+        winterActionDesc: "现在种植您的花球，春天享受五彩缤纷的花园。12月15日前订购，使用代码WINTER2025可享受<strong>10%折扣</strong>。",
+        popularBulbs: "热门花球",
+        popularBulbsSubtitle: "本季最畅销的花球",
+        viewAllProducts: "查看所有产品",
+        meetOurGrowers: "认识我们的花农",
+        meetOurGrowersDesc: "每个花球背后都有一个故事。我们的花农世代在花球区工作，分享他们对种植最美丽花球的热情。",
+        order: "订购"
     },
     
     fr: {
@@ -496,7 +612,36 @@ const translations = {
         since: "Depuis",
         moreInfo: "Plus d'infos",
         visitWebsite: "Visiter le Site",
-        close: "Fermer"
+        close: "Fermer",
+        
+        // New Homepage elements
+        orderNow: "Commander",
+        freeShippingBanner: "LIVRAISON GRATUITE",
+        freeShippingFrom: "pour les commandes de plus de €35",
+        growthGuarantee: "100% GARANTIE DE CROISSANCE",
+        onAllBulbs: "sur tous nos bulbes",
+        customerRating: "évaluation client",
+        securePayment: "Paiement sécurisé",
+        fastDelivery: "Livraison rapide",
+        growthGuaranteeBadge: "Garantie de croissance",
+        dutch100: "100% Néerlandais",
+        idealCreditcard: "iDEAL & Carte de crédit",
+        directFromBollenstreek: "Direct de la Bollenstreek",
+        directFromBollenstreekDesc: "Tous nos bulbes proviennent directement de producteurs de Lisse, Hillegom et environs.",
+        knowYourGrower: "Connaissez votre Producteur",
+        knowYourGrowerDesc: "Sachez exactement qui cultive vos bulbes et comment ils sont cultivés.",
+        premiumQuality: "Qualité Premium",
+        premiumQualityDesc: "Uniquement les meilleurs bulbes, sélectionnés par des générations d'expertise.",
+        freshShipped: "Expédié Frais",
+        freshShippedDesc: "Du champ à votre jardin, soigneusement emballé et rapidement livré.",
+        winterAction: "Promo d'Hiver - Plantez maintenant pour la splendeur du printemps!",
+        winterActionDesc: "Plantez vos bulbes maintenant et profitez d'un jardin coloré au printemps. Commandez avant le 15 décembre et recevez <strong>10% de réduction</strong> avec le code WINTER2025.",
+        popularBulbs: "Bulbes Populaires",
+        popularBulbsSubtitle: "Nos bulbes de fleurs les plus vendus cette saison",
+        viewAllProducts: "Voir Tous les Produits",
+        meetOurGrowers: "Rencontrez Nos Producteurs",
+        meetOurGrowersDesc: "Derrière chaque bulbe se cache une histoire. Nos producteurs travaillent dans la Bollenstreek depuis des générations, partageant leur passion pour la culture des plus beaux bulbes de fleurs.",
+        order: "Commander"
     }
 };
 
