@@ -622,72 +622,46 @@ function initExitIntent() {
 // MOBILE MENU
 // ========================================
 function initMobileMenu() {
-    const header = document.querySelector('.header-content');
-    if (!header || document.querySelector('.mobile-menu-toggle')) return;
+    const toggle = document.getElementById('mobileMenuToggle');
+    const mobileNav = document.getElementById('mobileNav');
     
-    // Add mobile toggle button
-    const toggle = document.createElement('button');
-    toggle.className = 'mobile-menu-toggle';
-    toggle.onclick = toggleMobileMenu;
-    toggle.innerHTML = '<span></span><span></span><span></span>';
+    if (!toggle || !mobileNav) return;
     
-    // Insert before header-actions
-    const actions = header.querySelector('.header-actions');
-    if (actions) {
-        header.insertBefore(toggle, actions);
-    }
+    // Toggle button click
+    toggle.addEventListener('click', function() {
+        toggle.classList.toggle('active');
+        mobileNav.classList.toggle('active');
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    });
     
-    // Create mobile menu
-    const menu = document.createElement('div');
-    menu.className = 'mobile-menu';
-    menu.id = 'mobileMenu';
-    menu.innerHTML = `
-        <a href="index.html" class="mobile-nav-link">🏠 Home</a>
-        
-        <div class="mobile-nav-link" onclick="toggleMobileSubmenu(this)">
-            🛒 Shop <span class="arrow">▼</span>
-        </div>
-        <div class="mobile-submenu">
-            <a href="shop.html?cat=tulpen">🌷 Tulpen</a>
-            <a href="shop.html?cat=narcissen">🌼 Narcissen</a>
-            <a href="shop.html?cat=hyacinten">💜 Hyacinten</a>
-            <a href="shop.html?cat=krokussen">💛 Krokussen</a>
-            <a href="shop.html?cat=allium">🟣 Allium</a>
-            <a href="shop.html">Alle Producten</a>
-        </div>
-        
-        <div class="mobile-nav-link" onclick="toggleMobileSubmenu(this)">
-            🗺️ Ontdek <span class="arrow">▼</span>
-        </div>
-        <div class="mobile-submenu">
-            <a href="bollenstreek.html">🗺️ Interactieve Kaart</a>
-            <a href="kwekers.html">👨‍🌾 Onze Kwekers</a>
-            <a href="experiences.html">🎟️ Experiences & Tickets</a>
-            <a href="blog.html">📝 Blog & Tips</a>
-        </div>
-        
-        <a href="contact.html" class="mobile-nav-link">📧 Contact</a>
-        
-        <div class="mobile-menu-footer">
-            <div class="language-switcher">
-                <button class="lang-btn" onclick="setLanguage('nl')">🇳🇱</button>
-                <button class="lang-btn" onclick="setLanguage('en')">🇬🇧</button>
-                <button class="lang-btn" onclick="setLanguage('de')">🇩🇪</button>
-                <button class="lang-btn" onclick="setLanguage('fr')">🇫🇷</button>
-                <button class="lang-btn" onclick="setLanguage('zh')">🇨🇳</button>
-            </div>
-        </div>
-    `;
-    document.body.appendChild(menu);
+    // Close menu when clicking on a link
+    mobileNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+            toggle.classList.remove('active');
+            mobileNav.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!toggle.contains(e.target) && !mobileNav.contains(e.target)) {
+            toggle.classList.remove('active');
+            mobileNav.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
 }
 
 function toggleMobileMenu() {
-    const toggle = document.querySelector('.mobile-menu-toggle');
-    const menu = document.getElementById('mobileMenu');
+    const toggle = document.getElementById('mobileMenuToggle');
+    const mobileNav = document.getElementById('mobileNav');
     
-    toggle.classList.toggle('active');
-    menu.classList.toggle('active');
-    document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+    if (toggle && mobileNav) {
+        toggle.classList.toggle('active');
+        mobileNav.classList.toggle('active');
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
 }
 
 function toggleMobileSubmenu(el) {
