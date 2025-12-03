@@ -17,47 +17,47 @@
                     <span class="logo-text">Bollenstreek Direct</span>
                 </a>
                 <nav class="nav">
-                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="index.html" class="nav-link active" data-translate="home">Home</a>
                     
                     <!-- Shop Dropdown -->
                     <div class="nav-item">
-                        <a href="shop.html" class="nav-link">Shop <span class="dropdown-arrow">▼</span></a>
+                        <a href="shop.html" class="nav-link"><span data-translate="shop">Shop</span> <span class="dropdown-arrow">▼</span></a>
                         <div class="nav-dropdown">
-                            <div class="nav-dropdown-header">Categorieën</div>
-                            <a href="shop.html?cat=tulpen"><span class="dropdown-icon">🌷</span> Tulpen</a>
-                            <a href="shop.html?cat=narcissen"><span class="dropdown-icon">🌼</span> Narcissen</a>
-                            <a href="shop.html?cat=hyacinten"><span class="dropdown-icon">💜</span> Hyacinten</a>
-                            <a href="shop.html?cat=krokussen"><span class="dropdown-icon">💛</span> Krokussen</a>
-                            <a href="shop.html?cat=allium"><span class="dropdown-icon">🟣</span> Allium</a>
+                            <div class="nav-dropdown-header" data-translate="categories">Categorieën</div>
+                            <a href="shop.html?cat=tulpen"><span class="dropdown-icon">🌷</span> <span data-translate="tulips">Tulpen</span></a>
+                            <a href="shop.html?cat=narcissen"><span class="dropdown-icon">🌼</span> <span data-translate="daffodils">Narcissen</span></a>
+                            <a href="shop.html?cat=hyacinten"><span class="dropdown-icon">💜</span> <span data-translate="hyacinths">Hyacinten</span></a>
+                            <a href="shop.html?cat=krokussen"><span class="dropdown-icon">💛</span> <span data-translate="crocuses">Krokussen</span></a>
+                            <a href="shop.html?cat=allium"><span class="dropdown-icon">🟣</span> <span data-translate="allium">Allium</span></a>
                             <div class="nav-dropdown-divider"></div>
-                            <a href="shop.html"><span class="dropdown-icon">🛒</span> Alle Producten</a>
+                            <a href="shop.html"><span class="dropdown-icon">🛒</span> <span data-translate="allProducts">Alle Producten</span></a>
                         </div>
                     </div>
 
                     <!-- Ontdek Dropdown -->
                     <div class="nav-item">
-                        <a href="bollenstreek.html" class="nav-link">Ontdek <span class="dropdown-arrow">▼</span></a>
+                        <a href="bollenstreek.html" class="nav-link"><span data-translate="discover">Ontdek</span> <span class="dropdown-arrow">▼</span></a>
                         <div class="nav-dropdown">
-                            <div class="nav-dropdown-header">De Bollenstreek</div>
-                            <a href="bollenstreek.html"><span class="dropdown-icon">🗺️</span> Interactieve Kaart</a>
-                            <a href="kwekers.html"><span class="dropdown-icon">👨‍🌾</span> Onze Kwekers</a>
-                            <a href="experiences.html"><span class="dropdown-icon">🎟️</span> Experiences & Tickets</a>
+                            <div class="nav-dropdown-header" data-translate="theBollenstreek">De Bollenstreek</div>
+                            <a href="bollenstreek.html"><span class="dropdown-icon">🗺️</span> <span data-translate="interactiveMap">Interactieve Kaart</span></a>
+                            <a href="kwekers.html"><span class="dropdown-icon">👨‍🌾</span> <span data-translate="ourGrowers">Onze Kwekers</span></a>
+                            <a href="experiences.html"><span class="dropdown-icon">🎟️</span> <span data-translate="experiencesTickets">Experiences & Tickets</span></a>
                             <div class="nav-dropdown-divider"></div>
-                            <div class="nav-dropdown-header">Inspiratie</div>
-                            <a href="blog.html"><span class="dropdown-icon">📝</span> Blog & Tips</a>
-                            <a href="bollenstreek.html#wandelingen"><span class="dropdown-icon">🚶</span> Wandelingen</a>
+                            <div class="nav-dropdown-header" data-translate="inspiration">Inspiratie</div>
+                            <a href="blog.html"><span class="dropdown-icon">📝</span> <span data-translate="blogTips">Blog & Tips</span></a>
+                            <a href="bollenstreek.html#wandelingen"><span class="dropdown-icon">🚶</span> <span data-translate="walks">Wandelingen</span></a>
                         </div>
                     </div>
 
-                    <a href="contact.html" class="nav-link">Contact</a>
+                    <a href="contact.html" class="nav-link" data-translate="contact">Contact</a>
                 </nav>
                 <div class="header-actions">
                     <div class="search-box" id="searchBox">
-                        <input type="text" placeholder="Zoek bollen..." id="searchInput">
+                        <input type="text" data-translate="searchPlaceholder" placeholder="Zoek bollen..." id="searchInput">
                         <button class="search-btn">🔍</button>
                         <div class="search-results" id="searchResults"></div>
                     </div>
-                    <button class="fav-btn" id="favBtn" title="Favorieten">
+                    <button class="fav-btn" id="favBtn" data-translate="favorites" title="Favorieten">
                         ❤️ <span class="fav-count" id="favCount">0</span>
                     </button>
                     <button class="cart-btn" id="cartBtn">
@@ -185,14 +185,14 @@
     <!-- Map Preview -->
     <section class="map-section">
         <div class="container">
-            <h2 class="section-title">De Bollenstreek</h2>
-            <p class="section-subtitle">Ontdek waar onze bloembollen vandaan komen</p>
+            <h2 class="section-title" data-translate="discoverBollenstreek">De Bollenstreek</h2>
+            <p class="section-subtitle" data-translate="discoverBollenstreekDesc">Ontdek waar onze bloembollen vandaan komen</p>
             <div class="map-container">
                 <div class="map-placeholder" id="mapPlaceholder">
                     <div class="map-overlay">
-                        <h3>🗺️ Interactieve Kaart</h3>
-                        <p>Bekijk de locaties van onze kwekers in de Bollenstreek</p>
-                        <a href="bollenstreek.html" class="btn btn-secondary">Ontdek de Streek</a>
+                        <h3>🗺️ <span data-translate="interactiveMap">Interactieve Kaart</span></h3>
+                        <p data-translate="discoverBollenstreekDesc">Bekijk de locaties van onze kwekers in de Bollenstreek</p>
+                        <a href="bollenstreek.html" class="btn btn-secondary" data-translate="discoverTheRegion">Ontdek de Streek</a>
                     </div>
                 </div>
             </div>
@@ -203,11 +203,11 @@
     <section class="newsletter-section">
         <div class="container">
             <div class="newsletter-content">
-                <h2>Blijf op de Hoogte</h2>
-                <p>Ontvang als eerste nieuws over nieuwe bollen, planttips en exclusieve aanbiedingen.</p>
+                <h2 data-translate="stayInformed">Blijf op de Hoogte</h2>
+                <p data-translate="stayInformedDesc">Ontvang als eerste nieuws over nieuwe bollen, planttips en exclusieve aanbiedingen.</p>
                 <form class="newsletter-form" id="newsletterForm">
-                    <input type="email" placeholder="Uw e-mailadres" required>
-                    <button type="submit" class="btn btn-primary">Aanmelden</button>
+                    <input type="email" data-translate="yourEmail" placeholder="Uw e-mailadres" required>
+                    <button type="submit" class="btn btn-primary" data-translate="subscribe">Aanmelden</button>
                 </form>
             </div>
         </div>
@@ -219,34 +219,34 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <h4>Bollenstreek Direct</h4>
-                    <p>Nederlandse bloembollen rechtstreeks van lokale kwekers uit de Bollenstreek naar uw tuin.</p>
+                    <p data-translate="footerAbout">Nederlandse bloembollen rechtstreeks van lokale kwekers uit de Bollenstreek naar uw tuin.</p>
                 </div>
                 <div class="footer-col">
-                    <h4>Webshop</h4>
+                    <h4 data-translate="footerWebshop">Webshop</h4>
                     <ul>
-                        <li><a href="shop.html">Alle Producten</a></li>
-                        <li><a href="shop.html?cat=tulpen">Tulpen</a></li>
-                        <li><a href="shop.html?cat=narcissen">Narcissen</a></li>
-                        <li><a href="shop.html?cat=hyacinten">Hyacinten</a></li>
+                        <li><a href="shop.html" data-translate="allProducts">Alle Producten</a></li>
+                        <li><a href="shop.html?cat=tulpen" data-translate="tulips">Tulpen</a></li>
+                        <li><a href="shop.html?cat=narcissen" data-translate="daffodils">Narcissen</a></li>
+                        <li><a href="shop.html?cat=hyacinten" data-translate="hyacinths">Hyacinten</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Over Ons</h4>
+                    <h4 data-translate="footerAboutUs">Over Ons</h4>
                     <ul>
-                        <li><a href="kwekers.html">Onze Kwekers</a></li>
-                        <li><a href="bollenstreek.html">De Bollenstreek</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="kwekers.html" data-translate="ourGrowers">Onze Kwekers</a></li>
+                        <li><a href="bollenstreek.html" data-translate="theBollenstreek">De Bollenstreek</a></li>
+                        <li><a href="contact.html" data-translate="contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Contact</h4>
+                    <h4 data-translate="footerContact">Contact</h4>
                     <p>📍 Bollenstreek, Nederland</p>
                     <p>📧 info@bollenstreekdirect.nl</p>
                     <p>📞 +31 (0)252 123 456</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Bollenstreek Direct. Alle rechten voorbehouden.</p>
+                <p>&copy; 2024 Bollenstreek Direct. <span data-translate="allRightsReserved">Alle rechten voorbehouden.</span></p>
             </div>
         </div>
     </footer>
@@ -254,7 +254,7 @@
     <!-- Cart Sidebar -->
     <div class="cart-sidebar" id="cartSidebar">
         <div class="cart-header">
-            <h3>🛒 Winkelwagen</h3>
+            <h3>🛒 <span data-translate="cartTitle">Winkelwagen</span></h3>
             <button class="cart-close" id="cartClose">✕</button>
         </div>
         <div class="cart-items" id="cartItems">
@@ -262,20 +262,20 @@
         </div>
         <div class="cart-footer">
             <div class="cart-subtotal">
-                <span>Subtotaal:</span>
+                <span data-translate="cartSubtotal">Subtotaal:</span>
                 <span id="cartTotal">€0,00</span>
             </div>
             <div id="shippingInfo" class="shipping-info">
                 <!-- Shipping info wordt via JavaScript geladen -->
             </div>
             <div class="cart-total-final">
-                <span>Totaal:</span>
+                <span data-translate="total">Totaal:</span>
                 <span id="cartTotalFinal">€0,00</span>
             </div>
             <button class="btn btn-primary btn-full" onclick="window.location.href='checkout.html'">
-                Afrekenen →
+                <span data-translate="cartCheckout">Afrekenen</span> →
             </button>
-            <p class="cart-secure">🔒 Veilig betalen via iDEAL, Bancontact of creditcard</p>
+            <p class="cart-secure">🔒 <span data-translate="cartSecure">Veilig betalen via iDEAL, Bancontact of creditcard</span></p>
         </div>
     </div>
     <div class="cart-overlay" id="cartOverlay"></div>
@@ -302,16 +302,16 @@
         </button>
         <div class="chat-window" id="chatWindow">
             <div class="chat-header">
-                <span>💬 Klantenservice</span>
+                <span>💬 <span data-translate="customerService">Klantenservice</span></span>
                 <button class="chat-close" id="chatClose">✕</button>
             </div>
             <div class="chat-messages" id="chatMessages">
-                <div class="chat-message bot">
+                <div class="chat-message bot" data-translate="chatWelcome">
                     Welkom! Hoe kunnen we u helpen?
                 </div>
             </div>
             <div class="chat-input-container">
-                <input type="text" class="chat-input" id="chatInput" placeholder="Typ uw bericht...">
+                <input type="text" class="chat-input" id="chatInput" data-translate="typeMessage" placeholder="Typ uw bericht...">
                 <button class="chat-send" id="chatSend">➤</button>
             </div>
         </div>

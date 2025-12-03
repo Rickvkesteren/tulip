@@ -251,6 +251,58 @@
             margin-bottom: 5px;
         }
 
+        .country-restrictions {
+            margin-top: 10px;
+        }
+
+        .restriction-warning {
+            background: #fff5f5;
+            border: 1px solid #fc8181;
+            color: #c53030;
+            padding: 12px;
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+        }
+
+        .seasonal-warning {
+            background: #fffbeb;
+            border: 1px solid #f6ad55;
+            color: #c05621;
+            padding: 15px;
+            border-radius: var(--radius-sm);
+        }
+
+        .seasonal-warning h4 {
+            margin: 0 0 10px 0;
+        }
+
+        .seasonal-warning p {
+            margin: 5px 0;
+            font-size: 0.9rem;
+        }
+
+        .shipping-notice {
+            background: #ebf8ff;
+            border: 1px solid #90cdf4;
+            color: #2b6cb0;
+            padding: 10px;
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            margin-top: 5px;
+        }
+
+        .delivery-estimate {
+            font-size: 0.85rem;
+            color: #48bb78;
+            margin-top: 5px;
+        }
+
+        .btn-checkout:disabled {
+            background: #cbd5e0;
+            cursor: not-allowed;
+            transform: none;
+        }
+
         @media (max-width: 900px) {
             .checkout-grid {
                 grid-template-columns: 1fr;
@@ -334,11 +386,10 @@
                             </div>
                             <div class="form-group">
                                 <label for="country">Land *</label>
-                                <select id="country" required>
-                                    <option value="NL" selected>Nederland</option>
-                                    <option value="BE">België</option>
-                                    <option value="DE">Duitsland</option>
+                                <select id="country" required onchange="updateShippingForCountry()">
+                                    <!-- Filled by JS based on allowed countries -->
                                 </select>
+                                <div id="countryRestrictions" class="country-restrictions" style="display: none;"></div>
                             </div>
                         </form>
                     </section>
@@ -442,13 +493,143 @@
     <script src="js/translations.js"></script>
     <script src="js/ux-enhancements.js"></script>
     <script src="js/mollie.js"></script>
+    <script src="js/shipping-config.js"></script>
+    <script src="js/supplier-integration.js"></script>
     <script>
         let selectedPayment = 'ideal';
+        let currentCountry = 'NL';
 
         document.addEventListener('DOMContentLoaded', function() {
+            initCountrySelect();
             loadCheckoutSummary();
             loadLeverancierInfo();
+            checkSeasonalRestrictions();
         });
+
+        function initCountrySelect() {
+            const select = document.getElementById('country');
+            select.innerHTML = generateCountrySelectHTML('NL');
+            updateShippingForCountry();
+            updatePaymentMethods();
+        }
+
+        function updateShippingForCountry() {
+            const country = document.getElementById('country').value;
+            currentCountry = country;
+            
+            const postalCode = document.getElementById('postalCode')?.value || null;
+            const subtotal = cart.getTotal();
+            
+            // Check of we naar dit land kunnen verzenden
+            const canShip = canShipToCountry(country);
+            const restrictionsDiv = document.getElementById('countryRestrictions');
+            
+            if (!canShip.allowed) {
+                restrictionsDiv.innerHTML = `
+                    <div class="restriction-warning">
+                        ⚠️ ${canShip.reason}
+                    </div>
+                `;
+                restrictionsDiv.style.display = 'block';
+                document.querySelector('.btn-checkout').disabled = true;
+                return;
+            }
+            
+            restrictionsDiv.style.display = 'none';
+            document.querySelector('.btn-checkout').disabled = false;
+            
+            // Bereken verzendkosten
+            const shipping = calculateShippingCost(country, subtotal, postalCode);
+            
+            // Update UI
+            const shippingEl = document.getElementById('summaryShipping');
+            if (shipping.cost === 0) {
+                shippingEl.textContent = 'GRATIS';
+                shippingEl.style.color = '#27ae60';
+            } else {
+                shippingEl.textContent = formatPrice(shipping.cost);
+                shippingEl.style.color = '';
+            }
+            
+            // Show delivery estimate
+            if (shipping.deliveryDays) {
+                const estimate = `${shipping.deliveryDays.min}-${shipping.deliveryDays.max} werkdagen`;
+                let existingEstimate = document.getElementById('deliveryEstimate');
+                if (!existingEstimate) {
+                    existingEstimate = document.createElement('div');
+                    existingEstimate.id = 'deliveryEstimate';
+                    existingEstimate.className = 'delivery-estimate';
+                    shippingEl.parentNode.insertAdjacentElement('afterend', existingEstimate);
+                }
+                existingEstimate.innerHTML = `🚚 Geschatte levering: ${estimate}`;
+            }
+            
+            // Show messages (island surcharge, etc.)
+            if (shipping.messages && shipping.messages.length > 0) {
+                restrictionsDiv.innerHTML = shipping.messages.map(m => 
+                    `<div class="shipping-notice">ℹ️ ${m}</div>`
+                ).join('');
+                restrictionsDiv.style.display = 'block';
+            }
+            
+            // Update totaal
+            const total = subtotal + (shipping.cost || 0);
+            document.getElementById('summaryTotal').textContent = formatPrice(total);
+            
+            // Update betaalmethodes voor dit land
+            updatePaymentMethods();
+        }
+
+        function updatePaymentMethods() {
+            const methods = getPaymentMethodsForCountry(currentCountry);
+            const container = document.querySelector('.payment-methods');
+            
+            const methodIcons = {
+                ideal: { icon: '🏦', name: 'iDEAL' },
+                bancontact: { icon: '💳', name: 'Bancontact' },
+                creditcard: { icon: '💳', name: 'Creditcard' },
+                paypal: { icon: '🅿️', name: 'PayPal' },
+                klarna: { icon: '🛍️', name: 'Klarna' },
+                applepay: { icon: '🍎', name: 'Apple Pay' },
+                sofort: { icon: '🏛️', name: 'SOFORT' },
+                giropay: { icon: '🇩🇪', name: 'Giropay' },
+                eps: { icon: '🇦🇹', name: 'EPS' }
+            };
+            
+            container.innerHTML = methods.map((method, index) => {
+                const m = methodIcons[method] || { icon: '💳', name: method };
+                const selected = index === 0 ? 'selected' : '';
+                return `
+                    <div class="payment-method ${selected}" onclick="selectPayment(this, '${method}')">
+                        <div style="font-size: 2rem;">${m.icon}</div>
+                        <span>${m.name}</span>
+                    </div>
+                `;
+            }).join('');
+            
+            // Select first method by default
+            if (methods.length > 0) {
+                selectedPayment = methods[0];
+            }
+        }
+
+        function checkSeasonalRestrictions() {
+            const seasonCheck = canShipProducts(cart.items);
+            
+            if (!seasonCheck.canShip) {
+                const restrictionsDiv = document.getElementById('countryRestrictions');
+                restrictionsDiv.innerHTML = `
+                    <div class="seasonal-warning">
+                        <h4>⚠️ Seizoensgebonden Verzending</h4>
+                        ${seasonCheck.issues.map(issue => 
+                            `<p><strong>${issue.product}:</strong> ${issue.message}</p>`
+                        ).join('')}
+                        <p><em>Wij nemen uw bestelling op en verzenden deze zodra het seizoen begint.</em></p>
+                    </div>
+                `;
+                restrictionsDiv.style.display = 'block';
+            }
+        }
 
         function loadCheckoutSummary() {
             const items = cart.items;
@@ -476,10 +657,7 @@
 
             // Update totals
             document.getElementById('summarySubtotal').textContent = formatPrice(cart.getTotal());
-            document.getElementById('summaryShipping').textContent = cart.getShippingCost() === 0 
-                ? 'GRATIS' 
-                : formatPrice(cart.getShippingCost());
-            document.getElementById('summaryTotal').textContent = formatPrice(cart.getTotalWithShipping());
+            updateShippingForCountry();
         }
 
         function loadLeverancierInfo() {
@@ -506,44 +684,77 @@
                 return;
             }
 
+            // Check verzending opnieuw
+            const canShip = canShipToCountry(currentCountry);
+            if (!canShip.allowed) {
+                alert('Verzending naar dit land is niet mogelijk: ' + canShip.reason);
+                return;
+            }
+
+            const postalCode = document.getElementById('postalCode').value;
+            const shipping = calculateShippingCost(currentCountry, cart.getTotal(), postalCode);
+
             // Collect order data
             const orderData = {
+                id: 'BD-' + Date.now().toString(36).toUpperCase(),
                 customer: {
                     firstName: document.getElementById('firstName').value,
                     lastName: document.getElementById('lastName').value,
                     email: document.getElementById('email').value,
-                    phone: document.getElementById('phone').value,
-                    address: {
-                        street: document.getElementById('street').value,
-                        addition: document.getElementById('addition').value,
-                        postalCode: document.getElementById('postalCode').value,
-                        city: document.getElementById('city').value,
-                        country: document.getElementById('country').value
-                    }
+                    phone: document.getElementById('phone').value
+                },
+                shippingAddress: {
+                    street: document.getElementById('street').value,
+                    addition: document.getElementById('addition').value,
+                    postalCode: postalCode,
+                    city: document.getElementById('city').value,
+                    country: currentCountry
                 },
                 items: cart.items,
                 payment: selectedPayment,
                 totals: {
                     subtotal: cart.getTotal(),
-                    shipping: cart.getShippingCost(),
-                    total: cart.getTotalWithShipping()
+                    shipping: shipping.cost,
+                    total: cart.getTotal() + shipping.cost
                 },
-                leveranciersOrders: groepeerBestellingPerLeverancier(cart.items),
-                marge: berekenTotaleMarge(cart.items)
+                createdAt: new Date().toISOString()
             };
 
-            // Log order (in productie zou dit naar een backend gaan)
-            console.log('=== NIEUWE BESTELLING ===');
-            console.log(orderData);
-            console.log('=== LEVERANCIERS ORDERS ===');
-            Object.values(orderData.leveranciersOrders).forEach(group => {
-                console.log(genereerLeveranciersOrder(group));
+            // Bereken marge analyse
+            const margeAnalysis = calculateMargeAnalysis(
+                cart.items, 
+                4.50, // werkelijke verzendkosten
+                shipping.cost // wat klant betaalt
+            );
+
+            // Creëer leveranciers orders
+            const supplierOrders = supplierOrderManager.createSupplierOrders(orderData);
+
+            // Log alles (in productie naar backend)
+            console.log('═══════════════════════════════════════════════════');
+            console.log('📦 NIEUWE BESTELLING:', orderData.id);
+            console.log('═══════════════════════════════════════════════════');
+            console.log('👤 Klant:', orderData.customer);
+            console.log('📍 Verzenden naar:', orderData.shippingAddress);
+            console.log('💰 Totaal:', formatPrice(orderData.totals.total));
+            console.log('───────────────────────────────────────────────────');
+            console.log('📊 MARGE ANALYSE:');
+            console.log('   Inkoop:', formatPrice(margeAnalysis.inkoop));
+            console.log('   Verkoop:', formatPrice(margeAnalysis.verkoop));
+            console.log('   Product marge:', formatPrice(margeAnalysis.productMarge));
+            console.log('   Verzend marge:', formatPrice(margeAnalysis.shippingMarge));
+            console.log('   Mollie fee:', formatPrice(margeAnalysis.mollieFee));
+            console.log('   NETTO MARGE:', formatPrice(margeAnalysis.nettoMarge), 
+                        `(${margeAnalysis.margePercentage}%)`);
+            console.log('───────────────────────────────────────────────────');
+            console.log('🏭 LEVERANCIERS ORDERS:', supplierOrders.length);
+            supplierOrders.forEach(order => {
+                console.log(`   → ${order.supplierName}: ${formatPrice(order.totals)}`);
             });
-            console.log('=== MARGE INFO ===');
-            console.log(`Totale marge: ${formatPrice(orderData.marge.totaleMarge)} (${orderData.marge.margePercentage}%)`);
+            console.log('═══════════════════════════════════════════════════');
 
             // Simuleer succesvolle bestelling
-            alert(`Bedankt voor uw bestelling, ${orderData.customer.firstName}!\n\nUw bloembollen worden vers verzonden door onze kwekers.\n\nU ontvangt een bevestiging op ${orderData.customer.email}`);
+            alert(`Bedankt voor uw bestelling, ${orderData.customer.firstName}!\n\nOrder: ${orderData.id}\nTotaal: ${formatPrice(orderData.totals.total)}\n\nUw bloembollen worden vers verzonden door onze kwekers.\nU ontvangt een bevestiging op ${orderData.customer.email}`);
             
             // Clear cart
             cart.clear();

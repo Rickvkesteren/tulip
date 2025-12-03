@@ -74,6 +74,11 @@ document.addEventListener('DOMContentLoaded', function() {
     loadProducts();
     checkURLParams();
     updateResultsCount();
+    
+    // Reload products when language changes
+    document.addEventListener('languageChanged', function() {
+        loadProducts();
+    });
 });
 
 // Initialiseer filters
@@ -133,9 +138,9 @@ function loadProducts(filteredProducts = null) {
         container.innerHTML = `
             <div class="no-results">
                 <div class="no-results-icon">🔍</div>
-                <h3>Geen producten gevonden</h3>
-                <p>Probeer andere filters of bekijk al onze producten.</p>
-                <button class="btn btn-primary" onclick="resetFilters()">Reset Filters</button>
+                <h3>${typeof t === 'function' ? t('noProductsFound') : 'Geen producten gevonden'}</h3>
+                <p>${typeof t === 'function' ? t('tryOtherFilters') : 'Probeer andere filters of bekijk al onze producten.'}</p>
+                <button class="btn btn-primary" onclick="resetFilters()">${typeof t === 'function' ? t('resetFilters') : 'Reset Filters'}</button>
             </div>
         `;
         updateResultsCount(0);
@@ -147,6 +152,10 @@ function loadProducts(filteredProducts = null) {
         const isFavorite = typeof favoritesManager !== 'undefined' && favoritesManager.isFavorite(product.id);
         const productImage = getProductImage(product);
         const variant = (product.id % 5);
+        const addToCartText = typeof t === 'function' ? t('order') : 'Bestel';
+        const viewDetailsText = typeof t === 'function' ? t('viewDetails') : 'Bekijk details';
+        const addFavText = typeof t === 'function' ? t('addToFavorites') : 'Voeg toe aan favorieten';
+        const removeFavText = typeof t === 'function' ? t('removeFromFavorites') : 'Verwijder uit favorieten';
         
         return `
             <div class="product-card fade-in" style="animation-delay: ${index * 0.05}s">
@@ -158,10 +167,10 @@ function loadProducts(filteredProducts = null) {
                     ${product.badge ? `<span class="product-badge ${product.badge === 'Uitverkoop' ? 'sale' : product.badge === 'Nieuw' ? 'new' : product.badge === 'Exclusief' ? 'exclusive' : ''}">${product.badge}</span>` : ''}
                     <button class="product-favorite ${isFavorite ? 'active' : ''}" 
                             onclick="event.stopPropagation(); toggleProductFavorite(${product.id}, this)"
-                            title="${isFavorite ? 'Verwijder uit favorieten' : 'Voeg toe aan favorieten'}">
+                            title="${isFavorite ? removeFavText : addFavText}">
                         ${isFavorite ? '❤️' : '🤍'}
                     </button>
-                    <div class="product-quick-view">👁️ Bekijk details</div>
+                    <div class="product-quick-view">👁️ ${viewDetailsText}</div>
                 </div>
                 <div class="product-info">
                     <div class="product-kweker">
@@ -180,7 +189,7 @@ function loadProducts(filteredProducts = null) {
                             <span style="font-size: 0.8rem; font-weight: normal; color: var(--text-light);">/ ${product.unit}</span>
                         </div>
                         <button class="add-to-cart btn btn-primary btn-small" onclick="addToCartWithToast(${product.id})">
-                            🛒 Bestel
+                            🛒 ${addToCartText}
                         </button>
                     </div>
                 </div>

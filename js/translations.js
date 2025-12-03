@@ -4,15 +4,30 @@
 
 const translations = {
     nl: {
-        // Header
+        // Header & Navigation
         home: "Home",
         webshop: "Webshop",
+        shop: "Shop",
         ourGrowers: "Onze Kwekers",
         theBollenstreek: "De Bollenstreek",
         experiences: "Experiences",
         contact: "Contact",
         blog: "Blog",
         searchPlaceholder: "Zoek bollen...",
+        discover: "Ontdek",
+        categories: "Categorieën",
+        tulips: "Tulpen",
+        daffodils: "Narcissen",
+        hyacinths: "Hyacinten",
+        crocuses: "Krokussen",
+        allium: "Allium",
+        allProducts: "Alle Producten",
+        interactiveMap: "Interactieve Kaart",
+        experiencesTickets: "Experiences & Tickets",
+        inspiration: "Inspiratie",
+        blogTips: "Blog & Tips",
+        walks: "Wandelingen",
+        favorites: "Favorieten",
         
         // Hero
         heroTitle: "Nederlandse Bloembollen<br>Direct van de Kweker",
@@ -128,19 +143,76 @@ const translations = {
         viewAllProducts: "Bekijk Alle Producten",
         meetOurGrowers: "Ontmoet Onze Kwekers",
         meetOurGrowersDesc: "Achter elke bol zit een verhaal. Onze kwekers werken al generaties lang in de Bollenstreek en delen hun passie voor het kweken van de mooiste bloembollen.",
-        order: "Bestel"
+        order: "Bestel",
+        
+        // Newsletter
+        stayInformed: "Blijf op de Hoogte",
+        stayInformedDesc: "Ontvang als eerste nieuws over nieuwe bollen, planttips en exclusieve aanbiedingen.",
+        yourEmail: "Uw e-mailadres",
+        subscribe: "Aanmelden",
+        newsletter_title: "Ontvang 10% korting!",
+        newsletter_text: "Schrijf je in voor onze nieuwsbrief en ontvang exclusieve aanbiedingen, planttips en 10% korting op je eerste bestelling.",
+        newsletterPrivacy: "We respecteren je privacy en sturen max. 2x per maand.",
+        
+        // Map Section
+        discoverBollenstreek: "De Bollenstreek",
+        discoverBollenstreekDesc: "Ontdek waar onze bloembollen vandaan komen",
+        discoverTheRegion: "Ontdek de Streek",
+        
+        // Footer
+        footerWebshop: "Webshop",
+        footerAboutUs: "Over Ons",
+        footerContact: "Contact",
+        allRightsReserved: "Alle rechten voorbehouden",
+        
+        // Cart sidebar
+        cartTitle: "Winkelwagen",
+        cartSubtotal: "Subtotaal",
+        cartCheckout: "Afrekenen",
+        cartSecure: "Veilig betalen via iDEAL, Bancontact of creditcard",
+        
+        // Chat
+        customerService: "Klantenservice",
+        chatWelcome: "Welkom! Hoe kunnen we u helpen?",
+        typeMessage: "Typ uw bericht...",
+        
+        // Shop page
+        noProductsFound: "Geen producten gevonden",
+        tryOtherFilters: "Probeer andere filters of bekijk al onze producten.",
+        resetFilters: "Reset Filters",
+        viewDetails: "Bekijk details",
+        addToFavorites: "Voeg toe aan favorieten",
+        removeFromFavorites: "Verwijder uit favorieten",
+        products: "producten",
+        product: "product",
+        addedToCart: "toegevoegd aan winkelwagen"
     },
     
     en: {
-        // Header
+        // Header & Navigation
         home: "Home",
         webshop: "Shop",
+        shop: "Shop",
         ourGrowers: "Our Growers",
         theBollenstreek: "The Bulb Region",
         experiences: "Experiences",
         contact: "Contact",
         blog: "Blog",
         searchPlaceholder: "Search bulbs...",
+        discover: "Discover",
+        categories: "Categories",
+        tulips: "Tulips",
+        daffodils: "Daffodils",
+        hyacinths: "Hyacinths",
+        crocuses: "Crocuses",
+        allium: "Allium",
+        allProducts: "All Products",
+        interactiveMap: "Interactive Map",
+        experiencesTickets: "Experiences & Tickets",
+        inspiration: "Inspiration",
+        blogTips: "Blog & Tips",
+        walks: "Walks",
+        favorites: "Favorites",
         
         // Hero
         heroTitle: "Dutch Flower Bulbs<br>Direct from the Grower",
@@ -256,19 +328,76 @@ const translations = {
         viewAllProducts: "View All Products",
         meetOurGrowers: "Meet Our Growers",
         meetOurGrowersDesc: "Behind every bulb is a story. Our growers have been working in the Bollenstreek for generations, sharing their passion for growing the most beautiful flower bulbs.",
-        order: "Order"
+        order: "Order",
+        
+        // Newsletter
+        stayInformed: "Stay Informed",
+        stayInformedDesc: "Be the first to receive news about new bulbs, planting tips and exclusive offers.",
+        yourEmail: "Your email address",
+        subscribe: "Subscribe",
+        newsletter_title: "Get 10% off!",
+        newsletter_text: "Sign up for our newsletter and receive exclusive offers, planting tips and 10% off your first order.",
+        newsletterPrivacy: "We respect your privacy and send max. 2x per month.",
+        
+        // Map Section
+        discoverBollenstreek: "The Bollenstreek",
+        discoverBollenstreekDesc: "Discover where our flower bulbs come from",
+        discoverTheRegion: "Discover the Region",
+        
+        // Footer
+        footerWebshop: "Shop",
+        footerAboutUs: "About Us",
+        footerContact: "Contact",
+        allRightsReserved: "All rights reserved",
+        
+        // Cart sidebar
+        cartTitle: "Shopping Cart",
+        cartSubtotal: "Subtotal",
+        cartCheckout: "Checkout",
+        cartSecure: "Secure payment via iDEAL, Bancontact or credit card",
+        
+        // Chat
+        customerService: "Customer Service",
+        chatWelcome: "Welcome! How can we help you?",
+        typeMessage: "Type your message...",
+        
+        // Shop page
+        noProductsFound: "No products found",
+        tryOtherFilters: "Try other filters or view all our products.",
+        resetFilters: "Reset Filters",
+        viewDetails: "View details",
+        addToFavorites: "Add to favorites",
+        removeFromFavorites: "Remove from favorites",
+        products: "products",
+        product: "product",
+        addedToCart: "added to cart"
     },
     
     de: {
-        // Header
+        // Header & Navigation
         home: "Startseite",
         webshop: "Shop",
+        shop: "Shop",
         ourGrowers: "Unsere Züchter",
         theBollenstreek: "Die Bollenstreek",
         experiences: "Erlebnisse",
         contact: "Kontakt",
         blog: "Blog",
         searchPlaceholder: "Blumenzwiebeln suchen...",
+        discover: "Entdecken",
+        categories: "Kategorien",
+        tulips: "Tulpen",
+        daffodils: "Narzissen",
+        hyacinths: "Hyazinthen",
+        crocuses: "Krokusse",
+        allium: "Allium",
+        allProducts: "Alle Produkte",
+        interactiveMap: "Interaktive Karte",
+        experiencesTickets: "Erlebnisse & Tickets",
+        inspiration: "Inspiration",
+        blogTips: "Blog & Tipps",
+        walks: "Wanderungen",
+        favorites: "Favoriten",
         
         // Hero
         heroTitle: "Niederländische Blumenzwiebeln<br>Direkt vom Züchter",
@@ -384,19 +513,76 @@ const translations = {
         viewAllProducts: "Alle Produkte Anzeigen",
         meetOurGrowers: "Unsere Züchter Kennenlernen",
         meetOurGrowersDesc: "Hinter jeder Zwiebel steckt eine Geschichte. Unsere Züchter arbeiten seit Generationen in der Bollenstreek und teilen ihre Leidenschaft für die schönsten Blumenzwiebeln.",
-        order: "Bestellen"
+        order: "Bestellen",
+        
+        // Newsletter
+        stayInformed: "Bleiben Sie informiert",
+        stayInformedDesc: "Erhalten Sie als Erster Neuigkeiten über neue Zwiebeln, Pflanztipps und exklusive Angebote.",
+        yourEmail: "Ihre E-Mail-Adresse",
+        subscribe: "Anmelden",
+        newsletter_title: "Erhalten Sie 10% Rabatt!",
+        newsletter_text: "Melden Sie sich für unseren Newsletter an und erhalten Sie exklusive Angebote, Pflanztipps und 10% Rabatt auf Ihre erste Bestellung.",
+        newsletterPrivacy: "Wir respektieren Ihre Privatsphäre und senden max. 2x pro Monat.",
+        
+        // Map Section
+        discoverBollenstreek: "Die Bollenstreek",
+        discoverBollenstreekDesc: "Entdecken Sie, woher unsere Blumenzwiebeln kommen",
+        discoverTheRegion: "Die Region entdecken",
+        
+        // Footer
+        footerWebshop: "Shop",
+        footerAboutUs: "Über Uns",
+        footerContact: "Kontakt",
+        allRightsReserved: "Alle Rechte vorbehalten",
+        
+        // Cart sidebar
+        cartTitle: "Warenkorb",
+        cartSubtotal: "Zwischensumme",
+        cartCheckout: "Zur Kasse",
+        cartSecure: "Sichere Bezahlung über iDEAL, Bancontact oder Kreditkarte",
+        
+        // Chat
+        customerService: "Kundenservice",
+        chatWelcome: "Willkommen! Wie können wir Ihnen helfen?",
+        typeMessage: "Geben Sie Ihre Nachricht ein...",
+        
+        // Shop page
+        noProductsFound: "Keine Produkte gefunden",
+        tryOtherFilters: "Probieren Sie andere Filter oder sehen Sie sich alle unsere Produkte an.",
+        resetFilters: "Filter zurücksetzen",
+        viewDetails: "Details ansehen",
+        addToFavorites: "Zu Favoriten hinzufügen",
+        removeFromFavorites: "Aus Favoriten entfernen",
+        products: "Produkte",
+        product: "Produkt",
+        addedToCart: "zum Warenkorb hinzugefügt"
     },
     
     zh: {
-        // Header
+        // Header & Navigation
         home: "首页",
         webshop: "网店",
+        shop: "网店",
         ourGrowers: "我们的花农",
         theBollenstreek: "花球区",
         experiences: "体验活动",
         contact: "联系我们",
         blog: "博客",
         searchPlaceholder: "搜索花球...",
+        discover: "探索",
+        categories: "分类",
+        tulips: "郁金香",
+        daffodils: "水仙",
+        hyacinths: "风信子",
+        crocuses: "番红花",
+        allium: "葱属",
+        allProducts: "所有产品",
+        interactiveMap: "互动地图",
+        experiencesTickets: "体验与门票",
+        inspiration: "灵感",
+        blogTips: "博客与技巧",
+        walks: "步行路线",
+        favorites: "收藏夹",
         
         // Hero
         heroTitle: "荷兰花球<br>直接来自花农",
@@ -513,19 +699,76 @@ const translations = {
         viewAllProducts: "查看所有产品",
         meetOurGrowers: "认识我们的花农",
         meetOurGrowersDesc: "每个花球背后都有一个故事。我们的花农世代在花球区工作，分享他们对种植最美丽花球的热情。",
-        order: "订购"
+        order: "订购",
+        
+        // Newsletter
+        stayInformed: "保持关注",
+        stayInformedDesc: "第一时间获取新花球资讯、种植技巧和独家优惠。",
+        yourEmail: "您的电子邮箱",
+        subscribe: "订阅",
+        newsletter_title: "获得10%折扣！",
+        newsletter_text: "订阅我们的新闻通讯，获取独家优惠、种植技巧和首次订单10%折扣。",
+        newsletterPrivacy: "我们尊重您的隐私，每月最多发送2次。",
+        
+        // Map Section
+        discoverBollenstreek: "花球区",
+        discoverBollenstreekDesc: "探索我们花球的产地",
+        discoverTheRegion: "探索该地区",
+        
+        // Footer
+        footerWebshop: "网店",
+        footerAboutUs: "关于我们",
+        footerContact: "联系方式",
+        allRightsReserved: "版权所有",
+        
+        // Cart sidebar
+        cartTitle: "购物车",
+        cartSubtotal: "小计",
+        cartCheckout: "结账",
+        cartSecure: "通过iDEAL、Bancontact或信用卡安全支付",
+        
+        // Chat
+        customerService: "客户服务",
+        chatWelcome: "欢迎！有什么可以帮助您的吗？",
+        typeMessage: "输入您的消息...",
+        
+        // Shop page
+        noProductsFound: "未找到产品",
+        tryOtherFilters: "尝试其他筛选条件或查看所有产品。",
+        resetFilters: "重置筛选",
+        viewDetails: "查看详情",
+        addToFavorites: "添加到收藏夹",
+        removeFromFavorites: "从收藏夹移除",
+        products: "产品",
+        product: "产品",
+        addedToCart: "已添加到购物车"
     },
     
     fr: {
-        // Header
+        // Header & Navigation
         home: "Accueil",
         webshop: "Boutique",
+        shop: "Boutique",
         ourGrowers: "Nos Producteurs",
         theBollenstreek: "La Bollenstreek",
         experiences: "Expériences",
         contact: "Contact",
         blog: "Blog",
         searchPlaceholder: "Rechercher des bulbes...",
+        discover: "Découvrir",
+        categories: "Catégories",
+        tulips: "Tulipes",
+        daffodils: "Narcisses",
+        hyacinths: "Jacinthes",
+        crocuses: "Crocus",
+        allium: "Allium",
+        allProducts: "Tous les Produits",
+        interactiveMap: "Carte Interactive",
+        experiencesTickets: "Expériences & Billets",
+        inspiration: "Inspiration",
+        blogTips: "Blog & Conseils",
+        walks: "Promenades",
+        favorites: "Favoris",
         
         // Hero
         heroTitle: "Bulbes de Fleurs Hollandais<br>Directement du Producteur",
@@ -641,7 +884,49 @@ const translations = {
         viewAllProducts: "Voir Tous les Produits",
         meetOurGrowers: "Rencontrez Nos Producteurs",
         meetOurGrowersDesc: "Derrière chaque bulbe se cache une histoire. Nos producteurs travaillent dans la Bollenstreek depuis des générations, partageant leur passion pour la culture des plus beaux bulbes de fleurs.",
-        order: "Commander"
+        order: "Commander",
+        
+        // Newsletter
+        stayInformed: "Restez Informé",
+        stayInformedDesc: "Soyez le premier à recevoir des nouvelles sur les nouveaux bulbes, conseils de plantation et offres exclusives.",
+        yourEmail: "Votre adresse e-mail",
+        subscribe: "S'inscrire",
+        newsletter_title: "Obtenez 10% de réduction !",
+        newsletter_text: "Inscrivez-vous à notre newsletter et recevez des offres exclusives, des conseils de plantation et 10% de réduction sur votre première commande.",
+        newsletterPrivacy: "Nous respectons votre vie privée et envoyons max. 2x par mois.",
+        
+        // Map Section
+        discoverBollenstreek: "La Bollenstreek",
+        discoverBollenstreekDesc: "Découvrez d'où viennent nos bulbes de fleurs",
+        discoverTheRegion: "Découvrir la Région",
+        
+        // Footer
+        footerWebshop: "Boutique",
+        footerAboutUs: "À Propos",
+        footerContact: "Contact",
+        allRightsReserved: "Tous droits réservés",
+        
+        // Cart sidebar
+        cartTitle: "Panier",
+        cartSubtotal: "Sous-total",
+        cartCheckout: "Commander",
+        cartSecure: "Paiement sécurisé via iDEAL, Bancontact ou carte de crédit",
+        
+        // Chat
+        customerService: "Service Client",
+        chatWelcome: "Bienvenue ! Comment pouvons-nous vous aider ?",
+        typeMessage: "Tapez votre message...",
+        
+        // Shop page
+        noProductsFound: "Aucun produit trouvé",
+        tryOtherFilters: "Essayez d'autres filtres ou consultez tous nos produits.",
+        resetFilters: "Réinitialiser les filtres",
+        viewDetails: "Voir les détails",
+        addToFavorites: "Ajouter aux favoris",
+        removeFromFavorites: "Retirer des favoris",
+        products: "produits",
+        product: "produit",
+        addedToCart: "ajouté au panier"
     }
 };
 
