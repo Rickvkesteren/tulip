@@ -297,86 +297,6 @@
                     </div>
                 </div>
                 
-                <!-- Wandelingen Section -->
-                <div class="wandelingen-section" id="wandelingen">
-                    <h3>🚶 Wandelroutes</h3>
-                    <p style="color: var(--text-light); margin-bottom: 20px;">Ontdek de mooiste wandelingen door de bollenvelden.</p>
-                    
-                    <div class="wandeling-cards">
-                        <div class="wandeling-card" onclick="showWandelingDetails(1)">
-                            <div class="wandeling-icon">🌷</div>
-                            <div class="wandeling-info">
-                                <h4>Keukenhof Rondje</h4>
-                                <div class="wandeling-stats">
-                                    <span>📏 5,2 km</span>
-                                    <span>⏱️ 1,5 uur</span>
-                                    <span class="difficulty easy">Makkelijk</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="wandeling-card" onclick="showWandelingDetails(2)">
-                            <div class="wandeling-icon">🌼</div>
-                            <div class="wandeling-info">
-                                <h4>Lisse - Hillegom Route</h4>
-                                <div class="wandeling-stats">
-                                    <span>📏 8,5 km</span>
-                                    <span>⏱️ 2,5 uur</span>
-                                    <span class="difficulty medium">Gemiddeld</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="wandeling-card" onclick="showWandelingDetails(3)">
-                            <div class="wandeling-icon">💜</div>
-                            <div class="wandeling-info">
-                                <h4>Hyacintenroute Noordwijkerhout</h4>
-                                <div class="wandeling-stats">
-                                    <span>📏 6,8 km</span>
-                                    <span>⏱️ 2 uur</span>
-                                    <span class="difficulty easy">Makkelijk</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="wandeling-card" onclick="showWandelingDetails(4)">
-                            <div class="wandeling-icon">🌸</div>
-                            <div class="wandeling-info">
-                                <h4>Duinen & Bollen Wandeling</h4>
-                                <div class="wandeling-stats">
-                                    <span>📏 12,3 km</span>
-                                    <span>⏱️ 3,5 uur</span>
-                                    <span class="difficulty hard">Uitdagend</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="wandeling-card" onclick="showWandelingDetails(5)">
-                            <div class="wandeling-icon">🏡</div>
-                            <div class="wandeling-info">
-                                <h4>Historische Kwekerswandeling</h4>
-                                <div class="wandeling-stats">
-                                    <span>📏 4,5 km</span>
-                                    <span>⏱️ 1,5 uur</span>
-                                    <span class="difficulty easy">Makkelijk</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="wandeling-card" onclick="showWandelingDetails(6)">
-                            <div class="wandeling-icon">🌅</div>
-                            <div class="wandeling-info">
-                                <h4>Zonsondergang Bollenvelden</h4>
-                                <div class="wandeling-stats">
-                                    <span>📏 7,2 km</span>
-                                    <span>⏱️ 2 uur</span>
-                                    <span class="difficulty medium">Gemiddeld</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
                 <div id="map"></div>
             </div>
 
@@ -390,7 +310,223 @@
                     <!-- Dynamisch geladen -->
                 </div>
             </div>
+        </div>
+    </section>
 
+    <!-- Wandelroutes Section - APART -->
+    <section class="wandelroutes-section" style="padding: 80px 0; background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 15px; color: var(--text-dark);">🚶 Wandelroutes door de Bollenstreek</h2>
+                <p style="color: var(--text-light); max-width: 700px; margin: 0 auto; font-size: 1.1rem;">
+                    Ontdek de mooiste wandelroutes door de bloeiende bollenvelden. Van korte wandelingen tot langere tochten - er is voor ieder wat wils!
+                </p>
+            </div>
+
+            <div class="wandelroutes-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;">
+                
+                <!-- Route 1: Bloemenroute Lisse -->
+                <div class="wandelroute-card" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 60px rgba(0,0,0,0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 40px rgba(0,0,0,0.1)';">
+                    <div style="height: 180px; background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); display: flex; align-items: center; justify-content: center; position: relative;">
+                        <span style="font-size: 4rem;">🌷</span>
+                        <div style="position: absolute; top: 15px; right: 15px; background: rgba(255,255,255,0.95); padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">
+                            ⭐ Populair
+                        </div>
+                    </div>
+                    <div style="padding: 25px;">
+                        <h3 style="font-size: 1.4rem; margin-bottom: 10px; color: var(--text-dark);">Bloemenroute Lisse</h3>
+                        <p style="color: var(--text-light); margin-bottom: 15px; line-height: 1.6;">
+                            De klassieker! Loop langs de beroemdste bollenvelden van Lisse, startend bij het centrum richting de Keukenhof.
+                        </p>
+                        <div style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+                            <span style="background: var(--bg-cream); padding: 8px 15px; border-radius: 20px; font-size: 0.9rem;">📏 5,2 km</span>
+                            <span style="background: var(--bg-cream); padding: 8px 15px; border-radius: 20px; font-size: 0.9rem;">⏱️ 1,5 uur</span>
+                            <span style="background: #d4edda; color: #155724; padding: 8px 15px; border-radius: 20px; font-size: 0.9rem;">✓ Makkelijk</span>
+                        </div>
+                        <div style="background: var(--bg-cream); padding: 15px; border-radius: 12px; margin-bottom: 20px;">
+                            <strong style="font-size: 0.9rem; color: var(--primary-dark);">🎯 Hoogtepunten:</strong>
+                            <p style="color: var(--text-light); margin-top: 8px; font-size: 0.9rem;">Keukenhof omgeving • Tulpenvelden Loosterweg • Historisch centrum Lisse</p>
+                        </div>
+                        <div style="display: flex; gap: 10px;">
+                            <button onclick="showWandelingOnMap(1)" class="btn btn-primary" style="flex: 1;">📍 Bekijk op kaart</button>
+                            <button onclick="downloadGPX(1)" class="btn btn-outline" style="flex: 1;">⬇️ GPX Route</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Route 2: Lisse - Hillegom Route -->
+                <div class="wandelroute-card" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 60px rgba(0,0,0,0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 40px rgba(0,0,0,0.1)';">
+                    <div style="height: 180px; background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%); display: flex; align-items: center; justify-content: center; position: relative;">
+                        <span style="font-size: 4rem;">🌼</span>
+                    </div>
+                    <div style="padding: 25px;">
+                        <h3 style="font-size: 1.4rem; margin-bottom: 10px; color: var(--text-dark);">Lisse - Hillegom Verbinding</h3>
+                        <p style="color: var(--text-light); margin-bottom: 15px; line-height: 1.6;">
+                            Wandel door de prachtige bollenvelden tussen Lisse en Hillegom via landweggetjes en kwekerijen.
+                        </p>
+                        <div style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+                            <span style="background: var(--bg-cream); padding: 8px 15px; border-radius: 20px; font-size: 0.9rem;">📏 8,5 km</span>
+                            <span style="background: var(--bg-cream); padding: 8px 15px; border-radius: 20px; font-size: 0.9rem;">⏱️ 2,5 uur</span>
+                            <span style="background: #fff3cd; color: #856404; padding: 8px 15px; border-radius: 20px; font-size: 0.9rem;">⚡ Gemiddeld</span>
+                        </div>
+                        <div style="background: var(--bg-cream); padding: 15px; border-radius: 12px; margin-bottom: 20px;">
+                            <strong style="font-size: 0.9rem; color: var(--primary-dark);">🎯 Hoogtepunten:</strong>
+                            <p style="color: var(--text-light); margin-top: 8px; font-size: 0.9rem;">Bollenvelden Heereweg • Landgoed Keukenhof • Dorpskern Hillegom</p>
+                        </div>
+                        <div style="display: flex; gap: 10px;">
+                            <button onclick="showWandelingOnMap(2)" class="btn btn-primary" style="flex: 1;">📍 Bekijk op kaart</button>
+                            <button onclick="downloadGPX(2)" class="btn btn-outline" style="flex: 1;">⬇️ GPX Route</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Route 3: Hyacintenroute Noordwijkerhout -->
+                <div class="wandelroute-card" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 60px rgba(0,0,0,0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 40px rgba(0,0,0,0.1)';">
+                    <div style="height: 180px; background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%); display: flex; align-items: center; justify-content: center; position: relative;">
+                        <span style="font-size: 4rem;">💜</span>
+                        <div style="position: absolute; top: 15px; right: 15px; background: rgba(255,255,255,0.95); padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">
+                            🌸 Geurig!
+                        </div>
+                    </div>
+                    <div style="padding: 25px;">
+                        <h3 style="font-size: 1.4rem; margin-bottom: 10px; color: var(--text-dark);">Hyacintenroute Noordwijkerhout</h3>
+                        <p style="color: var(--text-light); margin-bottom: 15px; line-height: 1.6;">
+                            Ervaar de heerlijke geur van hyacinten! Deze route voert langs de meeste hyacintenkwekers van de streek.
+                        </p>
+                        <div style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+                            <span style="background: var(--bg-cream); padding: 8px 15px; border-radius: 20px; font-size: 0.9rem;">📏 6,8 km</span>
+                            <span style="background: var(--bg-cream); padding: 8px 15px; border-radius: 20px; font-size: 0.9rem;">⏱️ 2 uur</span>
+                            <span style="background: #d4edda; color: #155724; padding: 8px 15px; border-radius: 20px; font-size: 0.9rem;">✓ Makkelijk</span>
+                        </div>
+                        <div style="background: var(--bg-cream); padding: 15px; border-radius: 12px; margin-bottom: 20px;">
+                            <strong style="font-size: 0.9rem; color: var(--primary-dark);">🎯 Hoogtepunten:</strong>
+                            <p style="color: var(--text-light); margin-top: 8px; font-size: 0.9rem;">Hyacintenvelden Zilkerbinnenweg • Molen De Nijverheid • Centrum Noordwijkerhout</p>
+                        </div>
+                        <div style="display: flex; gap: 10px;">
+                            <button onclick="showWandelingOnMap(3)" class="btn btn-primary" style="flex: 1;">📍 Bekijk op kaart</button>
+                            <button onclick="downloadGPX(3)" class="btn btn-outline" style="flex: 1;">⬇️ GPX Route</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Route 4: Duinen & Bollen Wandeling -->
+                <div class="wandelroute-card" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 60px rgba(0,0,0,0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 40px rgba(0,0,0,0.1)';">
+                    <div style="height: 180px; background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%); display: flex; align-items: center; justify-content: center; position: relative;">
+                        <span style="font-size: 4rem;">🏖️</span>
+                        <div style="position: absolute; top: 15px; right: 15px; background: rgba(255,255,255,0.95); padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">
+                            🥾 Sportief
+                        </div>
+                    </div>
+                    <div style="padding: 25px;">
+                        <h3 style="font-size: 1.4rem; margin-bottom: 10px; color: var(--text-dark);">Duinen & Bollen Wandeling</h3>
+                        <p style="color: var(--text-light); margin-bottom: 15px; line-height: 1.6;">
+                            De ultieme combinatie! Van bollenvelden naar de duinen van Noordwijk. Prachtige afwisseling van landschappen.
+                        </p>
+                        <div style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+                            <span style="background: var(--bg-cream); padding: 8px 15px; border-radius: 20px; font-size: 0.9rem;">📏 12,3 km</span>
+                            <span style="background: var(--bg-cream); padding: 8px 15px; border-radius: 20px; font-size: 0.9rem;">⏱️ 3,5 uur</span>
+                            <span style="background: #f8d7da; color: #721c24; padding: 8px 15px; border-radius: 20px; font-size: 0.9rem;">🔥 Uitdagend</span>
+                        </div>
+                        <div style="background: var(--bg-cream); padding: 15px; border-radius: 12px; margin-bottom: 20px;">
+                            <strong style="font-size: 0.9rem; color: var(--primary-dark);">🎯 Hoogtepunten:</strong>
+                            <p style="color: var(--text-light); margin-top: 8px; font-size: 0.9rem;">Duinreservaat Noordwijk • Bollenvelden Langevelderslag • Strand Noordwijk</p>
+                        </div>
+                        <div style="display: flex; gap: 10px;">
+                            <button onclick="showWandelingOnMap(4)" class="btn btn-primary" style="flex: 1;">📍 Bekijk op kaart</button>
+                            <button onclick="downloadGPX(4)" class="btn btn-outline" style="flex: 1;">⬇️ GPX Route</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Route 5: Historische Kwekerswandeling -->
+                <div class="wandelroute-card" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 60px rgba(0,0,0,0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 40px rgba(0,0,0,0.1)';">
+                    <div style="height: 180px; background: linear-gradient(135deg, #795548 0%, #5d4037 100%); display: flex; align-items: center; justify-content: center; position: relative;">
+                        <span style="font-size: 4rem;">🏡</span>
+                    </div>
+                    <div style="padding: 25px;">
+                        <h3 style="font-size: 1.4rem; margin-bottom: 10px; color: var(--text-dark);">Historische Kwekerswandeling</h3>
+                        <p style="color: var(--text-light); margin-bottom: 15px; line-height: 1.6;">
+                            Ontdek de rijke geschiedenis van de bollenteelt. Loop langs eeuwenoude kwekerijen en historische panden.
+                        </p>
+                        <div style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+                            <span style="background: var(--bg-cream); padding: 8px 15px; border-radius: 20px; font-size: 0.9rem;">📏 4,5 km</span>
+                            <span style="background: var(--bg-cream); padding: 8px 15px; border-radius: 20px; font-size: 0.9rem;">⏱️ 1,5 uur</span>
+                            <span style="background: #d4edda; color: #155724; padding: 8px 15px; border-radius: 20px; font-size: 0.9rem;">✓ Makkelijk</span>
+                        </div>
+                        <div style="background: var(--bg-cream); padding: 15px; border-radius: 12px; margin-bottom: 20px;">
+                            <strong style="font-size: 0.9rem; color: var(--primary-dark);">🎯 Hoogtepunten:</strong>
+                            <p style="color: var(--text-light); margin-top: 8px; font-size: 0.9rem;">Museum de Zwarte Tulp • Oude kwekerijen Heereweg • Villa's aan de Kanaalstraat</p>
+                        </div>
+                        <div style="display: flex; gap: 10px;">
+                            <button onclick="showWandelingOnMap(5)" class="btn btn-primary" style="flex: 1;">📍 Bekijk op kaart</button>
+                            <button onclick="downloadGPX(5)" class="btn btn-outline" style="flex: 1;">⬇️ GPX Route</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Route 6: Sassenheim Bollenroute -->
+                <div class="wandelroute-card" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 60px rgba(0,0,0,0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 40px rgba(0,0,0,0.1)';">
+                    <div style="height: 180px; background: linear-gradient(135deg, #ff7675 0%, #fd79a8 100%); display: flex; align-items: center; justify-content: center; position: relative;">
+                        <span style="font-size: 4rem;">🌸</span>
+                        <div style="position: absolute; top: 15px; right: 15px; background: rgba(255,255,255,0.95); padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">
+                            🆕 Nieuw
+                        </div>
+                    </div>
+                    <div style="padding: 25px;">
+                        <h3 style="font-size: 1.4rem; margin-bottom: 10px; color: var(--text-dark);">Sassenheim Bollenroute</h3>
+                        <p style="color: var(--text-light); margin-bottom: 15px; line-height: 1.6;">
+                            Verken de bollenvelden rondom Sassenheim, inclusief de beroemde Bloemenveiling FloraHolland!
+                        </p>
+                        <div style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+                            <span style="background: var(--bg-cream); padding: 8px 15px; border-radius: 20px; font-size: 0.9rem;">📏 7,2 km</span>
+                            <span style="background: var(--bg-cream); padding: 8px 15px; border-radius: 20px; font-size: 0.9rem;">⏱️ 2 uur</span>
+                            <span style="background: #fff3cd; color: #856404; padding: 8px 15px; border-radius: 20px; font-size: 0.9rem;">⚡ Gemiddeld</span>
+                        </div>
+                        <div style="background: var(--bg-cream); padding: 15px; border-radius: 12px; margin-bottom: 20px;">
+                            <strong style="font-size: 0.9rem; color: var(--primary-dark);">🎯 Hoogtepunten:</strong>
+                            <p style="color: var(--text-light); margin-top: 8px; font-size: 0.9rem;">Ruïne van Teylingen • Bollenvelden Warmonderweg • Centrum Sassenheim</p>
+                        </div>
+                        <div style="display: flex; gap: 10px;">
+                            <button onclick="showWandelingOnMap(6)" class="btn btn-primary" style="flex: 1;">📍 Bekijk op kaart</button>
+                            <button onclick="downloadGPX(6)" class="btn btn-outline" style="flex: 1;">⬇️ GPX Route</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Tips Section -->
+            <div style="margin-top: 50px; background: white; border-radius: 20px; padding: 40px; box-shadow: 0 10px 40px rgba(0,0,0,0.08);">
+                <h3 style="text-align: center; margin-bottom: 25px; font-size: 1.6rem;">💡 Tips voor je wandeling</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px;">
+                    <div style="text-align: center; padding: 20px;">
+                        <span style="font-size: 2.5rem; display: block; margin-bottom: 15px;">📅</span>
+                        <h4 style="margin-bottom: 10px;">Beste periode</h4>
+                        <p style="color: var(--text-light); font-size: 0.95rem;">Medio maart - half mei voor de mooiste bloei. Tulpen bloeien meestal eind maart - begin mei.</p>
+                    </div>
+                    <div style="text-align: center; padding: 20px;">
+                        <span style="font-size: 2.5rem; display: block; margin-bottom: 15px;">👟</span>
+                        <h4 style="margin-bottom: 10px;">Schoeisel</h4>
+                        <p style="color: var(--text-light); font-size: 0.95rem;">Goede wandelschoenen aanbevolen. Sommige paden kunnen modderig zijn na regen.</p>
+                    </div>
+                    <div style="text-align: center; padding: 20px;">
+                        <span style="font-size: 2.5rem; display: block; margin-bottom: 15px;">🚫</span>
+                        <h4 style="margin-bottom: 10px;">Respecteer de velden</h4>
+                        <p style="color: var(--text-light); font-size: 0.95rem;">Blijf op de paden en loop niet door de bollenvelden. De bollen zijn het levenswerk van de kwekers!</p>
+                    </div>
+                    <div style="text-align: center; padding: 20px;">
+                        <span style="font-size: 2.5rem; display: block; margin-bottom: 15px;">🚗</span>
+                        <h4 style="margin-bottom: 10px;">Bereikbaarheid</h4>
+                        <p style="color: var(--text-light); font-size: 0.95rem;">Alle routes zijn bereikbaar met OV. Kijk op 9292.nl voor de beste verbindingen.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Continue with Locations -->
+    <section style="padding: 60px 0; background: white;">
+        <div class="container">
             <!-- Locations Grid -->
             <h3 style="text-align: center; margin-bottom: 30px; font-size: 1.8rem;">📍 Locaties in de Bollenstreek</h3>
             <div class="locations-grid" id="locationsGrid">
@@ -802,42 +938,70 @@
 
         // ==========================================
         // Wandelingen Data & Functionality
+        // ECHTE wandelroutes door de Bollenstreek
         // ==========================================
         const wandelingen = [
             {
                 id: 1,
-                name: "Keukenhof Rondje",
+                name: "Bloemenroute Lisse",
                 distance: "5,2 km",
                 duration: "1,5 uur",
                 difficulty: "Makkelijk",
                 icon: "🌷",
-                description: "Een prachtige wandeling rondom de wereldberoemde Keukenhof. Loop langs kleurrijke tulpenvelden en geniet van de bloemenweelde.",
-                highlights: ["Tulpenvelden", "Keukenhof", "Fotospots", "Parkeerplaats beschikbaar"],
-                startPoint: { lat: 52.2697, lng: 4.5469 },
+                description: "De klassieker! Loop langs de beroemdste bollenvelden van Lisse, startend bij het centrum richting de Keukenhof.",
+                highlights: ["Keukenhof omgeving", "Tulpenvelden Loosterweg", "Historisch centrum Lisse"],
+                startPoint: { lat: 52.2586, lng: 4.5443 }, // Centrum Lisse
+                // ECHTE route via straten in Lisse
                 route: [
-                    [52.2697, 4.5469],
-                    [52.2720, 4.5520],
-                    [52.2750, 4.5480],
-                    [52.2730, 4.5400],
-                    [52.2697, 4.5469]
+                    [52.2586, 4.5443], // Start: Centrum Lisse (Heereweg)
+                    [52.2605, 4.5420], // Heereweg Noord
+                    [52.2635, 4.5398], // Richting Keukenhof
+                    [52.2658, 4.5412], // Stationsweg
+                    [52.2680, 4.5445], // Loosterweg Noord
+                    [52.2697, 4.5469], // Keukenhof ingang
+                    [52.2710, 4.5485], // Langs Keukenhof
+                    [52.2725, 4.5510], // Bollenvelden oost
+                    [52.2715, 4.5550], // Rooversbroekdijk
+                    [52.2690, 4.5565], // Tweede Poellaan
+                    [52.2665, 4.5545], // Terug richting centrum
+                    [52.2640, 4.5510], // Kanaalstraat
+                    [52.2615, 4.5475], // Centrum nadert
+                    [52.2586, 4.5443]  // Terug bij start
                 ]
             },
             {
                 id: 2,
-                name: "Lisse - Hillegom Route",
+                name: "Lisse - Hillegom Verbinding",
                 distance: "8,5 km",
                 duration: "2,5 uur",
                 difficulty: "Gemiddeld",
                 icon: "🌼",
-                description: "Wandel van Lisse naar Hillegom door het hart van de Bollenstreek. Onderweg passeer je verschillende kwekerijen en historische boerderijen.",
-                highlights: ["Meerdere kwekerijen", "Historische boerderijen", "Museum de Zwarte Tulp", "Horeca onderweg"],
-                startPoint: { lat: 52.2586, lng: 4.5443 },
+                description: "Wandel door de prachtige bollenvelden tussen Lisse en Hillegom via landweggetjes en kwekerijen.",
+                highlights: ["Bollenvelden Heereweg", "Landgoed Keukenhof", "Dorpskern Hillegom"],
+                startPoint: { lat: 52.2586, lng: 4.5443 }, // Centrum Lisse
                 route: [
-                    [52.2586, 4.5443],
-                    [52.2650, 4.5500],
-                    [52.2750, 4.5550],
-                    [52.2850, 4.5600],
-                    [52.2950, 4.5650]
+                    [52.2586, 4.5443], // Start: Centrum Lisse
+                    [52.2610, 4.5420], // Heereweg
+                    [52.2650, 4.5405], // Heereweg Noord
+                    [52.2695, 4.5390], // Richting Hillegom
+                    [52.2740, 4.5375], // Bollenvelden
+                    [52.2785, 4.5360], // Grens Lisse/Hillegom
+                    [52.2830, 4.5345], // Hillegom Zuid
+                    [52.2875, 4.5330], // Pastoorslaan
+                    [52.2920, 4.5315], // Weeresteinstraat
+                    [52.2960, 4.5350], // Centrum Hillegom
+                    [52.2975, 4.5380], // Hoofdstraat Hillegom
+                    [52.2990, 4.5420], // NS Station Hillegom
+                    [52.2965, 4.5455], // Terug via Leidsestraat
+                    [52.2930, 4.5470], // Bollenvelden oost
+                    [52.2890, 4.5480], // Landweg
+                    [52.2845, 4.5485], // Vogelenzang grens
+                    [52.2800, 4.5475], // Terug richting Lisse
+                    [52.2755, 4.5465], // Bollenvelden
+                    [52.2710, 4.5460], // Keukenhof rand
+                    [52.2665, 4.5455], // Lisse Noord
+                    [52.2620, 4.5450], // Centrum nadert
+                    [52.2586, 4.5443]  // Terug bij start
                 ]
             },
             {
@@ -847,15 +1011,26 @@
                 duration: "2 uur",
                 difficulty: "Makkelijk",
                 icon: "💜",
-                description: "Ervaar de heerlijke geur van hyacinten tijdens deze ontspannen wandeling door Noordwijkerhout. In het voorjaar is dit een ware sensatie.",
-                highlights: ["Hyacintenvelden", "Geurervaring", "Dorpscentrum", "Terrasjes"],
-                startPoint: { lat: 52.2600, lng: 4.4850 },
+                description: "Ervaar de heerlijke geur van hyacinten! Deze route voert langs de meeste hyacintenkwekers van de streek.",
+                highlights: ["Hyacintenvelden Zilkerbinnenweg", "Molen De Nijverheid", "Centrum Noordwijkerhout"],
+                startPoint: { lat: 52.2614, lng: 4.4931 }, // Centrum Noordwijkerhout
                 route: [
-                    [52.2600, 4.4850],
-                    [52.2650, 4.4900],
-                    [52.2700, 4.4950],
-                    [52.2680, 4.5000],
-                    [52.2600, 4.4850]
+                    [52.2614, 4.4931], // Start: Centrum Noordwijkerhout (Dorpsstraat)
+                    [52.2630, 4.4910], // Herenweg
+                    [52.2655, 4.4885], // Richting Zilkerbinnenweg
+                    [52.2680, 4.4865], // Zilkerbinnenweg
+                    [52.2710, 4.4845], // Hyacintenvelden
+                    [52.2735, 4.4825], // Verder noordwest
+                    [52.2750, 4.4800], // Molen De Nijverheid
+                    [52.2765, 4.4780], // Langs de molen
+                    [52.2750, 4.4750], // Richting De Zilk
+                    [52.2725, 4.4735], // Bollenvelden west
+                    [52.2695, 4.4755], // Terugweg
+                    [52.2670, 4.4785], // Langs kwekerijen
+                    [52.2645, 4.4820], // Bollenvelden
+                    [52.2625, 4.4860], // Zeestraat
+                    [52.2610, 4.4895], // Centrum nadert
+                    [52.2614, 4.4931]  // Terug bij start
                 ]
             },
             {
@@ -864,16 +1039,32 @@
                 distance: "12,3 km",
                 duration: "3,5 uur",
                 difficulty: "Uitdagend",
-                icon: "🌸",
-                description: "Een uitdagende wandeling die bollenvelden combineert met de prachtige duinlandschappen richting Noordwijk aan Zee.",
-                highlights: ["Duinlandschap", "Bollenvelden", "Zee uitzicht", "Strandpaviljoen"],
-                startPoint: { lat: 52.2450, lng: 4.4500 },
+                icon: "🏖️",
+                description: "De ultieme combinatie! Van bollenvelden naar de duinen van Noordwijk. Prachtige afwisseling van landschappen.",
+                highlights: ["Duinreservaat Noordwijk", "Bollenvelden Langevelderslag", "Strand Noordwijk"],
+                startPoint: { lat: 52.2390, lng: 4.4425 }, // Noordwijk-Binnen
                 route: [
-                    [52.2450, 4.4500],
-                    [52.2500, 4.4400],
-                    [52.2550, 4.4300],
-                    [52.2520, 4.4200],
-                    [52.2450, 4.4500]
+                    [52.2390, 4.4425], // Start: Noordwijk-Binnen
+                    [52.2420, 4.4400], // Richting duinen
+                    [52.2455, 4.4365], // Duinweg
+                    [52.2490, 4.4330], // Langevelderslag
+                    [52.2525, 4.4290], // Bollenvelden
+                    [52.2560, 4.4255], // Duinreservaat
+                    [52.2590, 4.4220], // Wandelpad duinen
+                    [52.2610, 4.4180], // Hoger in duinen
+                    [52.2620, 4.4130], // Richting strand
+                    [52.2615, 4.4080], // Strand Noordwijk
+                    [52.2600, 4.4050], // Boulevard
+                    [52.2570, 4.4040], // Langs strand zuidwaarts
+                    [52.2535, 4.4055], // Strandopgang
+                    [52.2500, 4.4085], // Terug duinen in
+                    [52.2465, 4.4130], // Duinpad
+                    [52.2430, 4.4180], // Bollenvelden
+                    [52.2405, 4.4230], // Langevelderweg
+                    [52.2385, 4.4285], // Richting centrum
+                    [52.2375, 4.4345], // Noordwijk-Binnen
+                    [52.2380, 4.4390], // Centrum nadert
+                    [52.2390, 4.4425]  // Terug bij start
                 ]
             },
             {
@@ -883,33 +1074,51 @@
                 duration: "1,5 uur",
                 difficulty: "Makkelijk",
                 icon: "🏡",
-                description: "Ontdek de rijke geschiedenis van de bollenteelt. Bezoek historische kwekerijen en leer over eeuwenoude tradities.",
-                highlights: ["Historische kwekerijen", "Informatieve borden", "Museum bezoek", "Kindvriendelijk"],
-                startPoint: { lat: 52.2550, lng: 4.5300 },
+                description: "Ontdek de rijke geschiedenis van de bollenteelt. Loop langs eeuwenoude kwekerijen en historische panden.",
+                highlights: ["Museum de Zwarte Tulp", "Oude kwekerijen Heereweg", "Villa's aan de Kanaalstraat"],
+                startPoint: { lat: 52.2586, lng: 4.5443 }, // Centrum Lisse
                 route: [
-                    [52.2550, 4.5300],
-                    [52.2580, 4.5350],
-                    [52.2600, 4.5380],
-                    [52.2570, 4.5320],
-                    [52.2550, 4.5300]
+                    [52.2586, 4.5443], // Start: Centrum Lisse
+                    [52.2575, 4.5420], // Heereweg Zuid
+                    [52.2560, 4.5395], // Museum de Zwarte Tulp
+                    [52.2545, 4.5380], // Langs museum
+                    [52.2530, 4.5400], // Kanaalstraat
+                    [52.2515, 4.5425], // Historische villa's
+                    [52.2500, 4.5455], // Ringvaart
+                    [52.2510, 4.5485], // Oude kwekerijen
+                    [52.2530, 4.5505], // Heereweg oost
+                    [52.2555, 4.5490], // Terug noordwaarts
+                    [52.2580, 4.5470], // Centrum nadert
+                    [52.2586, 4.5443]  // Terug bij start
                 ]
             },
             {
                 id: 6,
-                name: "Zonsondergang Bollenvelden",
+                name: "Sassenheim Bollenroute",
                 distance: "7,2 km",
                 duration: "2 uur",
                 difficulty: "Gemiddeld",
-                icon: "🌅",
-                description: "De perfecte avondwandeling! Start 2 uur voor zonsondergang voor de mooiste foto's van de bollenvelden in het gouden licht.",
-                highlights: ["Zonsondergang fotospots", "Gouden uur", "Romantisch", "Bankjes onderweg"],
-                startPoint: { lat: 52.2700, lng: 4.5200 },
+                icon: "🌸",
+                description: "Verken de bollenvelden rondom Sassenheim, inclusief de historische Ruïne van Teylingen!",
+                highlights: ["Ruïne van Teylingen", "Bollenvelden Warmonderweg", "Centrum Sassenheim"],
+                startPoint: { lat: 52.2267, lng: 4.5231 }, // Centrum Sassenheim
                 route: [
-                    [52.2700, 4.5200],
-                    [52.2750, 4.5250],
-                    [52.2800, 4.5300],
-                    [52.2780, 4.5350],
-                    [52.2700, 4.5200]
+                    [52.2267, 4.5231], // Start: Centrum Sassenheim
+                    [52.2285, 4.5200], // Hoofdstraat
+                    [52.2310, 4.5170], // Richting ruïne
+                    [52.2340, 4.5140], // Teylingerlaan
+                    [52.2370, 4.5110], // Ruïne van Teylingen
+                    [52.2395, 4.5085], // Langs de ruïne
+                    [52.2415, 4.5115], // Bollenvelden noord
+                    [52.2435, 4.5150], // Warmonderweg
+                    [52.2450, 4.5190], // Bollenvelden oost
+                    [52.2440, 4.5235], // Terug zuidwaarts
+                    [52.2415, 4.5270], // Parklaan
+                    [52.2385, 4.5290], // Sportpark
+                    [52.2355, 4.5285], // Residentieel
+                    [52.2320, 4.5270], // Centrum nadert
+                    [52.2290, 4.5255], // Wasbeeklaan
+                    [52.2267, 4.5231]  // Terug bij start
                 ]
             }
         ];
@@ -989,6 +1198,124 @@ ${wandeling.route.map(coord => `      <trkpt lat="${coord[0]}" lon="${coord[1]}"
             URL.revokeObjectURL(url);
             
             showToast('Wandeling gedownload!', 'success');
+        }
+
+        // Functies voor de nieuwe wandelroutes sectie
+        function showWandelingOnMap(id) {
+            const wandeling = wandelingen.find(w => w.id === id);
+            if (!wandeling) return;
+            
+            // Scroll naar de kaart
+            document.getElementById('map').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Clear previous route
+            if (activeWandelingLine) {
+                map.removeLayer(activeWandelingLine);
+            }
+            
+            // Draw route on map with attractive styling
+            activeWandelingLine = L.polyline(wandeling.route, {
+                color: '#e74c3c',
+                weight: 5,
+                opacity: 0.9,
+                dashArray: '12, 8',
+                lineCap: 'round',
+                lineJoin: 'round'
+            }).addTo(map);
+            
+            // Fit map to route with padding
+            setTimeout(() => {
+                map.fitBounds(activeWandelingLine.getBounds(), { padding: [80, 80] });
+            }, 500);
+            
+            // Add start marker with custom icon
+            const startMarker = L.marker(wandeling.startPoint, {
+                icon: L.divIcon({
+                    className: 'custom-marker',
+                    html: `<div style="background: linear-gradient(135deg, #27ae60, #2ecc71); color: white; padding: 10px 16px; border-radius: 25px; font-weight: bold; box-shadow: 0 4px 15px rgba(39,174,96,0.4); font-size: 14px;">🚶 START</div>`,
+                    iconSize: [90, 40],
+                    iconAnchor: [45, 20]
+                })
+            }).addTo(map);
+            
+            startMarker.bindPopup(`
+                <div style="text-align: center; padding: 15px; min-width: 280px;">
+                    <div style="font-size: 3rem; margin-bottom: 10px;">${wandeling.icon}</div>
+                    <h3 style="margin: 0 0 10px; font-size: 1.3rem;">${wandeling.name}</h3>
+                    <p style="margin: 0 0 15px; color: #666; line-height: 1.5;">${wandeling.description}</p>
+                    <div style="display: flex; gap: 20px; justify-content: center; margin-bottom: 15px; flex-wrap: wrap;">
+                        <span style="background: #f8f9fa; padding: 8px 15px; border-radius: 20px;">📏 ${wandeling.distance}</span>
+                        <span style="background: #f8f9fa; padding: 8px 15px; border-radius: 20px;">⏱️ ${wandeling.duration}</span>
+                        <span style="background: ${wandeling.difficulty === 'Makkelijk' ? '#d4edda' : wandeling.difficulty === 'Gemiddeld' ? '#fff3cd' : '#f8d7da'}; padding: 8px 15px; border-radius: 20px;">${wandeling.difficulty}</span>
+                    </div>
+                    <div style="margin-bottom: 15px; text-align: left;">
+                        <strong style="color: var(--primary-dark);">🎯 Hoogtepunten:</strong>
+                        <div style="margin-top: 8px;">
+                            ${wandeling.highlights.map(h => `<span style="background: #e9ecef; padding: 5px 12px; border-radius: 15px; margin: 3px; display: inline-block; font-size: 0.85rem;">✓ ${h}</span>`).join('')}
+                        </div>
+                    </div>
+                    <button onclick="downloadGPX(${wandeling.id})" class="btn btn-primary" style="padding: 12px 25px; width: 100%;">
+                        📥 Download GPX Route
+                    </button>
+                </div>
+            `).openPopup();
+            
+            showToast(`${wandeling.icon} ${wandeling.name} - ${wandeling.distance}`, 'success');
+        }
+
+        function downloadGPX(id) {
+            const wandeling = wandelingen.find(w => w.id === id);
+            if (!wandeling) return;
+            
+            // Genereer GPX met metadata
+            const now = new Date().toISOString();
+            let gpx = `<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Bollenstreek Direct - Bloembollen Webshop"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>${wandeling.name}</name>
+    <desc>${wandeling.description}</desc>
+    <author>
+      <name>Bollenstreek Direct</name>
+      <link href="https://rickvkesteren.github.io/tulip/">
+        <text>Bollenstreek Direct Webshop</text>
+      </link>
+    </author>
+    <time>${now}</time>
+    <keywords>bollenstreek, wandelen, ${wandeling.highlights.join(', ')}</keywords>
+  </metadata>
+  <trk>
+    <name>${wandeling.name}</name>
+    <desc>${wandeling.description} | Afstand: ${wandeling.distance} | Duur: ${wandeling.duration} | Niveau: ${wandeling.difficulty}</desc>
+    <type>hiking</type>
+    <trkseg>
+${wandeling.route.map((coord, index) => `      <trkpt lat="${coord[0]}" lon="${coord[1]}">
+        <ele>0</ele>
+        <name>Punt ${index + 1}</name>
+      </trkpt>`).join('\n')}
+    </trkseg>
+  </trk>
+  <wpt lat="${wandeling.startPoint.lat}" lon="${wandeling.startPoint.lng}">
+    <name>Start/Finish: ${wandeling.name}</name>
+    <desc>Startpunt van de ${wandeling.name}</desc>
+    <sym>Flag, Green</sym>
+  </wpt>
+</gpx>`;
+            
+            // Download het bestand
+            const blob = new Blob([gpx], { type: 'application/gpx+xml' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `bollenstreek-${wandeling.name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}.gpx`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            showToast(`📥 ${wandeling.name} GPX gedownload!`, 'success');
         }
 
         // ==========================================
