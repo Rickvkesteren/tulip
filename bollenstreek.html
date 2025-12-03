@@ -219,7 +219,7 @@
                             <div class="nav-dropdown-divider"></div>
                             <div class="nav-dropdown-header">Inspiratie</div>
                             <a href="blog.html"><span class="dropdown-icon">📝</span> Blog & Tips</a>
-                            <a href="bollenstreek.html#routes"><span class="dropdown-icon">🚴</span> Fietsroutes</a>
+                            <a href="bollenstreek.html#wandelingen"><span class="dropdown-icon">🚶</span> Wandelingen</a>
                         </div>
                     </div>
 
@@ -312,52 +312,84 @@
                     </div>
                 </div>
                 
-                <!-- Route Planner -->
-                <div class="route-planner" id="routePlanner">
-                    <h3>🚴 Route Planner</h3>
-                    <p style="color: var(--text-light); margin-bottom: 15px;">Plan je eigen route langs de mooiste bollenkwekers en bezienswaardigheden.</p>
+                <!-- Wandelingen Section -->
+                <div class="wandelingen-section" id="wandelingen">
+                    <h3>🚶 Wandelroutes</h3>
+                    <p style="color: var(--text-light); margin-bottom: 20px;">Ontdek de mooiste wandelingen door de bollenvelden.</p>
                     
-                    <div class="route-type-toggle">
-                        <button class="route-type-btn active" onclick="setRouteType('bike')" id="btnBike">
-                            🚴 Fietsroute
-                        </button>
-                        <button class="route-type-btn" onclick="setRouteType('car')" id="btnCar">
-                            🚗 Autoroute
-                        </button>
-                        <button class="route-type-btn" onclick="setRouteType('walk')" id="btnWalk">
-                            🚶 Wandelroute
-                        </button>
-                    </div>
-                    
-                    <div class="route-stops" id="routeStops">
-                        <p style="text-align: center; color: var(--text-light); padding: 20px;">
-                            Klik op markers in de kaart om stops toe te voegen aan je route
-                        </p>
-                    </div>
-                    
-                    <div class="route-summary" id="routeSummary" style="display: none;">
-                        <div class="route-stats">
-                            <div class="route-stat">
-                                <div class="value" id="routeDistance">0 km</div>
-                                <div class="label">Afstand</div>
-                            </div>
-                            <div class="route-stat">
-                                <div class="value" id="routeTime">0 min</div>
-                                <div class="label">Geschatte tijd</div>
-                            </div>
-                            <div class="route-stat">
-                                <div class="value" id="routeStopsCount">0</div>
-                                <div class="label">Stops</div>
+                    <div class="wandeling-cards">
+                        <div class="wandeling-card" onclick="showWandelingDetails(1)">
+                            <div class="wandeling-icon">🌷</div>
+                            <div class="wandeling-info">
+                                <h4>Keukenhof Rondje</h4>
+                                <div class="wandeling-stats">
+                                    <span>📏 5,2 km</span>
+                                    <span>⏱️ 1,5 uur</span>
+                                    <span class="difficulty easy">Makkelijk</span>
+                                </div>
                             </div>
                         </div>
-                        <button class="btn btn-primary" onclick="exportRoute()" style="width: 100%;">
-                            📥 Download Route (GPX)
-                        </button>
+                        
+                        <div class="wandeling-card" onclick="showWandelingDetails(2)">
+                            <div class="wandeling-icon">🌼</div>
+                            <div class="wandeling-info">
+                                <h4>Lisse - Hillegom Route</h4>
+                                <div class="wandeling-stats">
+                                    <span>📏 8,5 km</span>
+                                    <span>⏱️ 2,5 uur</span>
+                                    <span class="difficulty medium">Gemiddeld</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="wandeling-card" onclick="showWandelingDetails(3)">
+                            <div class="wandeling-icon">💜</div>
+                            <div class="wandeling-info">
+                                <h4>Hyacintenroute Noordwijkerhout</h4>
+                                <div class="wandeling-stats">
+                                    <span>📏 6,8 km</span>
+                                    <span>⏱️ 2 uur</span>
+                                    <span class="difficulty easy">Makkelijk</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="wandeling-card" onclick="showWandelingDetails(4)">
+                            <div class="wandeling-icon">🌸</div>
+                            <div class="wandeling-info">
+                                <h4>Duinen & Bollen Wandeling</h4>
+                                <div class="wandeling-stats">
+                                    <span>📏 12,3 km</span>
+                                    <span>⏱️ 3,5 uur</span>
+                                    <span class="difficulty hard">Uitdagend</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="wandeling-card" onclick="showWandelingDetails(5)">
+                            <div class="wandeling-icon">🏡</div>
+                            <div class="wandeling-info">
+                                <h4>Historische Kwekerswandeling</h4>
+                                <div class="wandeling-stats">
+                                    <span>📏 4,5 km</span>
+                                    <span>⏱️ 1,5 uur</span>
+                                    <span class="difficulty easy">Makkelijk</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="wandeling-card" onclick="showWandelingDetails(6)">
+                            <div class="wandeling-icon">🌅</div>
+                            <div class="wandeling-info">
+                                <h4>Zonsondergang Bollenvelden</h4>
+                                <div class="wandeling-stats">
+                                    <span>📏 7,2 km</span>
+                                    <span>⏱️ 2 uur</span>
+                                    <span class="difficulty medium">Gemiddeld</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <button class="btn btn-secondary" onclick="clearRoute()" style="width: 100%; margin-top: 10px;">
-                        🗑️ Route Wissen
-                    </button>
                 </div>
                 
                 <div id="map"></div>
@@ -784,136 +816,181 @@
         }
 
         // ==========================================
-        // Route Planner Functionality
+        // Wandelingen Data & Functionality
         // ==========================================
-        let routeStops = [];
-        let routeType = 'bike';
-        let routeLine = null;
+        const wandelingen = [
+            {
+                id: 1,
+                name: "Keukenhof Rondje",
+                distance: "5,2 km",
+                duration: "1,5 uur",
+                difficulty: "Makkelijk",
+                icon: "🌷",
+                description: "Een prachtige wandeling rondom de wereldberoemde Keukenhof. Loop langs kleurrijke tulpenvelden en geniet van de bloemenweelde.",
+                highlights: ["Tulpenvelden", "Keukenhof", "Fotospots", "Parkeerplaats beschikbaar"],
+                startPoint: { lat: 52.2697, lng: 4.5469 },
+                route: [
+                    [52.2697, 4.5469],
+                    [52.2720, 4.5520],
+                    [52.2750, 4.5480],
+                    [52.2730, 4.5400],
+                    [52.2697, 4.5469]
+                ]
+            },
+            {
+                id: 2,
+                name: "Lisse - Hillegom Route",
+                distance: "8,5 km",
+                duration: "2,5 uur",
+                difficulty: "Gemiddeld",
+                icon: "🌼",
+                description: "Wandel van Lisse naar Hillegom door het hart van de Bollenstreek. Onderweg passeer je verschillende kwekerijen en historische boerderijen.",
+                highlights: ["Meerdere kwekerijen", "Historische boerderijen", "Museum de Zwarte Tulp", "Horeca onderweg"],
+                startPoint: { lat: 52.2586, lng: 4.5443 },
+                route: [
+                    [52.2586, 4.5443],
+                    [52.2650, 4.5500],
+                    [52.2750, 4.5550],
+                    [52.2850, 4.5600],
+                    [52.2950, 4.5650]
+                ]
+            },
+            {
+                id: 3,
+                name: "Hyacintenroute Noordwijkerhout",
+                distance: "6,8 km",
+                duration: "2 uur",
+                difficulty: "Makkelijk",
+                icon: "💜",
+                description: "Ervaar de heerlijke geur van hyacinten tijdens deze ontspannen wandeling door Noordwijkerhout. In het voorjaar is dit een ware sensatie.",
+                highlights: ["Hyacintenvelden", "Geurervaring", "Dorpscentrum", "Terrasjes"],
+                startPoint: { lat: 52.2600, lng: 4.4850 },
+                route: [
+                    [52.2600, 4.4850],
+                    [52.2650, 4.4900],
+                    [52.2700, 4.4950],
+                    [52.2680, 4.5000],
+                    [52.2600, 4.4850]
+                ]
+            },
+            {
+                id: 4,
+                name: "Duinen & Bollen Wandeling",
+                distance: "12,3 km",
+                duration: "3,5 uur",
+                difficulty: "Uitdagend",
+                icon: "🌸",
+                description: "Een uitdagende wandeling die bollenvelden combineert met de prachtige duinlandschappen richting Noordwijk aan Zee.",
+                highlights: ["Duinlandschap", "Bollenvelden", "Zee uitzicht", "Strandpaviljoen"],
+                startPoint: { lat: 52.2450, lng: 4.4500 },
+                route: [
+                    [52.2450, 4.4500],
+                    [52.2500, 4.4400],
+                    [52.2550, 4.4300],
+                    [52.2520, 4.4200],
+                    [52.2450, 4.4500]
+                ]
+            },
+            {
+                id: 5,
+                name: "Historische Kwekerswandeling",
+                distance: "4,5 km",
+                duration: "1,5 uur",
+                difficulty: "Makkelijk",
+                icon: "🏡",
+                description: "Ontdek de rijke geschiedenis van de bollenteelt. Bezoek historische kwekerijen en leer over eeuwenoude tradities.",
+                highlights: ["Historische kwekerijen", "Informatieve borden", "Museum bezoek", "Kindvriendelijk"],
+                startPoint: { lat: 52.2550, lng: 4.5300 },
+                route: [
+                    [52.2550, 4.5300],
+                    [52.2580, 4.5350],
+                    [52.2600, 4.5380],
+                    [52.2570, 4.5320],
+                    [52.2550, 4.5300]
+                ]
+            },
+            {
+                id: 6,
+                name: "Zonsondergang Bollenvelden",
+                distance: "7,2 km",
+                duration: "2 uur",
+                difficulty: "Gemiddeld",
+                icon: "🌅",
+                description: "De perfecte avondwandeling! Start 2 uur voor zonsondergang voor de mooiste foto's van de bollenvelden in het gouden licht.",
+                highlights: ["Zonsondergang fotospots", "Gouden uur", "Romantisch", "Bankjes onderweg"],
+                startPoint: { lat: 52.2700, lng: 4.5200 },
+                route: [
+                    [52.2700, 4.5200],
+                    [52.2750, 4.5250],
+                    [52.2800, 4.5300],
+                    [52.2780, 4.5350],
+                    [52.2700, 4.5200]
+                ]
+            }
+        ];
 
-        function setRouteType(type) {
-            routeType = type;
-            document.querySelectorAll('.route-type-btn').forEach(btn => btn.classList.remove('active'));
-            document.getElementById('btn' + type.charAt(0).toUpperCase() + type.slice(1)).classList.add('active');
-            updateRouteDisplay();
-        }
+        let activeWandelingLine = null;
 
-        function addToRoute(name, lat, lng, icon) {
-            if (routeStops.length >= 10) {
-                showToast('Maximum 10 stops per route', 'warning');
-                return;
+        function showWandelingDetails(id) {
+            const wandeling = wandelingen.find(w => w.id === id);
+            if (!wandeling) return;
+            
+            // Clear previous route
+            if (activeWandelingLine) {
+                map.removeLayer(activeWandelingLine);
             }
             
-            // Check if already in route
-            if (routeStops.find(s => s.name === name)) {
-                showToast('Deze stop zit al in je route', 'info');
-                return;
-            }
-            
-            routeStops.push({ name, lat, lng, icon });
-            updateRouteDisplay();
-            showToast(`${name} toegevoegd aan route`, 'success');
-        }
-
-        function removeFromRoute(index) {
-            routeStops.splice(index, 1);
-            updateRouteDisplay();
-        }
-
-        function updateRouteDisplay() {
-            const container = document.getElementById('routeStops');
-            const summary = document.getElementById('routeSummary');
-            
-            if (routeStops.length === 0) {
-                container.innerHTML = `<p style="text-align: center; color: var(--text-light); padding: 20px;">
-                    Klik op markers in de kaart om stops toe te voegen aan je route
-                </p>`;
-                summary.style.display = 'none';
-                if (routeLine) {
-                    map.removeLayer(routeLine);
-                    routeLine = null;
-                }
-                return;
-            }
-            
-            container.innerHTML = routeStops.map((stop, i) => `
-                <div class="route-stop" onclick="removeFromRoute(${i})" title="Klik om te verwijderen">
-                    <div class="stop-number">${i + 1}</div>
-                    <div class="stop-info">
-                        <h4>${stop.icon} ${stop.name}</h4>
-                        <p>Klik om te verwijderen</p>
-                    </div>
-                </div>
-            `).join('');
-            
-            // Calculate route stats
-            const distance = calculateRouteDistance();
-            const time = calculateRouteTime(distance);
-            
-            document.getElementById('routeDistance').textContent = distance.toFixed(1) + ' km';
-            document.getElementById('routeTime').textContent = time + ' min';
-            document.getElementById('routeStopsCount').textContent = routeStops.length;
-            
-            summary.style.display = 'block';
-            
-            // Draw route line on map
-            drawRouteLine();
-        }
-
-        function calculateRouteDistance() {
-            if (routeStops.length < 2) return 0;
-            
-            let total = 0;
-            for (let i = 0; i < routeStops.length - 1; i++) {
-                const from = L.latLng(routeStops[i].lat, routeStops[i].lng);
-                const to = L.latLng(routeStops[i + 1].lat, routeStops[i + 1].lng);
-                total += from.distanceTo(to) / 1000; // Convert to km
-            }
-            return total * 1.3; // Add 30% for actual road distance
-        }
-
-        function calculateRouteTime(distanceKm) {
-            const speeds = { bike: 15, car: 40, walk: 5 }; // km/h
-            const stopTime = routeStops.length * 15; // 15 min per stop
-            return Math.round((distanceKm / speeds[routeType]) * 60 + stopTime);
-        }
-
-        function drawRouteLine() {
-            if (routeLine) {
-                map.removeLayer(routeLine);
-            }
-            
-            if (routeStops.length < 2) return;
-            
-            const coords = routeStops.map(s => [s.lat, s.lng]);
-            routeLine = L.polyline(coords, {
-                color: routeType === 'bike' ? '#27ae60' : routeType === 'car' ? '#3498db' : '#e74c3c',
+            // Draw route on map
+            activeWandelingLine = L.polyline(wandeling.route, {
+                color: '#e74c3c',
                 weight: 4,
                 opacity: 0.8,
-                dashArray: routeType === 'walk' ? '10, 10' : null
+                dashArray: '10, 10'
             }).addTo(map);
             
-            map.fitBounds(routeLine.getBounds(), { padding: [50, 50] });
-        }
-
-        function clearRoute() {
-            routeStops = [];
-            updateRouteDisplay();
-            showToast('Route gewist', 'info');
-        }
-
-        function exportRoute() {
-            if (routeStops.length < 2) {
-                showToast('Voeg minimaal 2 stops toe', 'warning');
-                return;
-            }
+            // Fit map to route
+            map.fitBounds(activeWandelingLine.getBounds(), { padding: [50, 50] });
             
-            // Generate simple GPX
+            // Add start marker
+            L.marker(wandeling.startPoint, {
+                icon: L.divIcon({
+                    className: 'custom-marker',
+                    html: `<div style="background: #27ae60; color: white; padding: 8px 12px; border-radius: 20px; font-weight: bold; box-shadow: 0 2px 10px rgba(0,0,0,0.3);">▶ Start</div>`,
+                    iconSize: [60, 30],
+                    iconAnchor: [30, 15]
+                })
+            }).addTo(map).bindPopup(`
+                <div style="text-align: center; padding: 10px;">
+                    <h3 style="margin: 0 0 10px;">${wandeling.icon} ${wandeling.name}</h3>
+                    <p style="margin: 0 0 10px; color: #666;">${wandeling.description}</p>
+                    <div style="display: flex; gap: 15px; justify-content: center; margin-bottom: 10px;">
+                        <span>📏 ${wandeling.distance}</span>
+                        <span>⏱️ ${wandeling.duration}</span>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <strong>Highlights:</strong><br>
+                        ${wandeling.highlights.map(h => `<span style="background: #f0f0f0; padding: 3px 8px; border-radius: 10px; margin: 2px; display: inline-block; font-size: 0.85rem;">✓ ${h}</span>`).join('')}
+                    </div>
+                    <button onclick="downloadWandelingGPX(${wandeling.id})" class="btn btn-primary" style="padding: 8px 20px;">
+                        📥 Download GPX
+                    </button>
+                </div>
+            `).openPopup();
+            
+            showToast(`${wandeling.name} geladen - ${wandeling.distance}`, 'success');
+        }
+
+        function downloadWandelingGPX(id) {
+            const wandeling = wandelingen.find(w => w.id === id);
+            if (!wandeling) return;
+            
             let gpx = `<?xml version="1.0" encoding="UTF-8"?>
 <gpx version="1.1" creator="Bollenstreek Direct">
   <trk>
-    <name>Bollenstreek Route</name>
+    <name>${wandeling.name}</name>
+    <desc>${wandeling.description}</desc>
     <trkseg>
-${routeStops.map(s => `      <trkpt lat="${s.lat}" lon="${s.lng}"><name>${s.name}</name></trkpt>`).join('\n')}
+${wandeling.route.map(coord => `      <trkpt lat="${coord[0]}" lon="${coord[1]}"></trkpt>`).join('\n')}
     </trkseg>
   </trk>
 </gpx>`;
@@ -922,11 +999,11 @@ ${routeStops.map(s => `      <trkpt lat="${s.lat}" lon="${s.lng}"><name>${s.name
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = 'bollenstreek-route.gpx';
+            a.download = `${wandeling.name.toLowerCase().replace(/\s+/g, '-')}.gpx`;
             a.click();
             URL.revokeObjectURL(url);
             
-            showToast('Route gedownload!', 'success');
+            showToast('Wandeling gedownload!', 'success');
         }
 
         // ==========================================
