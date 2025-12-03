@@ -4573,3 +4573,430 @@ img {
     color: var(--text-light);
     font-size: 0.9rem;
 }
+
+/* ========================================
+   ENHANCED VISUAL - REAL IMAGES & EFFECTS
+   ======================================== */
+
+/* Hero met echte achtergrond */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), 
+                url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1920&q=80') center/cover no-repeat fixed;
+    min-height: 100vh;
+}
+
+.hero::before,
+.hero::after {
+    display: none;
+}
+
+.hero h1 {
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    font-size: 4rem;
+}
+
+.hero p {
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    font-size: 1.4rem;
+}
+
+/* Product images met echte foto's */
+.product-image {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.product-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease, filter 0.3s ease;
+    z-index: 0;
+}
+
+.product-card:hover .product-image::before {
+    transform: scale(1.1);
+}
+
+/* Tulpen afbeeldingen */
+.product-image[data-category="tulpen"]::before {
+    background-image: url('https://images.unsplash.com/photo-1520763185298-1b434c919102?w=400&q=80');
+}
+
+.product-image[data-category="tulpen"][data-variant="1"]::before {
+    background-image: url('https://images.unsplash.com/photo-1591886960571-74d43a9d4166?w=400&q=80');
+}
+
+.product-image[data-category="tulpen"][data-variant="2"]::before {
+    background-image: url('https://images.unsplash.com/photo-1518882605630-8eb738e08289?w=400&q=80');
+}
+
+.product-image[data-category="tulpen"][data-variant="3"]::before {
+    background-image: url('https://images.unsplash.com/photo-1457089328109-e5d9bd499191?w=400&q=80');
+}
+
+.product-image[data-category="tulpen"][data-variant="4"]::before {
+    background-image: url('https://images.unsplash.com/photo-1522165078649-823cf4dbaf46?w=400&q=80');
+}
+
+/* Narcissen afbeeldingen */
+.product-image[data-category="narcissen"]::before {
+    background-image: url('https://images.unsplash.com/photo-1550165703-9f2c0d8a8b29?w=400&q=80');
+}
+
+.product-image[data-category="narcissen"][data-variant="1"]::before {
+    background-image: url('https://images.unsplash.com/photo-1456415333674-42b11b9f5b7b?w=400&q=80');
+}
+
+/* Hyacinten afbeeldingen */
+.product-image[data-category="hyacinten"]::before {
+    background-image: url('https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?w=400&q=80');
+}
+
+.product-image[data-category="hyacinten"][data-variant="1"]::before {
+    background-image: url('https://images.unsplash.com/photo-1455659817273-f96807779a8a?w=400&q=80');
+}
+
+/* Krokussen afbeeldingen */
+.product-image[data-category="krokussen"]::before {
+    background-image: url('https://images.unsplash.com/photo-1457534979083-dbc249d0f5cc?w=400&q=80');
+}
+
+/* Allium afbeeldingen */
+.product-image[data-category="allium"]::before {
+    background-image: url('https://images.unsplash.com/photo-1464639351491-a172c2aa2911?w=400&q=80');
+}
+
+/* Lelies afbeeldingen */
+.product-image[data-category="lelies"]::before {
+    background-image: url('https://images.unsplash.com/photo-1533616688419-b7a585564566?w=400&q=80');
+}
+
+/* Product icon overlay verbergen wanneer image is */
+.product-image.has-image .product-icon {
+    opacity: 0;
+}
+
+.product-image.has-image::before {
+    opacity: 1;
+}
+
+/* Improved product card styling */
+.product-card {
+    border: 1px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(135deg, #f8f9fa, #e9ecef) border-box;
+}
+
+.product-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 20px 60px rgba(231, 76, 60, 0.15);
+}
+
+/* Badge styling enhanced */
+.product-badge {
+    background: linear-gradient(135deg, var(--secondary-color), #2ecc71);
+    box-shadow: 0 2px 8px rgba(39, 174, 96, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.product-badge.sale {
+    background: linear-gradient(135deg, var(--primary-color), #e74c3c);
+    box-shadow: 0 2px 8px rgba(231, 76, 60, 0.3);
+}
+
+.product-badge.new {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);
+}
+
+.product-badge.exclusive {
+    background: linear-gradient(135deg, #9b59b6, #8e44ad);
+    box-shadow: 0 2px 8px rgba(155, 89, 182, 0.3);
+}
+
+/* Quick view overlay verbetering */
+.product-quick-view {
+    background: linear-gradient(transparent, rgba(0,0,0,0.85));
+    padding: 30px 15px 15px;
+    font-weight: 600;
+}
+
+/* Price styling */
+.product-price {
+    background: linear-gradient(135deg, #fff5f5, #ffffff);
+    padding: 8px 12px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.product-price .price {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.product-price .original-price {
+    text-decoration: line-through;
+    color: var(--text-light);
+    font-size: 0.85rem;
+    margin-left: 8px;
+}
+
+/* Call to action button */
+.product-card .btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.product-card:hover .btn-primary::before {
+    left: 100%;
+}
+
+/* Featured section banner */
+.featured-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.featured-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 300px;
+    background: url('https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=1920&q=80') center/cover;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+/* Seasonal highlight boxes */
+.season-banner {
+    background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
+    border-left: 5px solid var(--primary-color);
+    padding: 25px 30px;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.season-banner::before {
+    content: '🌷';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 4rem;
+    opacity: 0.2;
+}
+
+.season-banner h3 {
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+/* Trust badges */
+.trust-badges {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 30px 0;
+    background: var(--bg-light);
+    flex-wrap: wrap;
+}
+
+.trust-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.trust-badge-icon {
+    font-size: 1.5rem;
+}
+
+/* Image gallery hover effect */
+.gallery-zoom {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius);
+}
+
+.gallery-zoom img {
+    transition: transform 0.5s ease;
+}
+
+.gallery-zoom:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-zoom::after {
+    content: '🔍';
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-zoom:hover::after {
+    opacity: 1;
+}
+
+/* Sticky add to cart on mobile */
+@media (max-width: 768px) {
+    .sticky-cart-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 15px 20px;
+        box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+    }
+    
+    .sticky-cart-bar .price {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--primary-color);
+    }
+    
+    .sticky-cart-bar .btn {
+        flex: 1;
+        max-width: 200px;
+    }
+}
+
+/* Animated sale tag */
+@keyframes pulse-sale {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.sale-tag {
+    animation: pulse-sale 2s ease-in-out infinite;
+}
+
+/* Product image shimmer loading */
+.product-image.loading::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+/* Reviews stars styling */
+.stars-display {
+    color: #ffc107;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+}
+
+/* Quantity selector enhanced */
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+}
+
+.quantity-selector button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: var(--bg-light);
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: var(--transition);
+}
+
+.quantity-selector button:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.quantity-selector input {
+    width: 60px;
+    height: 40px;
+    border: none;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Shipping info banner */
+.shipping-banner {
+    background: linear-gradient(90deg, #27ae60, #2ecc71);
+    color: white;
+    text-align: center;
+    padding: 12px 20px;
+    font-weight: 500;
+}
+
+.shipping-banner strong {
+    font-weight: 700;
+}
+
+/* Countdown timer */
+.countdown-timer {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.countdown-item {
+    background: var(--text-dark);
+    color: white;
+    padding: 15px 20px;
+    border-radius: var(--radius-sm);
+    text-align: center;
+    min-width: 70px;
+}
+
+.countdown-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    display: block;
+}
+
+.countdown-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+

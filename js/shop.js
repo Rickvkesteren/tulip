@@ -5,6 +5,61 @@
 let currentView = 'grid';
 let currentSort = 'popular';
 
+// Product afbeeldingen database - prachtige bloemen
+const productImages = {
+    tulpen: [
+        'https://images.unsplash.com/photo-1520763185298-1b434c919102?w=400&q=80',
+        'https://images.unsplash.com/photo-1591886960571-74d43a9d4166?w=400&q=80',
+        'https://images.unsplash.com/photo-1518882605630-8eb738e08289?w=400&q=80',
+        'https://images.unsplash.com/photo-1457089328109-e5d9bd499191?w=400&q=80',
+        'https://images.unsplash.com/photo-1522165078649-823cf4dbaf46?w=400&q=80',
+        'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=400&q=80',
+        'https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=400&q=80'
+    ],
+    narcissen: [
+        'https://images.unsplash.com/photo-1550165703-9f2c0d8a8b29?w=400&q=80',
+        'https://images.unsplash.com/photo-1456415333674-42b11b9f5b7b?w=400&q=80',
+        'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=400&q=80',
+        'https://images.unsplash.com/photo-1584648487455-99c05ca9f10e?w=400&q=80'
+    ],
+    hyacinten: [
+        'https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?w=400&q=80',
+        'https://images.unsplash.com/photo-1455659817273-f96807779a8a?w=400&q=80',
+        'https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?w=400&q=80'
+    ],
+    krokussen: [
+        'https://images.unsplash.com/photo-1457534979083-dbc249d0f5cc?w=400&q=80',
+        'https://images.unsplash.com/photo-1487530811176-3780de880c2d?w=400&q=80',
+        'https://images.unsplash.com/photo-1551972251-12070d63502a?w=400&q=80'
+    ],
+    allium: [
+        'https://images.unsplash.com/photo-1464639351491-a172c2aa2911?w=400&q=80',
+        'https://images.unsplash.com/photo-1530092285049-1c42085fd395?w=400&q=80'
+    ],
+    lelies: [
+        'https://images.unsplash.com/photo-1533616688419-b7a585564566?w=400&q=80',
+        'https://images.unsplash.com/photo-1568902779976-5e47e6d4c296?w=400&q=80'
+    ],
+    dahlia: [
+        'https://images.unsplash.com/photo-1536238349444-c05ffb6837e4?w=400&q=80',
+        'https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=400&q=80'
+    ],
+    gladiolen: [
+        'https://images.unsplash.com/photo-1597826368522-9f4cb5a6a7a1?w=400&q=80'
+    ],
+    default: [
+        'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=400&q=80'
+    ]
+};
+
+// Get product image based on category and ID
+function getProductImage(product) {
+    const category = product.category.toLowerCase();
+    const images = productImages[category] || productImages.default;
+    const index = product.id % images.length;
+    return images[index];
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     initFilters();
     loadProducts();
@@ -81,17 +136,22 @@ function loadProducts(filteredProducts = null) {
     container.innerHTML = productsToShow.map((product, index) => {
         const kweker = getKwekerForProduct(product);
         const isFavorite = typeof favoritesManager !== 'undefined' && favoritesManager.isFavorite(product.id);
+        const productImage = getProductImage(product);
+        const variant = (product.id % 5);
         
         return `
             <div class="product-card fade-in" style="animation-delay: ${index * 0.05}s">
-                <div class="product-image" onclick="openProductModal(${product.id})" style="background: linear-gradient(135deg, ${kweker.color}22 0%, ${kweker.color}44 100%)">
-                    ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
+                <div class="product-image has-image" 
+                     data-category="${product.category}" 
+                     data-variant="${variant}"
+                     onclick="openProductModal(${product.id})" 
+                     style="background-image: url('${productImage}'); background-size: cover; background-position: center;">
+                    ${product.badge ? `<span class="product-badge ${product.badge === 'Uitverkoop' ? 'sale' : product.badge === 'Nieuw' ? 'new' : product.badge === 'Exclusief' ? 'exclusive' : ''}">${product.badge}</span>` : ''}
                     <button class="product-favorite ${isFavorite ? 'active' : ''}" 
                             onclick="event.stopPropagation(); toggleProductFavorite(${product.id}, this)"
                             title="${isFavorite ? 'Verwijder uit favorieten' : 'Voeg toe aan favorieten'}">
                         ${isFavorite ? '❤️' : '🤍'}
                     </button>
-                    <span class="product-icon">${product.icon}</span>
                     <div class="product-quick-view">👁️ Bekijk details</div>
                 </div>
                 <div class="product-info">
@@ -107,10 +167,11 @@ function loadProducts(filteredProducts = null) {
                     </div>
                     <div class="product-footer">
                         <div class="product-price">
-                            ${formatPrice(product.price)} <span style="font-size: 0.8rem; font-weight: normal;">/ ${product.unit}</span>
+                            <span class="price">${formatPrice(product.price)}</span>
+                            <span style="font-size: 0.8rem; font-weight: normal; color: var(--text-light);">/ ${product.unit}</span>
                         </div>
-                        <button class="add-to-cart" onclick="addToCartWithToast(${product.id})">
-                            🛒
+                        <button class="add-to-cart btn btn-primary btn-small" onclick="addToCartWithToast(${product.id})">
+                            🛒 Bestel
                         </button>
                     </div>
                 </div>

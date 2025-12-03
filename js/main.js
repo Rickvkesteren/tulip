@@ -2,6 +2,46 @@
 // Bollenstreek Direct - Main JavaScript
 // ========================================
 
+// Product afbeeldingen database - prachtige bloemen
+const productImageUrls = {
+    tulpen: [
+        'https://images.unsplash.com/photo-1520763185298-1b434c919102?w=400&q=80',
+        'https://images.unsplash.com/photo-1591886960571-74d43a9d4166?w=400&q=80',
+        'https://images.unsplash.com/photo-1518882605630-8eb738e08289?w=400&q=80',
+        'https://images.unsplash.com/photo-1457089328109-e5d9bd499191?w=400&q=80',
+        'https://images.unsplash.com/photo-1522165078649-823cf4dbaf46?w=400&q=80',
+        'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=400&q=80'
+    ],
+    narcissen: [
+        'https://images.unsplash.com/photo-1550165703-9f2c0d8a8b29?w=400&q=80',
+        'https://images.unsplash.com/photo-1456415333674-42b11b9f5b7b?w=400&q=80',
+        'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=400&q=80'
+    ],
+    hyacinten: [
+        'https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?w=400&q=80',
+        'https://images.unsplash.com/photo-1455659817273-f96807779a8a?w=400&q=80'
+    ],
+    krokussen: [
+        'https://images.unsplash.com/photo-1457534979083-dbc249d0f5cc?w=400&q=80',
+        'https://images.unsplash.com/photo-1487530811176-3780de880c2d?w=400&q=80'
+    ],
+    allium: [
+        'https://images.unsplash.com/photo-1464639351491-a172c2aa2911?w=400&q=80'
+    ],
+    lelies: [
+        'https://images.unsplash.com/photo-1533616688419-b7a585564566?w=400&q=80'
+    ],
+    default: [
+        'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=400&q=80'
+    ]
+};
+
+function getProductImageUrl(product) {
+    const category = product.category.toLowerCase();
+    const images = productImageUrls[category] || productImageUrls.default;
+    return images[product.id % images.length];
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     initCart();
     initFeaturedProducts();
@@ -58,18 +98,20 @@ function initFeaturedProducts() {
     }).join('');
 }
 
-// Maak product card HTML met verbeterde features
+// Maak product card HTML met verbeterde features en echte foto's
 function createProductCard(product, kweker, index = 0) {
     const isFav = typeof favoritesManager !== 'undefined' && favoritesManager.isFavorite(product.id);
+    const imageUrl = getProductImageUrl(product);
     
     return `
         <div class="product-card fade-in" data-product-id="${product.id}" style="animation-delay: ${index * 0.1}s">
-            <div class="product-image" style="background: linear-gradient(135deg, ${kweker.color}22 0%, ${kweker.color}44 100%)" onclick="openProductModal(${product.id})">
-                ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
+            <div class="product-image has-image" 
+                 style="background-image: url('${imageUrl}'); background-size: cover; background-position: center;" 
+                 onclick="openProductModal(${product.id})">
+                ${product.badge ? `<span class="product-badge ${product.badge === 'Uitverkoop' ? 'sale' : product.badge === 'Nieuw' ? 'new' : product.badge === 'Exclusief' ? 'exclusive' : ''}">${product.badge}</span>` : ''}
                 <button class="product-favorite ${isFav ? 'active' : ''}" data-favorite="${product.id}" onclick="event.stopPropagation(); toggleFav(${product.id}, this)">
                     ${isFav ? '❤️' : '🤍'}
                 </button>
-                <span class="product-icon">${product.icon}</span>
                 <div class="product-quick-view">
                     <span>👁️ Snel bekijken</span>
                 </div>
@@ -87,10 +129,11 @@ function createProductCard(product, kweker, index = 0) {
                 </div>
                 <div class="product-footer">
                     <div class="product-price">
-                        ${formatPrice(product.price)} <span>/ ${product.unit}</span>
+                        <span class="price">${formatPrice(product.price)}</span>
+                        <span style="font-size: 0.8rem; color: var(--text-light);">/ ${product.unit}</span>
                     </div>
-                    <button class="add-to-cart" onclick="addWithAnimation(${product.id}, this)">
-                        🛒
+                    <button class="add-to-cart btn btn-primary btn-small" onclick="addWithAnimation(${product.id}, this)">
+                        🛒 Bestel
                     </button>
                 </div>
             </div>
