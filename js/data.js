@@ -685,7 +685,7 @@ const products = [
         kwekerId: 2,
         leverancierId: 3,
         icon: "🌷",
-        image: "https://images.unsplash.com/photo-1520763185298-1b434c919102?w=400&q=80", // Rode tulpen
+        image: "https://images.unsplash.com/photo-1518882605630-8eb738e08289?w=400&q=80", // Rode triumph tulpen close-up
         description: "Klassieke rode tulpen van Ruigrok, perfect voor borders en potten.",
         badge: "Bestseller",
         inStock: true,
@@ -704,7 +704,7 @@ const products = [
         kwekerId: 1,
         leverancierId: 1,
         icon: "🌷",
-        image: "https://images.unsplash.com/photo-1588729803540-5c69d68be648?w=400&q=80", // Apricot Beauty - zacht abrikooskleurig
+        image: "https://images.unsplash.com/photo-1591886960571-74d43a9d4166?w=400&q=80", // Apricot Beauty - zacht zalm/abrikooskleurige tulp
         description: "Prachtige abrikooskleurige tulp van Fluwel met zacht geurende bloemen.",
         badge: "Fluwel Favoriet",
         inStock: true,
@@ -723,7 +723,7 @@ const products = [
         kwekerId: 4,
         leverancierId: 2,
         icon: "🌷",
-        image: "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=400&q=80", // Kleurrijke tulpenmix
+        image: "https://images.unsplash.com/photo-1520219306100-ec4afeeefe58?w=400&q=80", // Darwin Hybrid mix - kleurrijke tulpen veld
         description: "Kleurrijke mix van Darwin Hybrid tulpen, sterk en weerbestendig.",
         badge: "Keukenhof Keuze",
         inStock: true,
@@ -742,7 +742,7 @@ const products = [
         kwekerId: 5,
         leverancierId: 2,
         icon: "🌷",
-        image: "https://images.unsplash.com/photo-1587825045005-bd411c6a24a4?w=400&q=80", // Queen of Night - donkerpaars/zwart
+        image: "https://images.unsplash.com/photo-1596073419667-9d77d59f033f?w=400&q=80", // Queen of Night - donkerpaarse/zwarte tulp
         description: "Donkerpaarse, bijna zwarte tulp. Een echte showstopper!",
         badge: "Exclusief",
         inStock: true,
@@ -763,7 +763,7 @@ const products = [
         kwekerId: 2,
         leverancierId: 3,
         icon: "🌼",
-        image: "https://images.unsplash.com/photo-1456415333674-42b11b9f5b7b?w=400&q=80", // Gele narcissen
+        image: "https://images.unsplash.com/photo-1549566682-d26a7e51c946?w=400&q=80", // Gele trompetnarcissen close-up
         description: "Klassieke gele narcissen van Ruigrok met grote trompetten.",
         badge: "Populair",
         inStock: true,
@@ -782,7 +782,7 @@ const products = [
         kwekerId: 3,
         leverancierId: 4,
         icon: "🌼",
-        image: "https://images.unsplash.com/photo-1550159930-40066082f2b6?w=400&q=80", // Thalia - witte trosnarcis
+        image: "https://images.unsplash.com/photo-1455659817273-f96807779a8a?w=400&q=80", // Thalia - witte narcis met meerdere bloemen
         description: "Sierlijke witte narcissen met meerdere bloemen per steel.",
         badge: null,
         inStock: true,
@@ -801,7 +801,7 @@ const products = [
         kwekerId: 4,
         leverancierId: 2,
         icon: "🌼",
-        image: "https://images.unsplash.com/photo-1582479459972-aa0a9a2cbbd1?w=400&q=80", // Narcissenveld
+        image: "https://images.unsplash.com/photo-1457530378978-8bac673b8062?w=400&q=80", // Narcissenmix geel en wit
         description: "Vrolijke mix van gele en witte narcissen van BULBi.",
         badge: null,
         inStock: true,
@@ -822,7 +822,7 @@ const products = [
         kwekerId: 2,
         leverancierId: 3,
         icon: "💜",
-        image: "https://images.unsplash.com/photo-1457530378978-8bac673b8062?w=400&q=80", // Delft Blue - klassiek blauw
+        image: "https://images.unsplash.com/photo-1584479898061-15742e14f50d?w=400&q=80", // Delft Blue - klassiek blauwe hyacint
         description: "Heerlijk geurende blauwe hyacinten, vernoemd naar Delfts Blauw.",
         badge: "Geurend",
         inStock: true,
@@ -841,7 +841,7 @@ const products = [
         kwekerId: 1,
         leverancierId: 1,
         icon: "💗",
-        image: "https://images.unsplash.com/photo-1518882605630-8eb738e08289?w=400&q=80", // Pink Pearl - felroze hyacint
+        image: "https://images.unsplash.com/photo-1586193309892-5b57eb4e4636?w=400&q=80", // Pink Pearl - roze hyacint close-up
         description: "Roze hyacinten van Fluwel met intense geur.",
         badge: null,
         inStock: true,
@@ -860,7 +860,7 @@ const products = [
         kwekerId: 4,
         leverancierId: 2,
         icon: "🤍",
-        image: "https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?w=400&q=80", // Gemengde hyacinten
+        image: "https://images.unsplash.com/photo-1520412099551-62b6bafeb5bb?w=400&q=80", // Hyacintenmix - blauw, roze en wit
         description: "Mix van blauw, roze en wit. Perfect voor binnen en buiten.",
         badge: "Mix",
         inStock: true,
@@ -881,7 +881,7 @@ const products = [
         kwekerId: 2,
         leverancierId: 3,
         icon: "💜",
-        image: "https://images.unsplash.com/photo-1457534979083-dbc249d0f5cc?w=400&q=80", // Paarse krokussen
+        image: "https://images.unsplash.com/photo-1551972251-12070d63502a?w=400&q=80", // Krokussen mix paars en geel
         description: "Vroege voorjaarsbloemen van Ruigrok, perfect voor in het gazon.",
         badge: "Vroegbloeier",
         inStock: true,
@@ -900,7 +900,7 @@ const products = [
         kwekerId: 6,
         leverancierId: 5,
         icon: "🤍",
-        image: "https://images.unsplash.com/photo-1455659817273-f96807779a8a?w=400&q=80", // Jeanne d'Arc - witte krokus
+        image: "https://images.unsplash.com/photo-1582217208730-4060a5142785?w=400&q=80", // Jeanne d'Arc - witte krokussen
         description: "Pure witte krokussen, ideaal voor naturaliseren.",
         badge: null,
         inStock: true,
@@ -919,7 +919,7 @@ const products = [
         kwekerId: 4,
         leverancierId: 2,
         icon: "🌸",
-        image: "https://images.unsplash.com/photo-1551972251-12070d63502a?w=400&q=80", // Gele krokussen
+        image: "https://images.unsplash.com/photo-1457534979083-dbc249d0f5cc?w=400&q=80", // Botanische krokussen geel/paars
         description: "Kleinbloemige, vroegbloeiende soorten. Bijvriendelijk!",
         badge: "Bijvriendelijk",
         inStock: true,
@@ -940,7 +940,7 @@ const products = [
         kwekerId: 6,
         leverancierId: 5,
         icon: "🟣",
-        image: "https://images.unsplash.com/photo-1526406915894-7bcd65f60845?w=400&q=80", // Purple Sensation
+        image: "https://images.unsplash.com/photo-1530092285049-1c42085fd395?w=400&q=80", // Purple Sensation - paarse allium bollen
         description: "Spectaculaire paarse bollen op hoge stelen van Peter Nyssen.",
         badge: "Showstopper",
         inStock: true,
@@ -959,7 +959,7 @@ const products = [
         kwekerId: 4,
         leverancierId: 2,
         icon: "🟣",
-        image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80", // Globemaster XXL
+        image: "https://images.unsplash.com/photo-1526406915894-7bcd65f60845?w=400&q=80", // Globemaster XXL allium
         description: "Enorme paarse bollen tot 20 cm doorsnee. Spectaculair!",
         badge: "XXL",
         inStock: true,
@@ -980,7 +980,7 @@ const products = [
         kwekerId: 3,
         leverancierId: 4,
         icon: "🤍",
-        image: "https://images.unsplash.com/photo-1567331711402-509c12c41959?w=400&q=80", // Casa Blanca - witte lelie
+        image: "https://images.unsplash.com/photo-1533616688419-b7a585564566?w=400&q=80", // Casa Blanca - witte lelie elegante bloem
         description: "Elegante witte lelies van P. Aker met heerlijke geur.",
         badge: "Geurend",
         inStock: true,
@@ -999,7 +999,7 @@ const products = [
         kwekerId: 3,
         leverancierId: 4,
         icon: "💗",
-        image: "https://images.unsplash.com/photo-1567748157439-651aca2ff064?w=400&q=80", // Roze lelies
+        image: "https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=400&q=80", // Aziatische lelies - oranje en geel
         description: "Kleurrijke mix van Aziatische lelies, vrolijk en sterk.",
         badge: "Mix",
         inStock: true,
@@ -1020,7 +1020,7 @@ const products = [
         kwekerId: 1,
         leverancierId: 1,
         icon: "🌺",
-        image: "https://images.unsplash.com/photo-1597848212624-a19eb35e2651?w=400&q=80", // Café au Lait - creme/blush dahlia
+        image: "https://images.unsplash.com/photo-1536329583941-14287ec6fc4e?w=400&q=80", // Café au Lait - creme/blush dinnerplate dahlia
         description: "Beroemde cremekleurige dahlia van Fluwel. Instagram favoriet!",
         badge: "Fluwel Topper",
         inStock: true,
@@ -1039,7 +1039,7 @@ const products = [
         kwekerId: 1,
         leverancierId: 1,
         icon: "🌺",
-        image: "https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=400&q=80", // Grote dahlia
+        image: "https://images.unsplash.com/photo-1533549433664-ecb6b5513e96?w=400&q=80", // Dinnerplate dahlia mix - grote bloemen
         description: "Grote dahlia's met bloemen tot 25 cm. Carlos' favorieten!",
         badge: "Mega Bloemen",
         inStock: true,
@@ -1060,7 +1060,7 @@ const products = [
         kwekerId: 1,
         leverancierId: 1,
         icon: "🌺",
-        image: "https://images.unsplash.com/photo-1546842931-886c185b4c8c?w=400&q=80", // Red Lion rode amaryllis
+        image: "https://images.unsplash.com/photo-1610631787813-9eeb1a2386cc?w=400&q=80", // Red Lion - rode amaryllis bloem
         description: "Klassieke rode amaryllis van Fluwel. Perfect voor binnen!",
         badge: "Kerst Favoriet",
         inStock: true,
@@ -1083,7 +1083,7 @@ const products = [
         kwekerId: 7,
         leverancierId: 1,
         icon: "🌷",
-        image: "https://images.unsplash.com/photo-1520412099551-62b6bafeb5bb?w=400&q=80", // Semper Augustus wit-rood
+        image: "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=400&q=80", // Semper Augustus - wit-rood historische tulp
         description: "Replica van de beroemde tulp uit de tulpenmanie. Wit met rode vlammen.",
         badge: "Historisch",
         inStock: true,
@@ -1102,7 +1102,7 @@ const products = [
         kwekerId: 7,
         leverancierId: 4,
         icon: "🌺",
-        image: "https://images.unsplash.com/photo-1595507779826-9ff4e01e5e5a?w=400&q=80", // Stargazer roze-wit
+        image: "https://images.unsplash.com/photo-1509223197845-458d87a6c5fe?w=400&q=80", // Stargazer - roze-wit gespikkelde lelie
         description: "Spectaculaire roze-witte lelies met sterke geur. Van den Bos kwaliteit.",
         badge: "Geurend",
         inStock: true,
@@ -1123,7 +1123,7 @@ const products = [
         kwekerId: 8,
         leverancierId: 2,
         icon: "🔔",
-        image: "https://images.unsplash.com/photo-1586521995568-39abaa0c2311?w=400&q=80", // Fritillaria
+        image: "https://images.unsplash.com/photo-1588462553020-a0b3d7f85af0?w=400&q=80", // Fritillaria Persica donkerpaarse bloem
         description: "Indrukwekkende donkerpaarse keizerskroon. Bakker Brothers specialty.",
         badge: "Bijzonder",
         inStock: true,
@@ -1142,7 +1142,7 @@ const products = [
         kwekerId: 8,
         leverancierId: 2,
         icon: "💙",
-        image: "https://images.unsplash.com/photo-1590755117688-2fd7db7a9ead?w=400&q=80", // Blauwe iris
+        image: "https://images.unsplash.com/photo-1594489428504-5c0c480a15fd?w=400&q=80", // Blue Magic - blauwe iris close-up
         description: "Prachtige blauwe hollandse irissen. Ideaal voor snijbloemen.",
         badge: null,
         inStock: true,
@@ -1163,7 +1163,7 @@ const products = [
         kwekerId: 9,
         leverancierId: 3,
         icon: "💙",
-        image: "https://images.unsplash.com/photo-1584479898061-15742e14f50d?w=400&q=80", // Delft blauwe hyacint
+        image: "https://images.unsplash.com/photo-1522165078944-a7cab98f6a9e?w=400&q=80", // Delft Blue hyacint - prachtig blauw
         description: "Klassieke Delfts blauwe hyacint. Moolenaar's paradepaardje!",
         badge: "Moolenaar Specialty",
         inStock: true,
@@ -1182,7 +1182,7 @@ const products = [
         kwekerId: 9,
         leverancierId: 3,
         icon: "💜",
-        image: "https://images.unsplash.com/photo-1585007600263-71228e40c8d1?w=400&q=80", // Muscari druifhyacint
+        image: "https://images.unsplash.com/photo-1614265436203-fe3c99b45f20?w=400&q=80", // Muscari blauwe druifhyacint
         description: "Dubbele blauwe druifjes. Perfect voor borders en potten.",
         badge: "Bijvriendelijk",
         inStock: true,
@@ -1201,7 +1201,7 @@ const products = [
         kwekerId: 9,
         leverancierId: 3,
         icon: "🌸",
-        image: "https://images.unsplash.com/photo-1455659817273-f96807779a8a?w=400&q=80", // Mix hyacinten
+        image: "https://images.unsplash.com/photo-1522844990619-4951c40f7eda?w=400&q=80", // Kleurrijke hyacintenmix
         description: "Gemengde kleuren hyacinten met intense geur. Moolenaar kwaliteit.",
         badge: "Geurend",
         inStock: true,
@@ -1222,7 +1222,7 @@ const products = [
         kwekerId: 10,
         leverancierId: 1,
         icon: "🌷",
-        image: "https://images.unsplash.com/photo-1524386416438-98b9b2d4b433?w=400&q=80", // Tulpenveld mix
+        image: "https://images.unsplash.com/photo-1491931560637-62fb12a4c18c?w=400&q=80", // Authentieke tulpenmix veld
         description: "Authentieke boerenmix van De Tulpenfarm. Zoals vroeger!",
         badge: "Authentiek",
         inStock: true,
@@ -1241,7 +1241,7 @@ const products = [
         kwekerId: 10,
         leverancierId: 1,
         icon: "🌺",
-        image: "https://images.unsplash.com/photo-1560717789-0ac7c58ac90a?w=400&q=80", // Roze pioenroos
+        image: "https://images.unsplash.com/photo-1527061011665-3652c757a4d4?w=400&q=80", // Sarah Bernhardt roze pioen
         description: "Roze pioenroos met volle bloemen. De Tulpenfarm favoriet.",
         badge: "Snijbloem",
         inStock: true,
@@ -1262,7 +1262,7 @@ const products = [
         kwekerId: 11,
         leverancierId: 2,
         icon: "🎨",
-        image: "https://images.unsplash.com/photo-1589994160839-163cd867cfe8?w=400&q=80", // Rembrandt gestreepte tulpen
+        image: "https://images.unsplash.com/photo-1589994160839-163cd867cfe8?w=400&q=80", // Rembrandt gevlamde tulpen wit-rood
         description: "Gestreepte tulpen in Rembrandt stijl. 160 jaar Van Waveren traditie.",
         badge: "Heritage",
         inStock: true,
@@ -1281,7 +1281,7 @@ const products = [
         kwekerId: 11,
         leverancierId: 3,
         icon: "🌼",
-        image: "https://images.unsplash.com/photo-1456415333674-42b11b9f5b7b?w=400&q=80", // Narcis Geranium oranje hartje
+        image: "https://images.unsplash.com/photo-1549476464-37392f717541?w=400&q=80", // Narcis Geranium wit-oranje
         description: "Trosbloemige narcis met oranje hartje. Historische cultivar.",
         badge: "Historisch",
         inStock: true,
@@ -1300,7 +1300,7 @@ const products = [
         kwekerId: 11,
         leverancierId: 3,
         icon: "🤍",
-        image: "https://images.unsplash.com/photo-1550159930-40066082f2b6?w=400&q=80", // Aiolos witte hyacint
+        image: "https://images.unsplash.com/photo-1487530811176-3780de880c2d?w=400&q=80", // Aiolos witte hyacint close-up
         description: "Pure witte hyacint. Van Waveren's oudste cultivar.",
         badge: "Klassiek",
         inStock: true,
@@ -1321,7 +1321,7 @@ const products = [
         kwekerId: 12,
         leverancierId: 2,
         icon: "🌸",
-        image: "https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?w=400&q=80", // Ranonkels
+        image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80", // Ranunculus pastel roze wit
         description: "Zachte pasteltinten ranonkels. Bloemenlust specialty.",
         badge: "Snijbloem",
         inStock: true,
@@ -1340,7 +1340,7 @@ const products = [
         kwekerId: 12,
         leverancierId: 2,
         icon: "❤️",
-        image: "https://images.unsplash.com/photo-1612722432474-b971cdcea546?w=400&q=80", // Anemonen
+        image: "https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?w=400&q=80", // De Caen anemonen kleurrijk
         description: "Kleurrijke Franse anemonen. Perfect voor in vazen.",
         badge: null,
         inStock: true,
@@ -1359,7 +1359,7 @@ const products = [
         kwekerId: 12,
         leverancierId: 1,
         icon: "🌷",
-        image: "https://images.unsplash.com/photo-1520763185298-1b434c919102?w=400&q=80", // Snijbloemen tulpen
+        image: "https://images.unsplash.com/photo-1520219306100-ec4afeeefe58?w=400&q=80", // Snijbloemen tulpen vaas
         description: "Speciaal geselecteerde mix voor snijbloemen. Lange stelen!",
         badge: "Snijbloem",
         inStock: true,
